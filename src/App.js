@@ -1,25 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
+import {makeStyles, useTheme} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import PersonIcon from '@material-ui/icons/Person';
-import PeopleIcon from '@material-ui/icons/People';
-import AssignmentIcon from '@material-ui/icons/Assignment';
-import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-import SettingsIcon from '@material-ui/icons/Settings';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Sidebar from "./components/Sidebar";
 
 const drawerWidth = 240;
 
@@ -55,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: '#eae9e9',
   },
   drawerHeader: {
     display: 'flex',
@@ -80,12 +69,16 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  contentHeader: {
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+  }
 }));
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -119,56 +112,17 @@ export default function PersistentDrawerLeft() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer
-            className={classes.drawer}
-            variant="persistent"
-            anchor="left"
-            open={open}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-            </IconButton>
-          </div>
 
-          <List>
-            <ListItem button key="Account">
-              <ListItemIcon><PersonIcon /></ListItemIcon>
-              <ListItemText primary="Account" />
-            </ListItem>
-            <ListItem button key="Students">
-              <ListItemIcon><PeopleIcon /></ListItemIcon>
-              <ListItemText primary="Students" />
-            </ListItem>
-            <ListItem button key="Assignments">
-              <ListItemIcon><AssignmentIcon /></ListItemIcon>
-              <ListItemText primary="Assignments" />
-            </ListItem>
-            <ListItem button key="Dashboard">
-              <ListItemIcon><TrendingUpIcon /></ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItem>
-            <ListItem button key="Settings">
-              <ListItemIcon><SettingsIcon /></ListItemIcon>
-              <ListItemText primary="Settings" />
-            </ListItem>
-            <ListItem button key="Logout">
-              <ListItemIcon><ArrowBackIcon /></ListItemIcon>
-              <ListItemText primary="Logout" />
-            </ListItem>
-          </List>
+        <Sidebar open={open} handleDrawerOpen={handleDrawerOpen} handleDrawerClose={handleDrawerClose} />
 
-        </Drawer>
         <main
             className={clsx(classes.content, {
               [classes.contentShift]: open,
             })}
         >
-          <div className={classes.drawerHeader} />
+          <div className={classes.contentHeader} />
           <Typography paragraph>
+            <h1>Home page</h1>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
             ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
             facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
