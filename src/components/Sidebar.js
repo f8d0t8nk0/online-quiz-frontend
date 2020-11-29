@@ -13,6 +13,8 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Drawer from "@material-ui/core/Drawer";
+import { withRouter } from "react-router-dom";
+
 
 const drawerWidth = 240;
 
@@ -39,9 +41,54 @@ const useStyles = makeStyles((theme) => ({
     })
 )
 
-function Sidebar({ open, handleDrawerOpen, handleDrawerClose }) {
+function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
     const classes = useStyles();
     const theme = useTheme();
+
+    const itemList = [{
+        text: 'Account',
+        icon: <PersonIcon />,
+        onClick: () => {
+            history.push('/account');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Students',
+        icon: <PeopleIcon />,
+        onClick: () => {
+            history.push('/students');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Assignments',
+        icon: <AssignmentIcon />,
+        onClick: () => {
+            history.push('/assignments');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Dashboard',
+        icon: <TrendingUpIcon />,
+        onClick: () => {
+            history.push('/dashboard');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Settings',
+        icon: <SettingsIcon />,
+        onClick: () => {
+            history.push('/settings');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Logout',
+        icon: <ArrowBackIcon />,
+        onClick: () => {
+            history.push('/logout');
+            handleDrawerClose();
+        }
+    }];
+
 
     return (
         <div>
@@ -61,30 +108,15 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose }) {
                 </div>
 
                 <List>
-                    <ListItem button key="Account" className="listItem">
-                        <ListItemIcon><PersonIcon /></ListItemIcon>
-                        <ListItemText primary="Account" />
-                    </ListItem>
-                    <ListItem button key="Students" className="listItem">
-                        <ListItemIcon><PeopleIcon /></ListItemIcon>
-                        <ListItemText primary="Students" />
-                    </ListItem>
-                    <ListItem button key="Assignments" className="listItem">
-                        <ListItemIcon><AssignmentIcon /></ListItemIcon>
-                        <ListItemText primary="Assignments" />
-                    </ListItem>
-                    <ListItem button key="Dashboard" className="listItem">
-                        <ListItemIcon><TrendingUpIcon /></ListItemIcon>
-                        <ListItemText primary="Dashboard" />
-                    </ListItem>
-                    <ListItem button key="Settings" className="listItem">
-                        <ListItemIcon><SettingsIcon /></ListItemIcon>
-                        <ListItemText primary="Settings" />
-                    </ListItem>
-                    <ListItem button key="Logout" className="listItem">
-                        <ListItemIcon><ArrowBackIcon /></ListItemIcon>
-                        <ListItemText primary="Logout" />
-                    </ListItem>
+                    {itemList.map((item, index) => {
+                        const { text, icon, onClick } = item;
+                        return (
+                            <ListItem button key={index} className="listItem" onClick={onClick}>
+                                {icon && <ListItemIcon>{icon}</ListItemIcon>}
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        );
+                    })}
                 </List>
 
             </Drawer>
@@ -92,6 +124,6 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose }) {
     );
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);
 
 
