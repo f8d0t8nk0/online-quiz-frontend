@@ -11,18 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/QuizCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Quizzes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/QuizzesData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/UploadQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ParseQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TestQComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TestQComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Assignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606330061452</updated>
       <workItem from="1606330062579" duration="16619000" />
-      <workItem from="1606602274686" duration="20643000" />
+      <workItem from="1606602274686" duration="22708000" />
     </task>
     <servers />
   </component>
@@ -196,6 +185,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="100" y="100" width="1080" height="600" key="dock-window-1/0.0.1280.800@0.0.1280.800" timestamp="1606608340470" />
+    <state x="412" y="296" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606763837932">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="412" y="296" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.800@0.0.1280.800" timestamp="1606763837932" />
     <state x="305" y="124" key="search.everywhere.popup" timestamp="1606340509277">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

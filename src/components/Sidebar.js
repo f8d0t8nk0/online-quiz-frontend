@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import List from "@material-ui/core/List";
@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
     const classes = useStyles();
-    const theme = useTheme();
 
     const itemList = [{
         text: 'Account',
