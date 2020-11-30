@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import ParseQuestions from "../components/ParseQuestions";
-import TestQComponent from "../components/TestQComponent";
+import Quizzes from "../components/Quizzes";
 
-const Assignments = props => {
+const UploadQuiz = props => {
 
     const [quizzes, setQuizzes] = useState("");
     const [step, setStep] = useState(1);
@@ -15,10 +15,10 @@ const Assignments = props => {
         case 1:
             return <ParseQuestions nextStep={nextStep} quizzes={quizzes} setQuizzes={setQuizzes} />
         case 2:
-            return <TestQComponent quizzes={quizzes} />
+            return <Quizzes quizzes={quizzes} />
         default:
             return null;
     }
 }
 
-export default Assignments;
+export default UploadQuiz;

@@ -17,6 +17,7 @@ import Logout from "./pages/Logout";
 import Main from "./components/Main";
 import Home from "./pages/Home";
 import Assignments from './pages/Assignments'
+import UploadQuiz from "./pages/UploadQuiz";
 
 const drawerWidth = 240;
 
@@ -130,6 +131,7 @@ export default function PersistentDrawerLeft() {
               <Route exact path="/account" render={props => <Account {...props} />} />
               <Route exact path="/students" render={props => <Students {...props} />} />
               <Route exact path="/assignments" render={props => <Assignments {...props} />} />
+              <Route exact path="/uploadQuiz" render={props => <UploadQuiz {...props} />} />
               <Route exact path="/dashboard" render={props => <Dashboard {...props} />} />
               <Route exact path="/settings" render={props => <Settings {...props} />} />
               <Route exact path="/logout" render={props => <Logout {...props} />} />

@@ -12,6 +12,7 @@ import AssignmentIcon from "@material-ui/icons/Assignment";
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import UploadIcon from '@material-ui/icons/Backup';
 import Drawer from "@material-ui/core/Drawer";
 import { withRouter } from "react-router-dom";
 
@@ -64,6 +65,13 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         icon: <AssignmentIcon />,
         onClick: () => {
             history.push('/assignments');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Upload Quiz',
+        icon: <UploadIcon />,
+        onClick: () => {
+            history.push('/uploadQuiz');
             handleDrawerClose();
         }
     }, {

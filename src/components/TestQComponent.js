@@ -1,9 +1,10 @@
 import React from 'react';
 
-function TestQComponent({ questions }) {
+function TestQComponent({ quizzes, step }) {
     return (
         <div>
-            <p>{JSON.stringify(questions)}</p>
+            <p>Questions are here</p>
+            <p>{JSON.stringify(quizzes)}</p>
         </div>
     );
 }
