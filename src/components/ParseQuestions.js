@@ -41,8 +41,9 @@ function ParseQuestions({ nextStep, setQuizzes }) {
         let questionIds;
         // send to API
         // const host = `http://localhost:8080/`;
-        // const createEndpoint = `api/v1/teacher/question/create`;
-        const url = `http://localhost:8080/api/v1/teacher/question/create`
+        const host = 'http://online-quiz-webservice.herokuapp.com/';
+        const createEndpoint = `api/v1/teacher/question/create`;
+        const url = `${host}${createEndpoint}`
         axios.post(url, createQuestionsDTO).then(res => {
             console.log(res);
             console.log(res.data);

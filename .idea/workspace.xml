@@ -11,7 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ParseQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606330061452</updated>
       <workItem from="1606330062579" duration="16619000" />
-      <workItem from="1606602274686" duration="22708000" />
+      <workItem from="1606602274686" duration="24776000" />
     </task>
     <servers />
   </component>
