@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="" />
+    <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/DeleteQuizCardButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ParseQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizCard.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +79,9 @@
       <updated>1606330061452</updated>
       <workItem from="1606330062579" duration="16619000" />
       <workItem from="1606602274686" duration="25079000" />
+      <workItem from="1606770723385" duration="184000" />
+      <workItem from="1606807713313" duration="6338000" />
+      <workItem from="1606851680794" duration="1062000" />
     </task>
     <servers />
   </component>
@@ -89,6 +98,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="104" y="62" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606662965282">
