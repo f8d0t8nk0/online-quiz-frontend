@@ -17,28 +17,18 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "left"
     },
     submitButton : {
-        // display : "block",
-        // width: "50px",
         width: "fit-content",
         margin: "10px",
-        // backgroundColor: '#b7b5b5',
         borderRadius: "100em",
         padding: "10px 25px",
         paddingLeft: "25px",
         font: "13px/20px 'Lucida Grande', Verdana, sans-serif",
         transition: "all .1s",
         fontSize: "15px",
-        // color: "#111",
-        // darkGrey
         color: "#fcfbfb",
-        // color: "#797878", // test
         textShadow: "0 0 2px rgba(0, 0, 0, .7)",
         backgroundColor: "#303030",
-        // borderColor: "#1c1c1c",
         border: "solid #797878 1px",
-        // backgroundImage: "-webkit-linear-gradient(top, #2a2a2a, #1b1b1b)",
-        // backgroundImage: "-moz-linear-gradient(top, #2a2a2a, #1b1b1b)",
-        // backgroundImage: -o-linear-gradient(top, #2a2a2a, #1b1b1b);
         backgroundImage: "linear-gradient(to bottom, #D9D8D8, #868585)"
     }
 }));

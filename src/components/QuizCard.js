@@ -6,7 +6,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
-import DeleteQuizCardButton from "./DeleteQuizCardButton";
+
+const fadeOutTime = 500;
 
 const useStyles = makeStyles({
     root: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles({
     fadeOutCard : {
         boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
         margin: "10px",
-        transition: "opacity 0.5s",
+        transition: "opacity " + 500/1000 + "s ease-out",
         opacity: "0"
     },
     title: {
@@ -54,7 +55,7 @@ export default function QuizCard({ quiz, ordinal }) {
 
     const hideParent = () => {
         setRootClass(classes.fadeOutCard);
-        setTimeout(() => setRootClass(classes.hideCard), 500);
+        setTimeout(() => setRootClass(classes.hideCard), fadeOutTime);
     }
 
     return (
@@ -83,9 +84,6 @@ export default function QuizCard({ quiz, ordinal }) {
                 <Button className={classes.deleteButton} size="small" color="primary" onClick={hideParent}>
                     Delete
                 </Button>
-                {/*<DeleteQuizCardButton>*/}
-                {/*    Custom*/}
-                {/*</DeleteQuizCardButton>*/}
             </CardActions>
         </Card>
     );
