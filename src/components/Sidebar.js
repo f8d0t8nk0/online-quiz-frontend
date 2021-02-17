@@ -16,7 +16,6 @@ import UploadIcon from '@material-ui/icons/Backup';
 import Drawer from "@material-ui/core/Drawer";
 import { withRouter } from "react-router-dom";
 
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({

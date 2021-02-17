@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import {QuizzesData} from "../components/QuizzesData";
 import QuizCard from "../components/QuizCard";
 import {makeStyles} from "@material-ui/core/styles";
+import CreateAssignment from "../components/CreateAssignment";
 
 const useStyles = makeStyles({
     root: {
@@ -32,13 +33,9 @@ function Settings(props) {
                     donec massa sapien faucibus et molestie ac.
                 </p>
             </Typography>
-            <div className={classes.root}>
-                {QuizzesData.map((quiz, index) => {
-                    return (
-                        <QuizCard quiz={quiz} ordinal={index + 1} />
-                    )
-                })}
-            </div>
+
+            <CreateAssignment quizzes={QuizzesData} />
+
         </div>
     );
 }

@@ -4,6 +4,7 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Button from "@material-ui/core/Button";
 import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
+import authAxios from "../App";
 
 const useStyles = makeStyles((theme) => ({
     pasteQuestions : {
@@ -39,10 +40,10 @@ function ParseQuestions({ nextStep, setQuizzes }) {
     const [questions, setQuestions] = useState("");
     const [answers, setAnswers] = useState("");
 
-    const printData = () => {
+    const printData = async () => {
         let createQuestionsDTO = {
-            questionsText : "",
-            answersText : ""
+            questionsText: "",
+            answersText: ""
         }
 
         createQuestionsDTO.questionsText = questions;
@@ -50,19 +51,35 @@ function ParseQuestions({ nextStep, setQuizzes }) {
 
         let questionIds;
         // send to API
-        // const host = `http://localhost:8080/`;
-        const host = 'https://online-quiz-webservice.herokuapp.com/';
+        const host = `http://localhost:8080/`;
+        // const host = 'https://online-quiz-webservice.herokuapp.com/';
         const createEndpoint = `api/v1/teacher/question/create`;
-        const url = `${host}${createEndpoint}`
-        axios.post(url, createQuestionsDTO).then(res => {
-            console.log(res);
-            console.log(res.data);
-            questionIds = res.data;
-            setQuizzes(res.data);
-            nextStep();
-        }).then(res2 => {
-            console.log("Second callback: " + JSON.stringify(questionIds));
-        })
+        const url = `${host}${createEndpoint}`;
+
+        await axios.post(url, createQuestionsDTO).then( res => {
+                console.log(res);
+                console.log(res.data);
+                questionIds = res.data;
+                setQuizzes(res.data);
+                nextStep();
+        });
+
+        // console.log(res);
+        // console.log(res.data);
+        // questionIds = res.data;
+        // setQuizzes(res.data);
+        // nextStep();
+
+
+        // authAxios.post(url, createQuestionsDTO).then(res => {
+        //     console.log(res);
+        //     console.log(res.data);
+        //     questionIds = res.data;
+        //     setQuizzes(res.data);
+        //     nextStep();
+        // }).then(res2 => {
+        //     console.log("Second callback: " + JSON.stringify(questionIds));
+        // })
 
     }
 
