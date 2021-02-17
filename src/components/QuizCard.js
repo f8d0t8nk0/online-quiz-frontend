@@ -49,14 +49,27 @@ const useStyles = makeStyles({
     }
 });
 
-export default function QuizCard({ quiz, ordinal }) {
+export default function QuizCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
+
     const classes = useStyles();
     const [rootClass, setRootClass] = useState(classes.root);
+
+    const handleDelete = () => {
+        hideParent();
+        updateDeleted();
+    };
 
     const hideParent = () => {
         setRootClass(classes.fadeOutCard);
         setTimeout(() => setRootClass(classes.hideCard), fadeOutTime);
-    }
+    };
+
+    const updateDeleted = () => {
+        let filtered = selectedQIds.filter(function (id) {
+            return id !== quiz.id;
+        });
+        setSelectedQIds([...filtered]);
+    };
 
     return (
         <Card className={rootClass}>
@@ -81,7 +94,7 @@ export default function QuizCard({ quiz, ordinal }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button className={classes.deleteButton} size="small" color="primary" onClick={hideParent}>
+                <Button className={classes.deleteButton} size="small" color="primary" onClick={handleDelete}>
                     Delete
                 </Button>
             </CardActions>

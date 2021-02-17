@@ -10,14 +10,19 @@ const useStyles = makeStyles({
     }
 });
 
-function Quizzes({ quizzes }) {
+function Quizzes({ quizzes, selectedQIds, setSelectedQIds }) {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
             {quizzes.map((quiz, index) => {
                 return (
-                    <QuizCard quiz={quiz} ordinal={index + 1} />
+                    <QuizCard
+                        quiz={quiz}
+                        ordinal={index + 1}
+                        selectedQIds={selectedQIds}
+                        setSelectedQIds={setSelectedQIds}
+                    />
                 )
             })}
         </div>

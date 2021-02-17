@@ -4,7 +4,6 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Button from "@material-ui/core/Button";
 import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
-import authAxios from "../App";
 
 const useStyles = makeStyles((theme) => ({
     pasteQuestions : {
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function ParseQuestions({ nextStep, setQuizzes }) {
+function ParseQuestions({ nextStep, setQuizzes, selectedQIds, setSelectedQIds }) {
 
     const classes = useStyles();
     const [questions, setQuestions] = useState("");
@@ -44,22 +43,34 @@ function ParseQuestions({ nextStep, setQuizzes }) {
         let createQuestionsDTO = {
             questionsText: "",
             answersText: ""
-        }
+        };
 
         createQuestionsDTO.questionsText = questions;
         createQuestionsDTO.answersText = answers;
 
-        let questionIds;
         // send to API
         const host = `http://localhost:8080/`;
         // const host = 'https://online-quiz-webservice.herokuapp.com/';
         const createEndpoint = `api/v1/teacher/question/create`;
         const url = `${host}${createEndpoint}`;
 
+        let savedQuizzes;
+
         await axios.post(url, createQuestionsDTO).then( res => {
                 console.log(res);
                 console.log(res.data);
-                questionIds = res.data;
+
+                savedQuizzes = res.data;
+
+                let qIds = savedQuizzes.map(function (thisQuiz) {
+                    return thisQuiz.id;
+                });
+
+                setSelectedQIds([...selectedQIds, ...qIds]);
+
+                // todo delete
+                console.log("Selected ids in ParseQuestions: " + selectedQIds);
+
                 setQuizzes(res.data);
                 nextStep();
         });
