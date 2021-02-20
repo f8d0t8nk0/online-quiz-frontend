@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import {QuizzesData} from "../components/QuizzesData";
-import QuizCard from "../components/QuizCard";
+import {QuestionsData} from "../components/question/QuestionsData";
+import QuestionCard from "../components/question/QuestionCard";
 import {makeStyles} from "@material-ui/core/styles";
 import CreateAssignment from "../components/CreateAssignment";
 
@@ -18,7 +18,7 @@ function Settings(props) {
 
     return (
         <div>
-            <Typography paragraph>
+            <Typography component={'div'} paragraph>
                 <h1>Settings page</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -34,7 +34,7 @@ function Settings(props) {
                 </p>
             </Typography>
 
-            <CreateAssignment quizzes={QuizzesData} />
+            <CreateAssignment quizzes={QuestionsData} />
 
         </div>
     );

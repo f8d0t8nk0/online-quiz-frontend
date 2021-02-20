@@ -11,6 +11,8 @@ const fadeOutTime = 500;
 
 const useStyles = makeStyles({
     root: {
+        minWidth: 550,
+        maxWidth: 550,
         display : "flex",
         flexDirection: "column",
         boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
@@ -49,7 +51,7 @@ const useStyles = makeStyles({
     }
 });
 
-export default function QuizCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
+export default function QuestionCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
 
     const classes = useStyles();
     const [rootClass, setRootClass] = useState(classes.root);
@@ -74,22 +76,22 @@ export default function QuizCard({ quiz, ordinal, selectedQIds, setSelectedQIds 
     return (
         <Card className={rootClass}>
             <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
                     {ordinal}
                 </Typography>
-                <Typography className={classes.pos} color="textPrimary">
+                <Typography component={'div'}  className={classes.pos} color="textPrimary">
                     {quiz.question}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
                     {"A) " + quiz.a}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
                     {"B) " + quiz.b}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
                     {"C) " + quiz.c}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
                     {"D) " + quiz.d}
                 </Typography>
             </CardContent>

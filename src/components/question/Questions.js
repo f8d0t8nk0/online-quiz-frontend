@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import QuizCard from "./QuizCard";
+import QuestionCard from "./QuestionCard";
 
 const useStyles = makeStyles({
     root: {
@@ -10,14 +10,14 @@ const useStyles = makeStyles({
     }
 });
 
-function Quizzes({ quizzes, selectedQIds, setSelectedQIds }) {
+function Questions({ quizzes, selectedQIds, setSelectedQIds }) {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
             {quizzes.map((quiz, index) => {
                 return (
-                    <QuizCard
+                    <QuestionCard
                         quiz={quiz}
                         ordinal={index + 1}
                         selectedQIds={selectedQIds}
@@ -29,4 +29,4 @@ function Quizzes({ quizzes, selectedQIds, setSelectedQIds }) {
     );
 }
 
-export default Quizzes;
+export default Questions;

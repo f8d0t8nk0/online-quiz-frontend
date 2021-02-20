@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import ParseQuestions from "../components/ParseQuestions";
+import ParseQuestions from "../components/question/ParseQuestions";
 import CreateAssignment from "../components/CreateAssignment";
+import MyQuizzes from "./MyQuizzes";
 
 const UploadQuiz = props => {
 
@@ -23,15 +24,16 @@ const UploadQuiz = props => {
             />;
         case 2:
             return <CreateAssignment
+                nextStep={nextStep}
                 quizzes={quizzes}
                 selectedQIds={selectedQIds}
                 setSelectedQIds={setSelectedQIds}
             />;
-        // case 3:
-        //     return // todo add quizzes tab
+        case 3:
+            return <MyQuizzes/>;
         default:
             return null;
     }
-}
+};
 
 export default UploadQuiz;

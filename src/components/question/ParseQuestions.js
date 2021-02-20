@@ -96,7 +96,7 @@ function ParseQuestions({ nextStep, setQuizzes, selectedQIds, setSelectedQIds })
 
     return (
         <div className={classes.submitDiv}>
-            <Typography >
+            <Typography component={'div'}  >
                 <h2>Upload Your Quiz</h2>
             </Typography>
 

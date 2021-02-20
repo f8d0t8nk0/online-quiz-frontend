@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 function Students(props) {
     return (
         <div>
-            <Typography paragraph>
+            <Typography component={'div'} paragraph>
                 <h1>Students page</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

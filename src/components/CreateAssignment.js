@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
-import Quizzes from "./Quizzes";
+import Questions from "./question/Questions";
 import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function CreateAssignment({ quizzes, selectedQIds, setSelectedQIds }) {
+function CreateAssignment({ nextStep, quizzes, selectedQIds, setSelectedQIds }) {
 
     const [quizName, setQuizName] = useState("");
     const classes = useStyles();
@@ -51,16 +51,14 @@ function CreateAssignment({ quizzes, selectedQIds, setSelectedQIds }) {
             console.log(res.data);
 
             savedQuiz = res.data;
-        })
+        });
+        nextStep();
     };
-
-
-
 
 
     return (
         <div>
-            <Typography >
+            <Typography component={'div'}  >
                 <h2>Create Your Assignment</h2>
             </Typography>
             {/*<form className={classes.formClass} noValidate autoComplete="off">*/}
@@ -73,7 +71,7 @@ function CreateAssignment({ quizzes, selectedQIds, setSelectedQIds }) {
                 id="standard-basic"
                 label="Name your assignment"
             />
-            <Quizzes
+            <Questions
                 quizzes={quizzes}
                 selectedQIds={selectedQIds}
                 setSelectedQIds={setSelectedQIds}
