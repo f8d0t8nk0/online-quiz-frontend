@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import QuestionCard from "../question/QuestionCard";
+import {makeStyles} from '@material-ui/core/styles';
 import QuestionQuizCard from "./QuestionQuizCard";
 import Button from "@material-ui/core/Button";
 import ReplyIcon from '@material-ui/icons/Reply';
 import TextField from "@material-ui/core/TextField";
+import axios from "axios";
+
 
 const useStyles = makeStyles({
     main: {
@@ -75,6 +76,30 @@ function WholeQuiz({ selectedQuiz }) {
     };
 
     const handleGoButton = () => {
+        // send to API
+        const host = `http://localhost:8080/`;
+        // const host = 'https://online-quiz-webservice.herokuapp.com/';
+        const saveAssignmentEndpoint = `api/v1/teacher/assignment/save`;
+        const url = `${host}${saveAssignmentEndpoint}`;
+
+        let assignDTO = {
+            name: "",
+            quizId: "",
+            teacher: "",
+            studentEmails: []
+        };
+
+        assignDTO.name = email;
+        assignDTO.quizId = selectedQuiz.id;
+
+        assignDTO.studentEmails = new Array(email);
+
+        axios.post(url, assignDTO).then( res => {
+            // todo delete
+            console.log(res);
+            console.log("Id of saved assignment: " + res.data);
+
+        });
 
     };
 

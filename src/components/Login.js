@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 
 function Copyright() {
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
     const classes = useStyles();
+    const history = useHistory();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -66,7 +68,7 @@ export default function Login() {
         const data = {
             email : "",
             password : ""
-        }
+        };
 
         data.email = email;
         data.password = password;
@@ -79,8 +81,9 @@ export default function Login() {
                     console.log("Token: " + jwtToken)
             }).catch(err => {
                 console.log(err);
-        })
-    }
+        });
+        history.push("/");
+    };
 
     return (
         <Container component="main" maxWidth="xs">

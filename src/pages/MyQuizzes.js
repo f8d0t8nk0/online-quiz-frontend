@@ -33,14 +33,17 @@ function MyQuizzes(props) {
         return `${host}${allQuizzes}`;
     };
 
+    let quizzesFromServer = "";
+
     const getQuizzes = () => {
         // send to API
         const url = getUrl();
 
         axios.get(url)
             .then(res => {
-                let data = res.data;
-                setPlainText(JSON.stringify(data));
+                quizzesFromServer = res.data;
+                // let data = res.data;
+                // setPlainText(JSON.stringify(data));
             })
     };
 
@@ -54,7 +57,7 @@ function MyQuizzes(props) {
                 <div>
                     {/*{plainText}*/}
                     {<QuizCards
-                        quizzes={QuizData}
+                        quizzes={quizzesFromServer}
                         setSelectedQuiz={setSelectedQuiz}
                         nextStep={nextStep}
                     />}
@@ -67,7 +70,6 @@ function MyQuizzes(props) {
         default:
             return null;
     }
-
 
 }
 
