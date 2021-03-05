@@ -6,10 +6,14 @@ import {useSelector} from "react-redux";
 
 const UploadQuiz = props => {
 
-    const [questions, setQuestions] = useState(useSelector(state => {
-        console.log("In useSelector PARENT: " + JSON.stringify(state));
-        return state.api.createQReq.questions;
-    }));
+    // const [questions, setQuestions] = useState(useSelector(state => {
+    //     console.log("In useSelector PARENT: " + JSON.stringify(state));
+    //     return state.api.createQReq.questions;
+    // }));
+    const questions = useSelector(state => {
+            console.log("In useSelector PARENT: " + JSON.stringify(state));
+            return state.api.createQReq.questions;
+        });
     // const [questions, setQuestions] = useSelector(state => {
     //     console.log("In useSelector PARENT: " + JSON.stringify(state));
     //     return state.api.createQReq.questions;
@@ -31,17 +35,17 @@ const UploadQuiz = props => {
                 setQuizzes={setQuizzes}
                 selectedQIds={selectedQIds}
                 questions={questions}
-                setQuestions={setQuestions}
+                // setQuestions={setQuestions}
                 setSelectedQIds={setSelectedQIds}
             />;
         case 2:
             return <CreateAssignment
                 nextStep={nextStep}
-                quizzes={quizzes}
+                quizzes={questions}
                 selectedQIds={selectedQIds}
                 setSelectedQIds={setSelectedQIds}
-                questions={questions}
-                setQuestions={setQuestions}
+                // questions={questions}
+                // setQuestions={setQuestions}
             />;
         default:
             return null;
