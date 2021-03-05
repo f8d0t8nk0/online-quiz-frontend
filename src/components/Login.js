@@ -14,6 +14,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import {HOST} from "../config/web";
 
 
 function Copyright() {
@@ -58,9 +59,8 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const host = 'http://localhost:8080/';
     const loginEndpoint = 'api/v1/auth/login';
-    const loginUrl = `${host}${loginEndpoint}`;
+    const loginUrl = `${HOST}${loginEndpoint}`;
 
     const handleSubmit = e => {
         e.preventDefault();
