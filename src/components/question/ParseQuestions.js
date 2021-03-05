@@ -74,64 +74,65 @@ function ParseQuestions(props) {
         props.nextStep();
     };
 
-    const saveQuestion = () => {
-        // props.createQs(buildDto(), seePayload);
+    // const saveQuestion = () => {
+    //     // props.createQs(buildDto(), seePayload);
+    //
+    //     // dispatch((dispatch) => fetchQuestions(buildDto(), dispatch));
+    //     // dispatch(() => fetchQuestions(buildDto()));
+    //     props.fetchQuestions(buildDto()).then(() => seePayload());
+    //
+    //     console.log("57: " + props.createdQuestions);
+    //
+    //     let qIds = props.createdQuestions.map(q => q.id);
+    //
+    //     props.setSelectedQIds([...props.selectedQIds, ...qIds]);
+    //
+    //     console.log("Created questions: " + props.createdQuestions);
+    //     console.log("Selected ids in ParseQuestions: " + qIds);
+    //
+    //     // props.setQuizzes(props.createdQuestions);
+    //     // props.nextStep();
+    // };
 
-        // dispatch((dispatch) => fetchQuestions(buildDto(), dispatch));
-        // dispatch(() => fetchQuestions(buildDto()));
-        props.fetchQuestions(buildDto()).then(() => seePayload());
-
-        console.log("57: " + props.createdQuestions);
-
-        let qIds = props.createdQuestions.map(q => q.id);
-
-        props.setSelectedQIds([...props.selectedQIds, ...qIds]);
-
-        console.log("Created questions: " + props.createdQuestions);
-        console.log("Selected ids in ParseQuestions: " + qIds);
-
-        // props.setQuizzes(props.createdQuestions);
-        // props.nextStep();
-    };
-
-    const printData = async () => {
-        let createQuestionsDTO = {
-            questionsText: "",
-            answersText: ""
-        };
-
-        createQuestionsDTO.questionsText = questions;
-        createQuestionsDTO.answersText = answers;
-
-        // send to API
-        const host = `http://localhost:8080/`;
-        const createEndpoint = `api/v1/teacher/question/create`;
-        const url = `${host}${createEndpoint}`;
-
-        let savedQuizzes;
-
-
-
-        await axios.post(url, createQuestionsDTO).then( res => {
-                console.log(res);
-                console.log(res.data);
-
-                savedQuizzes = res.data;
-
-                let qIds = savedQuizzes.map(function (thisQuiz) {
-                    return thisQuiz.id;
-                });
-
-                props.setSelectedQIds([...props.selectedQIds, ...qIds]);
-
-                // todo delete
-                console.log("Selected ids in ParseQuestions: " + props.selectedQIds);
-
-                props.setQuizzes(res.data);
-                props.nextStep();
-        });
-
-    };
+    // // it actually worked before
+    // const printData = async () => {
+    //     let createQuestionsDTO = {
+    //         questionsText: "",
+    //         answersText: ""
+    //     };
+    //
+    //     createQuestionsDTO.questionsText = questions;
+    //     createQuestionsDTO.answersText = answers;
+    //
+    //     // send to API
+    //     const host = `http://localhost:8080/`;
+    //     const createEndpoint = `api/v1/teacher/question/create`;
+    //     const url = `${host}${createEndpoint}`;
+    //
+    //     let savedQuizzes;
+    //
+    //
+    //
+    //     await axios.post(url, createQuestionsDTO).then( res => {
+    //             console.log(res);
+    //             console.log(res.data);
+    //
+    //             savedQuizzes = res.data;
+    //
+    //             let qIds = savedQuizzes.map(function (thisQuiz) {
+    //                 return thisQuiz.id;
+    //             });
+    //
+    //             props.setSelectedQIds([...props.selectedQIds, ...qIds]);
+    //
+    //             // todo delete
+    //             console.log("Selected ids in ParseQuestions: " + props.selectedQIds);
+    //
+    //             props.setQuizzes(res.data);
+    //             props.nextStep();
+    //     });
+    //
+    // };
 
     return (
         <div className={classes.submitDiv}>
@@ -155,9 +156,9 @@ function ParseQuestions(props) {
 
             <Button
                 className={classes.submitButton}
-                onClick={async () => {
+                onClick= {() => {
                     // saveQuestion();
-                    await dispatch(fetchQuestions(buildDto()));
+                     dispatch(fetchQuestions(buildDto()));
                     seePayload();
                     // dispatch(fetchQuestions(buildDto(), dispatch));
                     setTimeout(() => {
