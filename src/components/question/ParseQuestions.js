@@ -60,6 +60,7 @@ function ParseQuestions(props) {
     const seePayload = () => {
         console.log("seePayload: " + JSON.stringify(props.createdQuestions));
         console.log("My questions: " + JSON.stringify(myQuestions));
+        console.log("Questions from parent: " + JSON.stringify(props.questions));
         // console.log(props);
         // let qIds = props.createdQuestions.map(q => q.id);
         let qIds = myQuestions.map(q => q.id);

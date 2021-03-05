@@ -43,14 +43,14 @@ export const createQuestions = (data) => dispatch => {
 // };
 
 export const fetchQuestions = (dto) => {
-    console.log("In fetchQuestions"); // todo dl
+    // console.log("In fetchQuestions"); // todo dl
     return (dispatch) => {
         // dispatch(fetchQuestionsRequest());
 
         axios.post(`${HOST}${QUESTIONS_CREATE}`, dto)
             .then(response => {
                 const data = response.data;
-                console.log("Action data: " + JSON.stringify(data));
+                // console.log("Action data: " + JSON.stringify(data));
                 dispatch(fetchQuestionsSuccess(data));
             });
             // .catch(response => {
@@ -70,7 +70,7 @@ const fetchQuestionsRequest = () => {
 };
 
 const fetchQuestionsSuccess = questions => {
-    console.log("IN fetchQuestionsSuccess"); // todo dl
+    // console.log("IN fetchQuestionsSuccess"); // todo dl
     return {
         type: API_CREATE_QUESTIONS_SUCCESS,
         payload: [...questions]

@@ -38,7 +38,7 @@ const apiReducer = (state = initialState, action) => {
         //     };
 
         case API_CREATE_QUESTIONS_SUCCESS:
-            console.log("In reducer: " + JSON.stringify(action.payload));
+            // console.log("In reducer: " + JSON.stringify(action.payload));
             // createQReq = {
             //     loading: false,
             //     questions: [...state.createQReq.questions ,...action.payload],
@@ -51,7 +51,7 @@ const apiReducer = (state = initialState, action) => {
                     questions: [...state.createQReq.questions, ...action.payload]
                 }
             };
-            console.log("My obj: " + JSON.stringify(obj));
+            // console.log("My obj: " + JSON.stringify(obj));
             return obj;
 
         // case API_CREATE_QUESTIONS_FAILURE:
