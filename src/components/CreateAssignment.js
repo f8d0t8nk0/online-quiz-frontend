@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
 import Questions from "./question/Questions";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
     formClass: {
@@ -23,6 +25,7 @@ function CreateAssignment({ nextStep, quizzes, selectedQIds, setSelectedQIds }) 
 
     const [quizName, setQuizName] = useState("");
     const classes = useStyles();
+    const history = useHistory();
 
     let quizDto = {
         name: "",
@@ -52,7 +55,8 @@ function CreateAssignment({ nextStep, quizzes, selectedQIds, setSelectedQIds }) 
 
             savedQuiz = res.data;
         });
-        nextStep();
+        history.push("/quizzes")
+        // nextStep();
     };
 
 

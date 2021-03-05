@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import ReplyIcon from '@material-ui/icons/Reply';
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles({
@@ -63,6 +64,8 @@ const useStyles = makeStyles({
 
 function WholeQuiz({ selectedQuiz }) {
     const classes = useStyles();
+    const history = useHistory();
+
     const [tAreaClass, setTAreaClass] = useState(classes.myTextFieldHidden);
     const [goButtonClass, setGoButtonClass] = useState(classes.goButtonHidden);
     const [email, setEmail] = useState("");
@@ -98,9 +101,8 @@ function WholeQuiz({ selectedQuiz }) {
             // todo delete
             console.log(res);
             console.log("Id of saved assignment: " + res.data);
-
         });
-
+        history.push("/assignments");
     };
 
     return (

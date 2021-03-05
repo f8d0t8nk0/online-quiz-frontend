@@ -1,0 +1,1 @@
+export const QUESTIONS_CREATE = 'api/v1/teacher/question/create';

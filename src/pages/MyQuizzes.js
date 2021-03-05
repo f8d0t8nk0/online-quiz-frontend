@@ -21,6 +21,7 @@ function MyQuizzes(props) {
     const [plainText, setPlainText] = useState("");
     const [step, setStep] = useState(1);
     const [selectedQuiz, setSelectedQuiz] = useState();
+    const [quizzesFromServer, setQuizzesFromServer] = useState([]);
 
     const nextStep = () => {
         setStep(step + 1);
@@ -33,7 +34,6 @@ function MyQuizzes(props) {
         return `${host}${allQuizzes}`;
     };
 
-    let quizzesFromServer = "";
 
     const getQuizzes = () => {
         // send to API
@@ -41,26 +41,30 @@ function MyQuizzes(props) {
 
         axios.get(url)
             .then(res => {
-                quizzesFromServer = res.data;
-                // let data = res.data;
-                // setPlainText(JSON.stringify(data));
+                setQuizzesFromServer(res.data);
+                // console.log("Quizzes from server: " + quizzesFromServer);
+                let data = res.data;
+                setPlainText(JSON.stringify(data));
             })
     };
 
     useEffect(() => {
         getQuizzes();
-    });
+    }, []);
 
     switch (step) {
         case 1:
             return (
                 <div>
-                    {/*{plainText}*/}
+                    {/*{getQuizzes()}*/}
                     {<QuizCards
                         quizzes={quizzesFromServer}
                         setSelectedQuiz={setSelectedQuiz}
                         nextStep={nextStep}
                     />}
+                    {/*{plainText}*/}
+                    {/*{quizzesFromServer}*/}
+                    {/*{console.log("quizzesFromServer in return" + quizzesFromServer)}*/}
                 </div>
             );
         case 2:
@@ -70,6 +74,7 @@ function MyQuizzes(props) {
         default:
             return null;
     }
+
 
 }
 

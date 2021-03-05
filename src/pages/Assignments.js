@@ -1,7 +1,39 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Typography from "@material-ui/core/Typography";
+import axios from "axios";
 
 function Assignments(props) {
+
+    const [assignments, setAssignments] = useState([])
+    const [plainText, setPlainText] = useState("");
+
+
+    const getUrl = () => {
+        const host = `http://localhost:8080/`;
+        // const host = 'https://online-quiz-webservice.herokuapp.com/';
+        const allQuizzes = `api/v1/teacher/assignment/all`;
+        return `${host}${allQuizzes}`;
+    };
+
+    const getAssignments = () => {
+        // send to API
+        const url = getUrl();
+
+        axios.get(url)
+            .then(res => {
+                if (typeof res !== "undefined") {
+                    setAssignments(res.data);
+                    // console.log("Quizzes from server: " + quizzesFromServer);
+                    // let data = res.data;
+                    setPlainText(JSON.stringify(res.data));
+                }
+            })
+    };
+
+    useEffect(() => {
+        getAssignments();
+    }, []);
+
     return (
         <div>
             <Typography component={'div'} paragraph>
@@ -18,6 +50,11 @@ function Assignments(props) {
                     arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
                     donec massa sapien faucibus et molestie ac.
                 </p>
+
+
+                {plainText}
+
+
             </Typography>
         </div>
     );

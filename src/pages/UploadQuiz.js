@@ -29,8 +29,6 @@ const UploadQuiz = props => {
                 selectedQIds={selectedQIds}
                 setSelectedQIds={setSelectedQIds}
             />;
-        case 3:
-            return <MyQuizzes/>;
         default:
             return null;
     }
