@@ -13,19 +13,7 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAssignment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/question/QuestionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/QuestionCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/question/Questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/Questions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UploadQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UploadQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +149,7 @@
       <workItem from="1614893737940" duration="2696000" />
       <workItem from="1614931072169" duration="8432000" />
       <workItem from="1615218290771" duration="402000" />
-      <workItem from="1615305986669" duration="13667000" />
+      <workItem from="1615305986669" duration="16132000" />
     </task>
     <servers />
   </component>
@@ -234,22 +222,18 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1228" height="309" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1614810161022" />
-    <state width="1259" height="264" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1606663011616" />
     <state width="1228" height="309" key="GridCell.Tab.1.center" timestamp="1614810161020">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1228" height="309" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1614810161020" />
-    <state width="1259" height="264" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1606663011613" />
     <state width="1228" height="309" key="GridCell.Tab.1.left" timestamp="1614810161019">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1228" height="309" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1614810161019" />
-    <state width="1259" height="264" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1606663011612" />
     <state width="1228" height="309" key="GridCell.Tab.1.right" timestamp="1614810161021">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1228" height="309" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1614810161021" />
-    <state width="1259" height="264" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1606663011615" />
     <state width="1228" height="309" key="GridCell.Tab.2.bottom" timestamp="1614810161026">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -266,22 +250,6 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="1228" height="309" key="GridCell.Tab.2.right/0.0.1280.800@0.0.1280.800" timestamp="1614810161025" />
-    <state width="1259" height="264" key="GridCell.Tab.3.bottom" timestamp="1606662986508">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.bottom/0.0.1280.800@0.0.1280.800" timestamp="1606662986508" />
-    <state width="1259" height="264" key="GridCell.Tab.3.center" timestamp="1606662986506">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.center/0.0.1280.800@0.0.1280.800" timestamp="1606662986506" />
-    <state width="1259" height="264" key="GridCell.Tab.3.left" timestamp="1606662986505">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.left/0.0.1280.800@0.0.1280.800" timestamp="1606662986505" />
-    <state width="1259" height="264" key="GridCell.Tab.3.right" timestamp="1606662986507">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state width="1259" height="264" key="GridCell.Tab.3.right/0.0.1280.800@0.0.1280.800" timestamp="1606662986507" />
     <state x="128" y="83" key="IDE.errors.dialog" timestamp="1613578538940">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -299,10 +267,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="252" y="194" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1613988980735" />
-    <state x="100" y="100" width="1080" height="600" key="dock-window-1" timestamp="1606608340470">
+    <state x="391" y="306" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615393185378">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="100" y="100" width="1080" height="600" key="dock-window-1/0.0.1280.800@0.0.1280.800" timestamp="1606608340470" />
+    <state x="391" y="306" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1615393185378" />
     <state x="412" y="296" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606763837932">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

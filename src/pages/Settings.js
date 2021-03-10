@@ -4,6 +4,9 @@ import {QuestionsData} from "../components/question/QuestionsData";
 import QuestionCard from "../components/question/QuestionCard";
 import {makeStyles} from "@material-ui/core/styles";
 import CreateAssignment from "../components/CreateAssignment";
+import CoreQuestionCard from "../components/radio/CoreQuestionCard";
+import {OneQuestion} from "../components/radio/OneQuestion";
+import CoreQuestions from "../components/radio/CoreQuestions";
 
 const useStyles = makeStyles({
     root: {
@@ -34,7 +37,11 @@ function Settings(props) {
                 </p>
             </Typography>
 
-            <CreateAssignment quizzes={QuestionsData} />
+            {/*<CreateAssignment quizzes={QuestionsData} selectedQIds={[954, 955, 956, 957, 958]} />*/}
+
+            {/*<CoreQuestionCard question={OneQuestion} ordinal={1}/>*/}
+
+            <CoreQuestions questions={QuestionsData} />
 
         </div>
     );
