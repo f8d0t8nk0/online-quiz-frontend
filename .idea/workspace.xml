@@ -10,9 +10,54 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="" />
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/question/QuestionCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/question/Questions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/quiz/QuizCards.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/quiz/QuizData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestionCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/radio/CustomRadio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/radio/OneQuestion.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/MyQuizzes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/numValue/NumAdditionContainer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/numValue/numValueAction.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/numValue/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/numValue/valueReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAssignment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ParseQuestions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Quizzes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuizzesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/QuestionsData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Assignments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Students.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/UploadQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UploadQuiz.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +194,8 @@
       <workItem from="1614931072169" duration="8432000" />
       <workItem from="1615218290771" duration="402000" />
       <workItem from="1615305986669" duration="16336000" />
+      <workItem from="1615395505747" duration="36000" />
+      <workItem from="1615396250613" duration="877000" />
     </task>
     <servers />
   </component>
@@ -181,10 +228,6 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="0" y="23" width="1280" height="777" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.800@0.0.1280.800" timestamp="1614766767837" />
-    <state x="364" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606754413321">
-      <screen x="0" y="0" width="1280" height="800" />
-    </state>
-    <state x="364" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1606754413321" />
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606854073695">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -193,10 +236,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="391" y="262" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.800@0.0.1280.800" timestamp="1606855877548" />
-    <state x="381" y="101" key="FileChooserDialogImpl" timestamp="1614873796208">
+    <state x="381" y="101" key="FileChooserDialogImpl" timestamp="1615397604401">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="381" y="101" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1614873796208" />
+    <state x="381" y="101" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1615397604401" />
     <state width="1228" height="309" key="GridCell.Tab.0.bottom" timestamp="1614810161018">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -262,10 +305,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="8" y="8" width="1264" height="784" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.800@0.0.1280.800" timestamp="1613647847163" />
-    <state x="252" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1613988980735">
+    <state x="252" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1615397276254">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="252" y="194" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1613988980735" />
+    <state x="252" y="194" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1615397276254" />
     <state x="391" y="306" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615393185378">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -278,10 +321,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1614873400722" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1615061986231">
-      <screen x="0" y="23" width="1280" height="777" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1615395534834">
+      <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1614810154061" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1615395534834" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1615061986231" />
   </component>
   <component name="XDebuggerManager">
