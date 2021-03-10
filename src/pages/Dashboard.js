@@ -1,10 +1,11 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
+import NumAdditionContainer from "../redux/numValue/NumAdditionContainer";
 
 function Dashboard(props) {
     return (
         <div>
-            <Typography paragraph>
+            <Typography component={'div'} paragraph>
                 <h1>Dashboard page</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -18,6 +19,9 @@ function Dashboard(props) {
                     arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
                     donec massa sapien faucibus et molestie ac.
                 </p>
+
+
+                <NumAdditionContainer/>
             </Typography>
         </div>
     );

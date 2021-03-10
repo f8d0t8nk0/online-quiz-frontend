@@ -21,6 +21,7 @@ import Home from "../pages/Home";
 import Assignments from '../pages/Assignments'
 import UploadQuiz from "../pages/UploadQuiz";
 import Login from "../components/Login";
+import MyQuizzes from "../pages/MyQuizzes";
 
 const drawerWidth = 240;
 
@@ -144,6 +145,7 @@ export default function MainApp() {
                 <Route exact path="/" render={props => <Home {...props} />} />
                 <Route exact path="/account" render={props => <Account {...props} />} />
                 <Route exact path="/students" render={props => <Students {...props} />} />
+                <Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />
                 <Route exact path="/assignments" render={props => <Assignments {...props} />} />
                 <Route exact path="/uploadQuiz" render={props => <UploadQuiz {...props} />} />
                 <Route exact path="/dashboard" render={props => <Dashboard {...props} />} />

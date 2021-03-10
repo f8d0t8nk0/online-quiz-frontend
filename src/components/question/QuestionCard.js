@@ -6,11 +6,16 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
+import {useDispatch} from "react-redux";
+import {changeSelectedIds} from "../../redux/gui/guiActions";
+import {changeSelectedQuestions} from "../../redux/api/apiActions";
 
 const fadeOutTime = 500;
 
 const useStyles = makeStyles({
     root: {
+        minWidth: 550,
+        maxWidth: 550,
         display : "flex",
         flexDirection: "column",
         boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
@@ -49,39 +54,57 @@ const useStyles = makeStyles({
     }
 });
 
-export default function QuizCard({ quiz, ordinal }) {
+export default function QuestionCard({ quiz, ordinal, selectedQIds }) {
+
     const classes = useStyles();
     const [rootClass, setRootClass] = useState(classes.root);
+    const dispatch = useDispatch();
+
+    const handleDelete = () => {
+        hideParent();
+        updateDeleted();
+    };
 
     const hideParent = () => {
         setRootClass(classes.fadeOutCard);
         setTimeout(() => setRootClass(classes.hideCard), fadeOutTime);
-    }
+    };
+
+    const updateDeleted = () => {
+        // selectedQIds = [1, 2, 3, 4, 5, 6, 7];
+        let filtered = selectedQIds.filter(function (id) {
+            return id !== quiz.id;
+        });
+        console.log("Filtered: " + JSON.stringify(filtered));
+        dispatch(changeSelectedIds([...filtered]));
+        dispatch(changeSelectedQuestions(quiz.id));
+        // setSelectedQIds([...filtered]);
+    };
 
     return (
         <Card className={rootClass}>
             <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
                     {ordinal}
                 </Typography>
-                <Typography className={classes.pos} color="textPrimary">
+                <Typography component={'div'}  className={classes.pos} color="textPrimary">
                     {quiz.question}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
                     {"A) " + quiz.a}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
                     {"B) " + quiz.b}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
                     {"C) " + quiz.c}
                 </Typography>
-                <Typography className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
+                <Typography component={'div'}  className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
                     {"D) " + quiz.d}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button className={classes.deleteButton} size="small" color="primary" onClick={hideParent}>
+                <Button className={classes.deleteButton} size="small" color="primary" onClick={() => handleDelete()}>
                     Delete
                 </Button>
             </CardActions>

@@ -1,9 +1,12 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import {QuizzesData} from "../components/QuizzesData";
-import QuizCard from "../components/QuizCard";
+import {QuestionsData} from "../components/question/QuestionsData";
+import QuestionCard from "../components/question/QuestionCard";
 import {makeStyles} from "@material-ui/core/styles";
 import CreateAssignment from "../components/CreateAssignment";
+import CoreQuestionCard from "../components/radio/CoreQuestionCard";
+import {OneQuestion} from "../components/radio/OneQuestion";
+import CoreQuestions from "../components/radio/CoreQuestions";
 
 const useStyles = makeStyles({
     root: {
@@ -18,7 +21,7 @@ function Settings(props) {
 
     return (
         <div>
-            <Typography paragraph>
+            <Typography component={'div'} paragraph>
                 <h1>Settings page</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -34,7 +37,11 @@ function Settings(props) {
                 </p>
             </Typography>
 
-            <CreateAssignment quizzes={QuizzesData} />
+            {/*<CreateAssignment quizzes={QuestionsData} selectedQIds={[954, 955, 956, 957, 958]} />*/}
+
+            {/*<CoreQuestionCard question={OneQuestion} ordinal={1}/>*/}
+
+            <CoreQuestions questions={QuestionsData} />
 
         </div>
     );

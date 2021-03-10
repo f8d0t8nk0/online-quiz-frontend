@@ -1,4 +1,4 @@
-export const QuizzesData = [
+export const QuestionsData = [
     {
         "id":954,
         "question":" If you are self-sufficient, you ...\n",

@@ -9,6 +9,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import ListItemText from "@material-ui/core/ListItemText";
 import PeopleIcon from "@material-ui/icons/People";
 import AssignmentIcon from "@material-ui/icons/Assignment";
+import StorageIcon from '@material-ui/icons/Storage';
 import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: 'flex-end',
         },
     })
-)
+);
 
 function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
     const classes = useStyles();
@@ -56,6 +57,13 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         icon: <PeopleIcon />,
         onClick: () => {
             history.push('/students');
+            handleDrawerClose();
+        }
+    }, {
+        text: 'Quizzes',
+        icon: <StorageIcon />,
+        onClick: () => {
+            history.push('/quizzes');
             handleDrawerClose();
         }
     }, {
