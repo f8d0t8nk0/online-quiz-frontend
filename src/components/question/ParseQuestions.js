@@ -4,7 +4,7 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Button from "@material-ui/core/Button";
 import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
-import {readParseQuestionsFields} from '../../redux/gui/guiActions';
+import {firstSelectedIds, readParseQuestionsFields} from '../../redux/gui/guiActions';
 import {createQuestions, fetchQuestions} from '../../redux/api/apiActions';
 import {connect, useDispatch, useSelector} from 'react-redux';
 import {bindActionCreators} from "redux";
@@ -38,17 +38,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-// function ParseQuestions({ nextStep, setQuizzes, selectedQIds, setSelectedQIds }) {
+// function ParseQuestions({ nextStep, setQuizzes, selectedQIds }) {
 function ParseQuestions(props) {
 
     const classes = useStyles();
     const dispatch = useDispatch();
     const [questions, setQuestions] = useState("");
     const [answers, setAnswers] = useState("");
-    const myQuestions = useSelector(state => {
-        console.log("In useSelector: " + JSON.stringify(state));
-        return state.api.createQReq.questions;
-    });
+    // const myQuestions = useSelector(state => {
+    //     console.log("In useSelector: " + JSON.stringify(state));
+    //     return state.api.createQReq.questions;
+    // });
 
     const buildDto = () => {
         return {
@@ -57,21 +57,10 @@ function ParseQuestions(props) {
         }
     };
 
-    const seePayload = () => {
-        console.log("seePayload: " + JSON.stringify(props.createdQuestions));
-        console.log("My questions: " + JSON.stringify(myQuestions));
-        console.log("Questions from parent: " + JSON.stringify(props.questions));
-        // console.log(props);
-        // let qIds = props.createdQuestions.map(q => q.id);
-        let qIds = myQuestions.map(q => q.id);
-
-        props.setSelectedQIds([...props.selectedQIds, ...qIds]);
-
-        // console.log("Created questions: " + props.createdQuestions);
-        // console.log("Selected ids in ParseQuestions: " + qIds);
-
-        // props.setQuizzes(props.createdQuestions);
-        props.setQuizzes(myQuestions);
+    const next = () => {
+        // let qIds = myQuestions.map(q => q.id);
+        // props.setSelectedQIds([...props.selectedQIds, ...qIds]);
+        // props.setQuizzes(myQuestions);
         props.nextStep();
     };
 
@@ -158,39 +147,14 @@ function ParseQuestions(props) {
             <Button
                 className={classes.submitButton}
                 onClick= {() => {
-                    // saveQuestion();
-                     dispatch(fetchQuestions(buildDto()));
-                    seePayload();
-                    // dispatch(fetchQuestions(buildDto(), dispatch));
-                    setTimeout(() => {
-                        console.log("My questions: " + JSON.stringify(myQuestions));
-                    }, 3000);
+                    dispatch(fetchQuestions(buildDto()))
+                        // .then(dispatch(firstSelectedIds()));
+                    next();
                 }}>Submit
             </Button>
 
         </div>
     );
 }
-
-// const mapStateToProps = state => {
-//     console.log("Map to Props: " + JSON.stringify(state.api.createQReq.questions));
-//     console.log("State: " + JSON.stringify(state));
-//     return {
-//         ...state,
-//         createdQuestions: [...state.api.createQReq.questions],
-//         loading: state.api.createQReq.loading,
-//         error: state.api.createQReq.error
-//     }
-// };
-//
-// const mapDispatchToProps = dispatch => ({
-//     createQs: (dto) => dispatch(fetchQuestions(dto, dispatch)),
-//     fetchQuestions: bindActionCreators(fetchQuestions, dispatch)
-// });
-
-// export default connect(
-//     mapStateToProps,
-//     mapDispatchToProps
-// )(ParseQuestions);
 
 export default ParseQuestions;

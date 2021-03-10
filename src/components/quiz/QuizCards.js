@@ -26,6 +26,7 @@ function QuizCards({ quizzes, setSelectedQuiz, nextStep }) {
                 {quizzes.map((quiz, index) => {
                     return (
                         <QuizCard
+                            key={quiz.id}
                             quiz={quiz}
                             setSelectedQuiz={setSelectedQuiz}
                             nextStep={nextStep}

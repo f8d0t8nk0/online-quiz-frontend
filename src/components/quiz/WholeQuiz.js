@@ -144,6 +144,7 @@ function WholeQuiz({ selectedQuiz }) {
                 {selectedQuiz.questions.map((question, index) => {
                     return (
                         <QuestionQuizCard
+                            key={question.id}
                             quiz={question}
                             ordinal={index + 1}
                         />

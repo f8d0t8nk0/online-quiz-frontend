@@ -6,6 +6,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
+import {useDispatch} from "react-redux";
+import {changeSelectedIds} from "../../redux/gui/guiActions";
+import {changeSelectedQuestions} from "../../redux/api/apiActions";
 
 const fadeOutTime = 500;
 
@@ -51,10 +54,11 @@ const useStyles = makeStyles({
     }
 });
 
-export default function QuestionCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
+export default function QuestionCard({ quiz, ordinal, selectedQIds }) {
 
     const classes = useStyles();
     const [rootClass, setRootClass] = useState(classes.root);
+    const dispatch = useDispatch();
 
     const handleDelete = () => {
         hideParent();
@@ -67,10 +71,14 @@ export default function QuestionCard({ quiz, ordinal, selectedQIds, setSelectedQ
     };
 
     const updateDeleted = () => {
+        // selectedQIds = [1, 2, 3, 4, 5, 6, 7];
         let filtered = selectedQIds.filter(function (id) {
             return id !== quiz.id;
         });
-        setSelectedQIds([...filtered]);
+        console.log("Filtered: " + JSON.stringify(filtered));
+        dispatch(changeSelectedIds([...filtered]));
+        dispatch(changeSelectedQuestions(quiz.id));
+        // setSelectedQIds([...filtered]);
     };
 
     return (
@@ -96,7 +104,7 @@ export default function QuestionCard({ quiz, ordinal, selectedQIds, setSelectedQ
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button className={classes.deleteButton} size="small" color="primary" onClick={handleDelete}>
+                <Button className={classes.deleteButton} size="small" color="primary" onClick={() => handleDelete()}>
                     Delete
                 </Button>
             </CardActions>

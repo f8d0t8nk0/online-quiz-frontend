@@ -13,7 +13,19 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAssignment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/question/QuestionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/QuestionCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/question/Questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/Questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/UploadQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UploadQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +159,9 @@
       <workItem from="1614810485106" duration="1571000" />
       <workItem from="1614848927897" duration="5719000" />
       <workItem from="1614893737940" duration="2696000" />
-      <workItem from="1614931072169" duration="7235000" />
+      <workItem from="1614931072169" duration="8432000" />
+      <workItem from="1615218290771" duration="402000" />
+      <workItem from="1615305986669" duration="13667000" />
     </task>
     <servers />
   </component>
@@ -297,10 +311,11 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1614873400722" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1614810154061">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1615061986231">
+      <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1614810154061" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1615061986231" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

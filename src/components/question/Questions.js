@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     }
 });
 
-function Questions({ quizzes, selectedQIds, setSelectedQIds }) {
+function Questions({ quizzes, selectedQIds }) {
     const classes = useStyles();
 
     return (
@@ -18,10 +18,11 @@ function Questions({ quizzes, selectedQIds, setSelectedQIds }) {
             {quizzes.map((quiz, index) => {
                 return (
                     <QuestionCard
+                        key={quiz.id}
                         quiz={quiz}
                         ordinal={index + 1}
                         selectedQIds={selectedQIds}
-                        setSelectedQIds={setSelectedQIds}
+                        // setSelectedQIds={setSelectedQIds}
                     />
                 )
             })}

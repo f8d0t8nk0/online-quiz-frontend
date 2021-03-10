@@ -2,26 +2,22 @@ import React, {useState} from 'react';
 import ParseQuestions from "../components/question/ParseQuestions";
 import CreateAssignment from "../components/CreateAssignment";
 import MyQuizzes from "./MyQuizzes";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {firstSelectedIds} from "../redux/gui/guiActions";
 
 const UploadQuiz = props => {
 
-    // const [questions, setQuestions] = useState(useSelector(state => {
-    //     console.log("In useSelector PARENT: " + JSON.stringify(state));
-    //     return state.api.createQReq.questions;
-    // }));
-    const questions = useSelector(state => {
-            console.log("In useSelector PARENT: " + JSON.stringify(state));
-            return state.api.createQReq.questions;
-        });
-    // const [questions, setQuestions] = useSelector(state => {
-    //     console.log("In useSelector PARENT: " + JSON.stringify(state));
-    //     return state.api.createQReq.questions;
-    // });
+    const dispatch = useDispatch();
     const [step, setStep] = useState(1);
     const [quizzes, setQuizzes] = useState([]);
-    const [selectedQIds, setSelectedQIds] = useState([]);
-
+    // const [selectedQIds, setSelectedQIds] = useState([]);
+    // const selectedQIds = useSelector(state => {
+    //     return state.gui.createAssignment.selectedId;
+    // });
+    const questions = useSelector(state => {
+        return state.api.createQReq.questions;
+    });
+    const selectedQIds = questions.map(q => q.id);
 
     const nextStep = () => {
         setStep(step + 1);
@@ -36,14 +32,14 @@ const UploadQuiz = props => {
                 selectedQIds={selectedQIds}
                 questions={questions}
                 // setQuestions={setQuestions}
-                setSelectedQIds={setSelectedQIds}
+                // setSelectedQIds={setSelectedQIds}
             />;
         case 2:
             return <CreateAssignment
                 nextStep={nextStep}
-                quizzes={questions}
+                questions={questions}
                 selectedQIds={selectedQIds}
-                setSelectedQIds={setSelectedQIds}
+                // setSelectedQIds={setSelectedQIds}
                 // questions={questions}
                 // setQuestions={setQuestions}
             />;
