@@ -10,14 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Assignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyQuizzes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyQuizzes.js" afterDir="false" />
-    </list>
+    <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +147,7 @@
       <workItem from="1615218290771" duration="402000" />
       <workItem from="1615305986669" duration="16336000" />
       <workItem from="1615395505747" duration="36000" />
-      <workItem from="1615396250613" duration="23107000" />
+      <workItem from="1615396250613" duration="23327000" />
     </task>
     <servers />
   </component>
