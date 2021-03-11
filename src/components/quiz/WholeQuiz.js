@@ -6,6 +6,8 @@ import ReplyIcon from '@material-ui/icons/Reply';
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import {fetchTeacherAssignments} from "../../redux/api/apiActions";
+import {useDispatch} from "react-redux";
 
 
 const useStyles = makeStyles({
@@ -65,10 +67,12 @@ const useStyles = makeStyles({
 function WholeQuiz({ selectedQuiz }) {
     const classes = useStyles();
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const [tAreaClass, setTAreaClass] = useState(classes.myTextFieldHidden);
     const [goButtonClass, setGoButtonClass] = useState(classes.goButtonHidden);
     const [email, setEmail] = useState("");
+    const [assignName, setAssignName] = useState("");
 
     const handleAssignButton = () => {
         setTAreaClass(classes.myTextFieldVisible);
@@ -88,20 +92,24 @@ function WholeQuiz({ selectedQuiz }) {
         let assignDTO = {
             name: "",
             quizId: "",
-            teacher: "",
+            // teacher: "",
             studentEmails: []
         };
 
-        assignDTO.name = email;
+        assignDTO.name = assignName;
         assignDTO.quizId = selectedQuiz.id;
 
         assignDTO.studentEmails = new Array(email);
+
+
+        console.log("assignDTO: " + JSON.stringify(assignDTO, null, 2));
 
         axios.post(url, assignDTO).then( res => {
             // todo delete
             console.log(res);
             console.log("Id of saved assignment: " + res.data);
         });
+        dispatch(fetchTeacherAssignments());
         history.push("/assignments");
     };
 
@@ -135,9 +143,23 @@ function WholeQuiz({ selectedQuiz }) {
                 <Button
                     className={goButtonClass}
                     variant="outlined"
-                    onClick={handleGoButton}>
+                    onClick={() => {
+                        handleGoButton();
+                    }}>
                     Go
                 </Button>
+            </div>
+
+            <div>
+                <TextField
+                    className={tAreaClass}
+                    onChange={event => {
+                        setAssignName(event.target.value);
+                        console.log("assignName: " + assignName);
+                    }}
+                    id="standard-basic"
+                    label="Name Assignment"
+                />
             </div>
 
             <div>

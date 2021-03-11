@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import {useDispatch} from "react-redux";
+import {setQuizRadioOption} from "../../redux/gui/guiActions";
 
 
 const useStyles = makeStyles({
@@ -58,11 +60,20 @@ function CoreQuestionCard({question, ordinal}) {
 
     const classes = useStyles();
     const [rootClass, setRootClass] = useState(classes.root);
+    const dispatch = useDispatch();
     const [selection, setSelection] = useState('');
 
     const handleChange = (event) => {
-        setSelection(event.target.value)
+        const value = event.target.value;
+        setSelection(event.target.value);
+        console.log(event.target.value);
+        let option = {
+            qid: question.id,
+            selection: value
+        }
+        dispatch(setQuizRadioOption(option));
     };
+
 
     return (
         <div>
@@ -86,11 +97,7 @@ function CoreQuestionCard({question, ordinal}) {
                     </FormControl>
                 </CardContent>
             </Card>
-
         </div>
-
-
-
     );
 }
 

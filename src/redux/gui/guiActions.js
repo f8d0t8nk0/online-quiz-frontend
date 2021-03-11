@@ -1,4 +1,9 @@
-import {GUI_CHANGE_SELECTED_IDS, GUI_FIRST_SELECTED_IDS_DISPATCH, GUI_READ_PARSE_QUESTIONS_FIELDS} from "./guiTypes";
+import {
+    GUI_CHANGE_SELECTED_IDS, GUI_CLEAR_QUIZ_RADIO_OPTIONS,
+    GUI_FIRST_SELECTED_IDS_DISPATCH,
+    GUI_READ_PARSE_QUESTIONS_FIELDS,
+    GUI_SET_QUIZ_RADIO_OPTION
+} from "./guiTypes";
 
 export const readParseQuestionsFields = (questionsText, answersText) => dispatch => {
     return {
@@ -25,4 +30,17 @@ export const firstSelectedIds = () => (dispatch, getState) => {
         type: GUI_FIRST_SELECTED_IDS_DISPATCH,
             payload: [...ids]
     })
+};
+
+export const setQuizRadioOption =(option) => {
+    return {
+        type: GUI_SET_QUIZ_RADIO_OPTION,
+        payload: option
+    }
+};
+
+export const clearQuizRadioOptions = () => {
+    return {
+        type: GUI_CLEAR_QUIZ_RADIO_OPTIONS,
+    }
 };

@@ -71,14 +71,12 @@ export default function QuestionCard({ quiz, ordinal, selectedQIds }) {
     };
 
     const updateDeleted = () => {
-        // selectedQIds = [1, 2, 3, 4, 5, 6, 7];
         let filtered = selectedQIds.filter(function (id) {
             return id !== quiz.id;
         });
-        console.log("Filtered: " + JSON.stringify(filtered));
+        console.log("Filtered: " + JSON.stringify(filtered)); // todo dl
         dispatch(changeSelectedIds([...filtered]));
         dispatch(changeSelectedQuestions(quiz.id));
-        // setSelectedQIds([...filtered]);
     };
 
     return (

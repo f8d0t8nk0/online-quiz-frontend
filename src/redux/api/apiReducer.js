@@ -1,10 +1,10 @@
 import {
-    API_CHANGE_SELECTED_QUESTIONS,
+    API_CHANGE_SELECTED_QUESTIONS, API_CHECK_ASSIGNMENT,
     API_CREATE_PARSED_QUESTIONS,
     API_CREATE_QUESTIONS_FAILURE,
     API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
-    API_CREATE_QUIZ_SUCCESS
+    API_CREATE_QUIZ_SUCCESS, API_GET_ALL_TEACHER_ASSIGNMENTS
 } from "./apiTypes";
 
 // const initialState = {
@@ -20,6 +20,12 @@ const initialState = {
     createQuiz : {
         quiz: '',
         selectedIds: []
+    },
+    getTeachAssign : {
+        assignments: []
+    },
+    checkAssignment: {
+        report: ''
     }
 };
 
@@ -89,6 +95,26 @@ const apiReducer = (state = initialState, action) => {
                     questions: state.createQReq.questions.filter(q => {
                         return q.id !== action.payload;
                     })
+                }
+            };
+
+        case API_GET_ALL_TEACHER_ASSIGNMENTS:
+            console.log("In reducer API_GET_ALL_TEACHER_ASSIGNMENTS: " + JSON.stringify(action.payload, null, 2));
+            return {
+                ...state,
+                getTeachAssign: {
+                    ...state.getTeachAssign,
+                    assignments: [...action.payload]
+                }
+            };
+
+        case API_CHECK_ASSIGNMENT:
+            console.log("In reducer API_CHECK_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
+            return {
+                ...state,
+                checkAssignment: {
+                    ...state.checkAssignment,
+                    report: action.payload
                 }
             };
 

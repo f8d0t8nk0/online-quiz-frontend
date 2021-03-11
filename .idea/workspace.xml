@@ -11,53 +11,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/question/QuestionCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/question/Questions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quiz/QuizCards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quiz/QuizData.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestionCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/radio/CustomRadio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/radio/OneQuestion.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MyQuizzes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/numValue/NumAdditionContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/numValue/numValueAction.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/numValue/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/numValue/valueReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAssignment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ParseQuestions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Quizzes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizzesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/QuestionsData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/question/QuestionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/QuestionCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/radio/CoreQuestionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestionCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/radio/CoreQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Assignments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Students.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UploadQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UploadQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/numValue/NumAdditionContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/numValue/numValueAction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/numValue/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/numValue/valueReducer.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +167,7 @@
       <workItem from="1615218290771" duration="402000" />
       <workItem from="1615305986669" duration="16336000" />
       <workItem from="1615395505747" duration="36000" />
-      <workItem from="1615396250613" duration="877000" />
+      <workItem from="1615396250613" duration="19841000" />
     </task>
     <servers />
   </component>

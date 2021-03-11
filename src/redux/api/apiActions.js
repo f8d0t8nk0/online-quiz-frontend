@@ -3,15 +3,15 @@ import {
     API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
     API_CREATE_QUESTIONS_FAILURE,
-    API_CREATE_QUIZ_SUCCESS, API_CHANGE_SELECTED_QUESTIONS
+    API_CREATE_QUIZ_SUCCESS, API_CHANGE_SELECTED_QUESTIONS, API_GET_ALL_TEACHER_ASSIGNMENTS, API_CHECK_ASSIGNMENT
 } from "./apiTypes";
 import {HOST} from '../../config/web';
-import {QUESTIONS_CREATE, SAVE_QUIZ} from '../../config/api';
+import {CHECK_ASSIGNMENT, GET_ALL_TEACHER_ASSIGNMENTS, QUESTIONS_CREATE, SAVE_QUIZ} from '../../config/api';
 import axios from "axios";
 import {firstSelectedIds} from "../gui/guiActions";
 
 export const fetchQuestions = (dto) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         // dispatch(fetchQuestionsRequest());
 
         axios.post(`${HOST}${QUESTIONS_CREATE}`, dto)
@@ -32,7 +32,6 @@ export const createAssignment = (dto) => {
                 dispatch(createAssignmentSuccess(data))
             })
     }
-
 };
 
 const createAssignmentSuccess = quiz => {
@@ -70,5 +69,32 @@ export const changeSelectedQuestions = (deletedId) => {
     return {
         type: API_CHANGE_SELECTED_QUESTIONS,
         payload: deletedId
+    }
+};
+
+export const fetchTeacherAssignments = () => {
+    console.log("IN fetchTeacherAssignments");
+    return dispatch => {
+        axios.get(`${HOST}${GET_ALL_TEACHER_ASSIGNMENTS}`)
+            .then(response => {
+                dispatch({
+                    type: API_GET_ALL_TEACHER_ASSIGNMENTS,
+                    payload: response.data
+                })
+            })
+    }
+};
+
+export const checkAssignment = dto => {
+    console.log("IN checkAssignment");
+    return dispatch => {
+        axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
+            .then(response => {
+                console.log("IN checkAssignment inside: " + JSON.stringify(response.data, null, 2));
+                dispatch({
+                    type: API_CHECK_ASSIGNMENT,
+                    payload: response.data
+                })
+            })
     }
 };

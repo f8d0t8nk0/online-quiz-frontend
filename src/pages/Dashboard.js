@@ -1,6 +1,8 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import NumAdditionContainer from "../redux/numValue/NumAdditionContainer";
+import AssignmentCard from "../components/assignment/AssignmentCard";
+import {AssignmentsData} from "../components/assignment/AssignmentsData";
+import AssignmentCards from "../components/assignment/AssignmentCards";
 
 function Dashboard(props) {
     return (
@@ -21,7 +23,8 @@ function Dashboard(props) {
                 </p>
 
 
-                <NumAdditionContainer/>
+                <AssignmentCards assignments={AssignmentsData} />
+
             </Typography>
         </div>
     );
