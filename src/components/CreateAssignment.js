@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Questions from "./question/Questions";
 import { useHistory } from "react-router-dom";
 import {useDispatch} from 'react-redux';
-import {createAssignment} from "../redux/api/apiActions";
+import {createAssignment, fetchQuizzes} from "../redux/api/apiActions";
 
 const useStyles = makeStyles((theme) => ({
     formClass: {
@@ -43,6 +43,7 @@ function CreateAssignment({ nextStep, questions, selectedQIds }) {
         quizDto.questionsIds = selectedQIds;
 
         dispatch(createAssignment(quizDto));
+        dispatch(fetchQuizzes());
         history.push("/quizzes")
     };
 

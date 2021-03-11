@@ -1,41 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
 import QuizCards from "../components/quiz/QuizCards";
 import WholeQuiz from "../components/quiz/WholeQuiz";
-
+import {useDispatch, useSelector} from "react-redux";
+import {fetchQuizzes} from "../redux/api/apiActions";
 
 function MyQuizzes(props) {
 
-    // const [plainText, setPlainText] = useState("");
     const [step, setStep] = useState(1);
     const [selectedQuiz, setSelectedQuiz] = useState();
-    const [quizzesFromServer, setQuizzesFromServer] = useState([]);
+    const dispatch = useDispatch();
+    const quizzes = useSelector(state => state.api.getQuizzes.quizzes);
 
     const nextStep = () => {
         setStep(step + 1);
     };
 
-    const getUrl = () => {
-        const host = `http://localhost:8080/`;
-        // const host = 'https://online-quiz-webservice.herokuapp.com/';
-        const allQuizzes = `api/v1/teacher/quiz/all`;
-        return `${host}${allQuizzes}`;
-    };
-
-
-    const getQuizzes = () => {
-        // send to API
-        const url = getUrl();
-
-        axios.get(url)
-            .then(res => {
-                setQuizzesFromServer(res.data);
-                // console.log("Quizzes from server: " + quizzesFromServer);
-            })
-    };
-
     useEffect(() => {
-        getQuizzes();
+        dispatch(fetchQuizzes());
     }, []);
 
     switch (step) {
@@ -43,7 +24,7 @@ function MyQuizzes(props) {
             return (
                 <div>
                     {<QuizCards
-                        quizzes={quizzesFromServer}
+                        quizzes={quizzes}
                         setSelectedQuiz={setSelectedQuiz}
                         nextStep={nextStep}
                     />}

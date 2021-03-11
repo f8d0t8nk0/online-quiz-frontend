@@ -4,8 +4,9 @@ import {
     // API_CREATE_QUESTIONS_FAILURE,
     // API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
-    API_CREATE_QUIZ_SUCCESS, API_GET_ALL_TEACHER_ASSIGNMENTS
+    API_CREATE_QUIZ_SUCCESS, API_GET_ALL_QUIZZES, API_GET_ALL_TEACHER_ASSIGNMENTS
 } from "./apiTypes";
+import {act} from "@testing-library/react";
 
 // const initialState = {
 //     createdQuestions: []
@@ -26,6 +27,9 @@ const initialState = {
     },
     checkAssignment: {
         report: ''
+    },
+    getQuizzes: {
+        quizzes: []
     }
 };
 
@@ -115,6 +119,16 @@ const apiReducer = (state = initialState, action) => {
                 checkAssignment: {
                     ...state.checkAssignment,
                     report: action.payload
+                }
+            };
+
+        case API_GET_ALL_QUIZZES:
+            console.log("In reducer API_GET_ALL_QUIZZES: " + JSON.stringify(action.payload, null, 2));
+            return {
+                ...state,
+                getQuizzes: {
+                    ...state.getQuizzes,
+                    quizzes: action.payload
                 }
             };
 
