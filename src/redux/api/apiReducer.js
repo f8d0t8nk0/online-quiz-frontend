@@ -4,7 +4,7 @@ import {
     // API_CREATE_QUESTIONS_FAILURE,
     // API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
-    API_CREATE_QUIZ_SUCCESS, API_GET_ALL_QUIZZES, API_GET_ALL_TEACHER_ASSIGNMENTS
+    API_CREATE_QUIZ_SUCCESS, API_GET_ALL_QUIZZES, API_GET_ALL_TEACHER_ASSIGNMENTS, API_SAVE_ASSIGNMENT
 } from "./apiTypes";
 import {act} from "@testing-library/react";
 
@@ -37,7 +37,7 @@ const apiReducer = (state = initialState, action) => {
     // let createQReq;
     switch (action.type) {
         case API_CREATE_PARSED_QUESTIONS:
-            console.log("In reducer: " + JSON.stringify(action.payload));
+            // console.log("In reducer: " + JSON.stringify(action.payload));
             return {
                 ...state,
                 createdQuestions: action.payload
@@ -103,7 +103,7 @@ const apiReducer = (state = initialState, action) => {
             };
 
         case API_GET_ALL_TEACHER_ASSIGNMENTS:
-            console.log("In reducer API_GET_ALL_TEACHER_ASSIGNMENTS: " + JSON.stringify(action.payload, null, 2));
+            // console.log("In reducer API_GET_ALL_TEACHER_ASSIGNMENTS: " + JSON.stringify(action.payload, null, 2));
             return {
                 ...state,
                 getTeachAssign: {
@@ -113,7 +113,7 @@ const apiReducer = (state = initialState, action) => {
             };
 
         case API_CHECK_ASSIGNMENT:
-            console.log("In reducer API_CHECK_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
+            // console.log("In reducer API_CHECK_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
             return {
                 ...state,
                 checkAssignment: {
@@ -123,7 +123,7 @@ const apiReducer = (state = initialState, action) => {
             };
 
         case API_GET_ALL_QUIZZES:
-            console.log("In reducer API_GET_ALL_QUIZZES: " + JSON.stringify(action.payload, null, 2));
+            // console.log("In reducer API_GET_ALL_QUIZZES: " + JSON.stringify(action.payload, null, 2));
             return {
                 ...state,
                 getQuizzes: {
@@ -131,6 +131,10 @@ const apiReducer = (state = initialState, action) => {
                     quizzes: action.payload
                 }
             };
+
+        case API_SAVE_ASSIGNMENT:
+            // console.log("In reducer API_SAVE_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
+            return state; // no need to save saved assignment id
 
         default: return state;
     }

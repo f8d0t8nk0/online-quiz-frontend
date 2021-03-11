@@ -6,7 +6,7 @@ import ReplyIcon from '@material-ui/icons/Reply';
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import {fetchTeacherAssignments} from "../../redux/api/apiActions";
+import {fetchTeacherAssignments, saveAssignment} from "../../redux/api/apiActions";
 import {useDispatch} from "react-redux";
 
 
@@ -82,17 +82,10 @@ function WholeQuiz({ selectedQuiz }) {
         setGoButtonClass(classes.goButton);
     };
 
-    const handleGoButton = () => {
-        // send to API
-        const host = `http://localhost:8080/`;
-        // const host = 'https://online-quiz-webservice.herokuapp.com/';
-        const saveAssignmentEndpoint = `api/v1/teacher/assignment/save`;
-        const url = `${host}${saveAssignmentEndpoint}`;
-
+    const buildDto = () => {
         let assignDTO = {
             name: "",
             quizId: "",
-            // teacher: "",
             studentEmails: []
         };
 
@@ -100,15 +93,26 @@ function WholeQuiz({ selectedQuiz }) {
         assignDTO.quizId = selectedQuiz.id;
 
         assignDTO.studentEmails = new Array(email);
+        return assignDTO;
+    }
 
-
-        console.log("assignDTO: " + JSON.stringify(assignDTO, null, 2));
-
-        axios.post(url, assignDTO).then( res => {
-            // todo delete
-            console.log(res);
-            console.log("Id of saved assignment: " + res.data);
-        });
+    const handleGoButton = () => {
+        // // send to API
+        // const host = `http://localhost:8080/`;
+        // // const host = 'https://online-quiz-webservice.herokuapp.com/';
+        // const saveAssignmentEndpoint = `api/v1/teacher/assignment/save`;
+        // const url = `${host}${saveAssignmentEndpoint}`;
+        //
+        // let assignDTO = buildDto();
+        //
+        // console.log("assignDTO: " + JSON.stringify(assignDTO, null, 2));
+        //
+        // axios.post(url, assignDTO).then( res => {
+        //     // todo delete
+        //     console.log(res);
+        //     console.log("Id of saved assignment: " + res.data);
+        // });
+        dispatch(saveAssignment(buildDto()));
         dispatch(fetchTeacherAssignments());
         history.push("/assignments");
     };

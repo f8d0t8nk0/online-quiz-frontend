@@ -6,14 +6,14 @@ import {
     API_CHANGE_SELECTED_QUESTIONS,
     API_GET_ALL_TEACHER_ASSIGNMENTS,
     API_CHECK_ASSIGNMENT,
-    API_GET_ALL_QUIZZES
+    API_GET_ALL_QUIZZES, API_SAVE_ASSIGNMENT
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
     CHECK_ASSIGNMENT,
     GET_ALL_QUIZZES,
     GET_ALL_TEACHER_ASSIGNMENTS,
-    QUESTIONS_CREATE,
+    QUESTIONS_CREATE, SAVE_ASSIGNMENT,
     SAVE_QUIZ
 } from '../../config/api';
 import axios from "axios";
@@ -114,6 +114,20 @@ export const fetchQuizzes = () => {
                 console.log("IN fetchQuizzes inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({
                     type: API_GET_ALL_QUIZZES,
+                    payload: response.data
+                })
+            })
+    }
+};
+
+export const saveAssignment = (dto) => {
+    console.log("IN saveAssignment"); // todo dl
+    return dispatch => {
+        axios.post(`${HOST}${SAVE_ASSIGNMENT}`, dto)
+            .then(response => {
+                console.log("IN saveAssignment inside: " + JSON.stringify(response.data, null, 2));
+                dispatch({
+                    type: API_SAVE_ASSIGNMENT,
                     payload: response.data
                 })
             })
