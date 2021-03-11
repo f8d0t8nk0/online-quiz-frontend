@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
 import CustomRadio from "./CustomRadio";
-import clsx from "clsx";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
 import Card from '@material-ui/core/Card';
@@ -59,7 +56,7 @@ const useStyles = makeStyles({
 function CoreQuestionCard({question, ordinal}) {
 
     const classes = useStyles();
-    const [rootClass, setRootClass] = useState(classes.root);
+    const [rootClass] = useState(classes.root);
     const dispatch = useDispatch();
     const [selection, setSelection] = useState('');
 
@@ -87,7 +84,6 @@ function CoreQuestionCard({question, ordinal}) {
                     </Typography>
                     <br />
                     <FormControl component="fieldset">
-                        {/*<FormLabel component="legend">Gender</FormLabel>*/}
                         <RadioGroup aria-label="gender" name="gender1" value={selection} onChange={handleChange}>
                             <FormControlLabel value="a" control={<CustomRadio />} label={"A)" + question.a} />
                             <FormControlLabel value="b" control={<CustomRadio />} label={"B)" + question.b} />

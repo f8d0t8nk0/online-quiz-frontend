@@ -1,24 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {QuizData} from "../components/quiz/QuizData";
 import QuizCards from "../components/quiz/QuizCards";
-import {makeStyles} from "@material-ui/core/styles";
 import WholeQuiz from "../components/quiz/WholeQuiz";
 
-const useStyles = makeStyles({
-    headerText: {
-        textAlign: "center"
-    }
-});
 
-/**
- * @return {null}
- */
 function MyQuizzes(props) {
 
-    const classes = useStyles();
-
-    const [plainText, setPlainText] = useState("");
+    // const [plainText, setPlainText] = useState("");
     const [step, setStep] = useState(1);
     const [selectedQuiz, setSelectedQuiz] = useState();
     const [quizzesFromServer, setQuizzesFromServer] = useState([]);
@@ -44,7 +32,7 @@ function MyQuizzes(props) {
                 setQuizzesFromServer(res.data);
                 // console.log("Quizzes from server: " + quizzesFromServer);
                 let data = res.data;
-                setPlainText(JSON.stringify(data));
+                // setPlainText(JSON.stringify(data));
             })
     };
 
@@ -56,15 +44,11 @@ function MyQuizzes(props) {
         case 1:
             return (
                 <div>
-                    {/*{getQuizzes()}*/}
                     {<QuizCards
                         quizzes={quizzesFromServer}
                         setSelectedQuiz={setSelectedQuiz}
                         nextStep={nextStep}
                     />}
-                    {/*{plainText}*/}
-                    {/*{quizzesFromServer}*/}
-                    {/*{console.log("quizzesFromServer in return" + quizzesFromServer)}*/}
                 </div>
             );
         case 2:

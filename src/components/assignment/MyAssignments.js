@@ -1,22 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {makeStyles} from "@material-ui/core/styles";
 import {fetchTeacherAssignments} from "../../redux/api/apiActions";
 import {useDispatch, useSelector} from "react-redux";
 import AssignmentCards from "./AssignmentCards";
-import Typography from "@material-ui/core/Typography";
-import CoreQuestions from "../radio/CoreQuestions";
 import RunningQuizPage from "../radio/RunningQuizPage";
-
-
-const useStyles = makeStyles({
-    headerText: {
-        textAlign: "center"
-    }
-});
+import AssignmentReport from "../radio/AssignmentReport";
 
 function MyAssignments(props) {
 
-    const classes = useStyles();
     const [step, setStep] = useState(1);
     const [selectedAssignment, setSelectedAssignment] = useState();
 
@@ -24,6 +14,7 @@ function MyAssignments(props) {
     const assignments = useSelector(state => {
         return state.api.getTeachAssign.assignments;
     });
+    const assignmentReport = useSelector(state => state.api.checkAssignment.report);
 
     useEffect(() => {
         dispatch(fetchTeacherAssignments());
@@ -45,7 +36,12 @@ function MyAssignments(props) {
                 </div>
             );
         case 2:
-            return <RunningQuizPage assignment={selectedAssignment} />
+            return <RunningQuizPage
+                        assignment={selectedAssignment}
+                        nextStep={nextStep}
+                    />;
+        case 3:
+            return <AssignmentReport report={assignmentReport} />;
         default:
             return null;
     }

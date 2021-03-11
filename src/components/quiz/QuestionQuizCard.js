@@ -3,9 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
-import Button from "@material-ui/core/Button";
 
 const fadeOutTime = 500;
 
@@ -56,22 +54,6 @@ function QuestionQuizCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
     const classes = useStyles();
     const [rootClass, setRootClass] = useState(classes.root);
 
-    const handleDelete = () => {
-        hideParent();
-        updateDeleted();
-    };
-
-    const hideParent = () => {
-        setRootClass(classes.fadeOutCard);
-        setTimeout(() => setRootClass(classes.hideCard), fadeOutTime);
-    };
-
-    const updateDeleted = () => {
-        let filtered = selectedQIds.filter(function (id) {
-            return id !== quiz.id;
-        });
-        setSelectedQIds([...filtered]);
-    };
 
     return (
         <Card className={rootClass}>
@@ -95,11 +77,6 @@ function QuestionQuizCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
                     {"D) " + quiz.d}
                 </Typography>
             </CardContent>
-            {/*<CardActions>*/}
-            {/*    <Button className={classes.deleteButton} size="small" color="primary" onClick={handleDelete}>*/}
-            {/*        Delete*/}
-            {/*    </Button>*/}
-            {/*</CardActions>*/}
         </Card>
     );
 

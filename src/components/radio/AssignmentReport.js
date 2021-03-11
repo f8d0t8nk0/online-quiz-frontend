@@ -1,14 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import {makeStyles} from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 275,
-        maxWidth: 275,
+        minWidth: 400,
+        maxWidth: 400,
         // width: "300",
         boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
         margin: "10px",
@@ -31,29 +31,25 @@ const useStyles = makeStyles({
     },
 });
 
-function QuizCard({ quiz, setSelectedQuiz, nextStep }) {
-    const classes = useStyles();
+function AssignmentReport({ report }) {
 
+    const classes = useStyles();
     const handleClick = () => {
-        setSelectedQuiz(quiz);
-        nextStep();
-    };
+        console.log("Clicked!!!")
+    }
 
     return (
         <Card className={classes.root} >
             <Button className={classes.innerButton} onClick={handleClick}>
                 <CardContent>
+                    <Typography component={'div'} className={classes.pos} color="textSecondary">
+                        # {report.id}
+                    </Typography>
                     <Typography className={classes.quizName} variant="h5" component="h2">
-                        {quiz.name}
+                        {report.name}
                     </Typography>
                     <Typography component={'div'} className={classes.pos} color="textSecondary">
-                        {quiz.questions.length} questions
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        {quiz.description}
-                    </Typography>
-                    <Typography component={'div'} className={classes.pos} color="textSecondary">
-                        # {quiz.id}
+                        Your score {Math.ceil((report.correctAnswers * 100) / report.totalAnswers)} %
                     </Typography>
                 </CardContent>
             </Button>
@@ -61,4 +57,4 @@ function QuizCard({ quiz, setSelectedQuiz, nextStep }) {
     );
 }
 
-export default QuizCard;
+export default AssignmentReport;

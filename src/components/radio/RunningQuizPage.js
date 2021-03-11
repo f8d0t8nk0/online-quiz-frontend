@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     }
 });
 
-function RunningQuizPage({ assignment }) {
+function RunningQuizPage({ assignment, nextStep }) {
 
     const classes = useStyles();
     const results = useSelector(state => state.gui.conductQuiz.selectedOptions);
@@ -33,6 +33,7 @@ function RunningQuizPage({ assignment }) {
         dispatch(checkAssignment(submitAssignmentDTO));
         dispatch(clearQuizRadioOptions());
         console.log("Cleared!!!");
+        nextStep();
     };
 
     return (

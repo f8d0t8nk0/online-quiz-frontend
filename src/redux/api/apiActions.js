@@ -1,5 +1,4 @@
 import {
-    API_CREATE_PARSED_QUESTIONS,
     API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
     API_CREATE_QUESTIONS_FAILURE,
@@ -8,7 +7,6 @@ import {
 import {HOST} from '../../config/web';
 import {CHECK_ASSIGNMENT, GET_ALL_TEACHER_ASSIGNMENTS, QUESTIONS_CREATE, SAVE_QUIZ} from '../../config/api';
 import axios from "axios";
-import {firstSelectedIds} from "../gui/guiActions";
 
 export const fetchQuestions = (dto) => {
     return (dispatch) => {
@@ -42,13 +40,13 @@ const createAssignmentSuccess = quiz => {
     }
 };
 
-const fetchQuestionsRequest = () => {
-    // console.log("IN fetchQuestionsRequest"); // todo dl
-    return {
-        type: API_CREATE_QUESTIONS_REQUEST,
-        payload: ''
-    }
-};
+// const fetchQuestionsRequest = () => {
+//     // console.log("IN fetchQuestionsRequest"); // todo dl
+//     return {
+//         type: API_CREATE_QUESTIONS_REQUEST,
+//         payload: ''
+//     }
+// };
 
 const fetchQuestionsSuccess = questions => {
     console.log("IN fetchQuestionsSuccess"); // todo dl
@@ -58,12 +56,12 @@ const fetchQuestionsSuccess = questions => {
     }
 };
 
-const fetchQuestionsFailure = error => {
-    return {
-        type: API_CREATE_QUESTIONS_FAILURE,
-        payload: error
-    }
-};
+// const fetchQuestionsFailure = error => {
+//     return {
+//         type: API_CREATE_QUESTIONS_FAILURE,
+//         payload: error
+//     }
+// };
 
 export const changeSelectedQuestions = (deletedId) => {
     return {

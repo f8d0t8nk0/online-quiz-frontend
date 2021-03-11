@@ -4,7 +4,6 @@ import {
     GUI_READ_PARSE_QUESTIONS_FIELDS,
     GUI_SET_QUIZ_RADIO_OPTION
 } from "./guiTypes";
-import {useSelector} from "react-redux";
 
 
 const initialState = {

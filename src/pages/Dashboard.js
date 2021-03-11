@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import AssignmentCard from "../components/assignment/AssignmentCard";
 import {AssignmentsData} from "../components/assignment/AssignmentsData";
 import AssignmentCards from "../components/assignment/AssignmentCards";
 

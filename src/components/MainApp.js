@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Sidebar from "../components/Sidebar";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Account from "../pages/Account";
 import Students from "../pages/Students";

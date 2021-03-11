@@ -4,12 +4,9 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
 import Questions from "./question/Questions";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {createAssignment} from "../redux/api/apiActions";
-
-
 
 const useStyles = makeStyles((theme) => ({
     formClass: {
@@ -27,9 +24,6 @@ const useStyles = makeStyles((theme) => ({
 function CreateAssignment({ nextStep, questions, selectedQIds }) {
 
     const dispatch = useDispatch();
-    // const selectedQIds = useSelector(state => {
-    //     return state.gui.createAssignment.selectedId;
-    // });
     const [quizName, setQuizName] = useState("");
     const classes = useStyles();
     const history = useHistory();
@@ -44,32 +38,12 @@ function CreateAssignment({ nextStep, questions, selectedQIds }) {
         console.log("Quiz name: " + quizName);
         console.log("Selected ids in CreateAssignment: " + selectedQIds);
 
-        // let ids = questions.map(q => q.id);
 
         quizDto.name = quizName;
         quizDto.questionsIds = selectedQIds;
 
-        // // send to API
-        // const host = `http://localhost:8080/`;
-        // // const host = 'https://online-quiz-webservice.herokuapp.com/';
-        // const saveQuizEndpoint = `api/v1/teacher/quiz/save`;
-        // const url = `${host}${saveQuizEndpoint}`;
-
-        // let savedQuiz;
-        //
-        // console.log("quizDto: " + JSON.stringify(quizDto));
-        //
-        // axios.post(url, quizDto).then( res => {
-        //     // todo delete
-        //     console.log(res);
-        //     console.log(res.data);
-        //
-        //     savedQuiz = res.data;
-        // });
-
         dispatch(createAssignment(quizDto));
         history.push("/quizzes")
-        // nextStep();
     };
 
 

@@ -1,23 +1,9 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import {QuestionsData} from "../components/question/QuestionsData";
-import QuestionCard from "../components/question/QuestionCard";
-import {makeStyles} from "@material-ui/core/styles";
-import CreateAssignment from "../components/CreateAssignment";
-import CoreQuestionCard from "../components/radio/CoreQuestionCard";
-import {OneQuestion} from "../components/radio/OneQuestion";
 import CoreQuestions from "../components/radio/CoreQuestions";
 
-const useStyles = makeStyles({
-    root: {
-        display : "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-    }
-});
-
 function Settings(props) {
-    const classes = useStyles();
 
     return (
         <div>
@@ -36,10 +22,6 @@ function Settings(props) {
                     donec massa sapien faucibus et molestie ac.
                 </p>
             </Typography>
-
-            {/*<CreateAssignment quizzes={QuestionsData} selectedQIds={[954, 955, 956, 957, 958]} />*/}
-
-            {/*<CoreQuestionCard question={OneQuestion} ordinal={1}/>*/}
 
             <CoreQuestions questions={QuestionsData} />
 

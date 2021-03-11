@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Provider} from 'react-redux';
 import MainApp from "./components/MainApp";
-import { Route, Switch } from 'react-router-dom';
-import Login from "./components/Login";
 import axios from "axios";
 import store from "./redux/store";
 
