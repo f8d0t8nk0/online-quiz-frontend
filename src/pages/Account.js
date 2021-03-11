@@ -1,7 +1,5 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import AssignmentReport from "../components/radio/AssignmentReport";
-import {AssignmentReportData} from "../components/radio/AssignmentReportData";
 
 function Account(props) {
     return (

@@ -13,25 +13,10 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAssignment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/MyAssignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/MyAssignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuizCards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/CoreQuestionCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/CoreQuestionCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/RunningQuizPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/RunningQuizPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Assignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/MyQuizzes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyQuizzes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UploadQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UploadQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +154,7 @@
       <workItem from="1615218290771" duration="402000" />
       <workItem from="1615305986669" duration="16336000" />
       <workItem from="1615395505747" duration="36000" />
-      <workItem from="1615396250613" duration="22628000" />
+      <workItem from="1615396250613" duration="23107000" />
     </task>
     <servers />
   </component>

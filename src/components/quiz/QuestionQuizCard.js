@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     fadeOutCard : {
         boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
         margin: "10px",
-        transition: "opacity " + 500/1000 + "s ease-out",
+        transition: "opacity " + fadeOutTime/1000 + "s ease-out",
         opacity: "0"
     },
     title: {
@@ -49,14 +49,12 @@ const useStyles = makeStyles({
     }
 });
 
-function QuestionQuizCard({ quiz, ordinal, selectedQIds, setSelectedQIds }) {
+function QuestionQuizCard({ quiz, ordinal }) {
 
     const classes = useStyles();
-    const [rootClass, setRootClass] = useState(classes.root);
-
 
     return (
-        <Card className={rootClass}>
+        <Card className={classes.root}>
             <CardContent>
                 <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
                     {ordinal}

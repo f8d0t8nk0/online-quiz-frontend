@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Typography from "@material-ui/core/Typography";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {fetchTeacherAssignments} from "../redux/api/apiActions";
 import MyAssignments from "../components/assignment/MyAssignments";
 

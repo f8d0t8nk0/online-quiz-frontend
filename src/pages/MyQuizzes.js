@@ -31,8 +31,6 @@ function MyQuizzes(props) {
             .then(res => {
                 setQuizzesFromServer(res.data);
                 // console.log("Quizzes from server: " + quizzesFromServer);
-                let data = res.data;
-                // setPlainText(JSON.stringify(data));
             })
     };
 
