@@ -3,6 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Questions from "./question/Questions";
 import { useHistory } from "react-router-dom";
 import {useDispatch} from 'react-redux';
@@ -16,6 +17,21 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     saveButton: {
+        margin: "10px 10px 10px 0",
+        marginBottom: "150px"
+    },
+    hideProgress: {
+        display: "none"
+    },
+    showProgress: {
+        display: "flex",
+        flexDirection: "row",
+        margin: "10px",
+        marginBottom: "150px"
+    },
+    bottomDiv: {
+        display: "flex",
+        flexDirection: "row",
         margin: "10px",
         marginBottom: "150px"
     }
@@ -23,9 +39,10 @@ const useStyles = makeStyles((theme) => ({
 
 function CreateAssignment({ nextStep, questions, selectedQIds }) {
 
+    const classes = useStyles();
     const dispatch = useDispatch();
     const [quizName, setQuizName] = useState("");
-    const classes = useStyles();
+    const [progressClass, setProgressClass] = useState(classes.hideProgress);
     const history = useHistory();
 
     let quizDto = {
@@ -38,13 +55,13 @@ function CreateAssignment({ nextStep, questions, selectedQIds }) {
         console.log("Quiz name: " + quizName);
         console.log("Selected ids in CreateAssignment: " + selectedQIds);
 
-
         quizDto.name = quizName;
         quizDto.questionsIds = selectedQIds;
 
         dispatch(createAssignment(quizDto));
         dispatch(fetchQuizzes());
-        history.push("/quizzes")
+        setProgressClass(classes.showProgress);
+        setTimeout(() => history.push("/quizzes"), 1500);
     };
 
 
@@ -68,12 +85,19 @@ function CreateAssignment({ nextStep, questions, selectedQIds }) {
                 selectedQIds={selectedQIds}
                 // setSelectedQIds={setSelectedQIds}
             />
-            <Button
-                onClick={() => handleSave()}
-                className={classes.saveButton}
-                variant="contained"
-                color="primary"
-            >Save</Button>
+            <div className={classes.bottomDiv}>
+                <Button
+                    onClick={() => handleSave()}
+                    className={classes.saveButton}
+                    variant="contained"
+                    color="primary"
+                >Save</Button>
+                <CircularProgress
+                    disableShrink
+                    className={progressClass}
+                />
+            </div>
+
         </div>
     );
 }

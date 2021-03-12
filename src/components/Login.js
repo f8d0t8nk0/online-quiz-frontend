@@ -13,6 +13,9 @@ import Container from '@material-ui/core/Container';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import {HOST} from "../config/web";
+import {LOGIN} from "../config/api";
+import {login} from "../redux/api/apiActions";
+import {useDispatch} from "react-redux";
 
 
 function Copyright() {
@@ -53,33 +56,33 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
     const classes = useStyles();
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const loginEndpoint = 'api/v1/auth/login';
-    const loginUrl = `${HOST}${loginEndpoint}`;
-
     const handleSubmit = e => {
         e.preventDefault();
 
-        const data = {
+        let loginDto = {
             email : "",
             password : ""
         };
 
-        data.email = email;
-        data.password = password;
+        loginDto.email = email;
+        loginDto.password = password;
 
-        axios.post(loginUrl, data)
-            .then(res => {
-                    console.log(res);
-                    let jwtToken = res.data.token;
-                    localStorage.setItem('jwtToken', jwtToken);
-                    console.log("Token: " + jwtToken)
-            }).catch(err => {
-                console.log(err);
-        });
+        dispatch(login(loginDto));
+
+        // axios.post(`${HOST}${LOGIN}`, loginDto)
+        //     .then(res => {
+        //             // console.log(res);
+        //             let jwtToken = res.data.token;
+        //             localStorage.setItem('jwtToken', jwtToken);
+        //             console.log("Token: " + jwtToken)
+        //     }).catch(err => {
+        //         console.log(err);
+        // });
         history.push("/");
     };
 
@@ -132,15 +135,17 @@ export default function Login() {
                         Sign In
                     </Button>
                     <Grid container>
-                        <Grid item xs>
-                            <Link href="#" variant="body2">
-                                Forgot password?
-                            </Link>
-                        </Grid>
+                        {/*<Grid item xs>*/}
+                        {/*    <Link href="#" variant="body2">*/}
+                        {/*        Forgot password?*/}
+                        {/*    </Link>*/}
+                        {/*</Grid>*/}
                         <Grid item>
-                            <Link href="#" variant="body2">
-                                {"Don't have an account? Sign Up"}
-                            </Link>
+                            <Button>
+                                <Link href="/register" variant="body2">
+                                    {"No account? Register"}
+                                </Link>
+                            </Button>
                         </Grid>
                     </Grid>
                 </form>

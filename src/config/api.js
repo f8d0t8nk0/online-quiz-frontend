@@ -4,3 +4,6 @@ export const GET_ALL_QUIZZES             = 'api/v1/teacher/quiz/all';
 export const SAVE_ASSIGNMENT             = 'api/v1/teacher/assignment/save';
 export const GET_ALL_TEACHER_ASSIGNMENTS = 'api/v1/teacher/assignment/all';
 export const CHECK_ASSIGNMENT            = 'api/v1/student/assignment/submit';
+export const LOGIN                       = 'api/v1/auth/login';
+export const REGISTER                    = 'api/v1/auth/register';
+export const ALL_ROLES                   = 'api/v1/auth/roles';

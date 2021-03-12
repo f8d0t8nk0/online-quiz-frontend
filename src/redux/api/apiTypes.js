@@ -8,3 +8,7 @@ export const API_GET_ALL_TEACHER_ASSIGNMENTS = 'API_GET_ALL_TEACHER_ASSIGNMENTS'
 export const API_CHECK_ASSIGNMENT            = 'API_CHECK_ASSIGNMENT';
 export const API_GET_ALL_QUIZZES             = 'API_GET_ALL_QUIZZES';
 export const API_SAVE_ASSIGNMENT             = 'API_SAVE_ASSIGNMENT';
+export const API_GET_ALL_ROLES               = 'API_GET_ALL_ROLES';
+export const API_REGISTER                    = 'API_REGISTER';
+export const API_LOGIN                       = 'API_LOGIN';
+

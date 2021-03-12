@@ -1,10 +1,15 @@
 import {
-    API_CHANGE_SELECTED_QUESTIONS, API_CHECK_ASSIGNMENT,
+    API_CHANGE_SELECTED_QUESTIONS,
+    API_CHECK_ASSIGNMENT,
     API_CREATE_PARSED_QUESTIONS,
     // API_CREATE_QUESTIONS_FAILURE,
     // API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
-    API_CREATE_QUIZ_SUCCESS, API_GET_ALL_QUIZZES, API_GET_ALL_TEACHER_ASSIGNMENTS, API_SAVE_ASSIGNMENT
+    API_CREATE_QUIZ_SUCCESS,
+    API_GET_ALL_QUIZZES,
+    API_GET_ALL_ROLES,
+    API_GET_ALL_TEACHER_ASSIGNMENTS, API_LOGIN, API_REGISTER,
+    API_SAVE_ASSIGNMENT
 } from "./apiTypes";
 import {act} from "@testing-library/react";
 
@@ -30,6 +35,15 @@ const initialState = {
     },
     getQuizzes: {
         quizzes: []
+    },
+    getRoles: {
+        roles: []
+    },
+    registerUser: {
+        user : ''
+    },
+    login: {
+        username: ''
     }
 };
 
@@ -135,6 +149,36 @@ const apiReducer = (state = initialState, action) => {
         case API_SAVE_ASSIGNMENT:
             // console.log("In reducer API_SAVE_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
             return state; // no need to save saved assignment id
+
+
+        case API_GET_ALL_ROLES:
+            console.log("In reducer API_GET_ALL_ROLES: " + JSON.stringify(action.payload, null, 2));
+            return {
+                ...state,
+                getRoles: {
+                    ...state.getRoles,
+                    roles: action.payload
+                }
+            };
+
+        case API_REGISTER:
+            console.log("In reducer API_REGISTER: " + JSON.stringify(action.payload, null, 2));
+            return {
+                ...state,
+                registerUser: {
+                    ...state.registerUser,
+                    user: action.payload
+                }
+            };
+
+        case API_LOGIN:
+            return {
+                ...state,
+                login: {
+                    ...state.login,
+                    username: action.payload
+                }
+            };
 
         default: return state;
     }

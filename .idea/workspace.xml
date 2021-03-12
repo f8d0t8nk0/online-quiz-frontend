@@ -13,11 +13,18 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateAssignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateAssignment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api/apiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api/apiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +73,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/redux/numValue" />
       <recent name="$PROJECT_DIR$/src/components/question" />
       <recent name="$PROJECT_DIR$/src/components/quiz" />
@@ -155,7 +163,7 @@
       <workItem from="1615218290771" duration="402000" />
       <workItem from="1615305986669" duration="16336000" />
       <workItem from="1615395505747" duration="36000" />
-      <workItem from="1615396250613" duration="27283000" />
+      <workItem from="1615396250613" duration="38825000" />
     </task>
     <servers />
   </component>
@@ -273,6 +281,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="391" y="306" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1615393185378" />
+    <state x="236" y="113" width="807" height="574" key="find.popup" timestamp="1615500443820">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="236" y="113" width="807" height="574" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1615500443820" />
     <state x="412" y="296" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606763837932">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

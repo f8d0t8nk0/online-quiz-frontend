@@ -1,7 +1,19 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
+import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
+import Avatar from '@material-ui/core/Avatar';
+import {makeStyles} from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+    },
+}));
 
 function Account(props) {
+    const classes = useStyles();
+
     return (
         <div>
             <Typography component={'div'} paragraph>
@@ -18,7 +30,15 @@ function Account(props) {
                     arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
                     donec massa sapien faucibus et molestie ac.
                 </p>
+
+                <Avatar className={classes.avatar}>
+                    <PersonAddOutlinedIcon />
+                </Avatar>
+
             </Typography>
+
+
+
         </div>
     );
 }

@@ -6,14 +6,15 @@ import {
     API_CHANGE_SELECTED_QUESTIONS,
     API_GET_ALL_TEACHER_ASSIGNMENTS,
     API_CHECK_ASSIGNMENT,
-    API_GET_ALL_QUIZZES, API_SAVE_ASSIGNMENT
+    API_GET_ALL_QUIZZES, API_SAVE_ASSIGNMENT, API_GET_ALL_ROLES, API_REGISTER, API_LOGIN
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
+    ALL_ROLES,
     CHECK_ASSIGNMENT,
     GET_ALL_QUIZZES,
-    GET_ALL_TEACHER_ASSIGNMENTS,
-    QUESTIONS_CREATE, SAVE_ASSIGNMENT,
+    GET_ALL_TEACHER_ASSIGNMENTS, LOGIN,
+    QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT,
     SAVE_QUIZ
 } from '../../config/api';
 import axios from "axios";
@@ -43,7 +44,7 @@ export const createAssignment = (dto) => {
 };
 
 const createAssignmentSuccess = quiz => {
-    console.log("IN createAssignmentSuccess" + JSON.stringify(quiz, null, 2)); // todo dl
+    // console.log("IN createAssignmentSuccess" + JSON.stringify(quiz, null, 2)); // todo dl
     return {
         type: API_CREATE_QUIZ_SUCCESS,
         payload: quiz
@@ -59,7 +60,7 @@ const createAssignmentSuccess = quiz => {
 // };
 
 const fetchQuestionsSuccess = questions => {
-    console.log("IN fetchQuestionsSuccess"); // todo dl
+    // console.log("IN fetchQuestionsSuccess"); // todo dl
     return {
         type: API_CREATE_QUESTIONS_SUCCESS,
         payload: [...questions]
@@ -81,7 +82,7 @@ export const changeSelectedQuestions = (deletedId) => {
 };
 
 export const fetchTeacherAssignments = () => {
-    console.log("IN fetchTeacherAssignments"); // todo dl
+    // console.log("IN fetchTeacherAssignments"); // todo dl
     return dispatch => {
         axios.get(`${HOST}${GET_ALL_TEACHER_ASSIGNMENTS}`)
             .then(response => {
@@ -94,11 +95,11 @@ export const fetchTeacherAssignments = () => {
 };
 
 export const checkAssignment = dto => {
-    console.log("IN checkAssignment"); // todo dl
+    // console.log("IN checkAssignment"); // todo dl
     return dispatch => {
         axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
             .then(response => {
-                console.log("IN checkAssignment inside: " + JSON.stringify(response.data, null, 2));
+                // console.log("IN checkAssignment inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({
                     type: API_CHECK_ASSIGNMENT,
                     payload: response.data
@@ -111,7 +112,7 @@ export const fetchQuizzes = () => {
     return dispatch => {
         axios.get(`${HOST}${GET_ALL_QUIZZES}`)
             .then(response => {
-                console.log("IN fetchQuizzes inside: " + JSON.stringify(response.data, null, 2));
+                // console.log("IN fetchQuizzes inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({
                     type: API_GET_ALL_QUIZZES,
                     payload: response.data
@@ -121,15 +122,59 @@ export const fetchQuizzes = () => {
 };
 
 export const saveAssignment = (dto) => {
-    console.log("IN saveAssignment"); // todo dl
+    // console.log("IN saveAssignment"); // todo dl
     return dispatch => {
         axios.post(`${HOST}${SAVE_ASSIGNMENT}`, dto)
             .then(response => {
-                console.log("IN saveAssignment inside: " + JSON.stringify(response.data, null, 2));
+                // console.log("IN saveAssignment inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({
                     type: API_SAVE_ASSIGNMENT,
                     payload: response.data
                 })
             })
+    }
+};
+
+export const fetchRoles = () => {
+    return dispatch => {
+        axios.get(`${HOST}${ALL_ROLES}`)
+            .then(response => {
+                console.log("IN fetchRoles inside: " + JSON.stringify(response.data, null, 2));
+                dispatch({
+                    type: API_GET_ALL_ROLES,
+                    payload: response.data
+                })
+            })
+    }
+};
+
+export const registerNewUser = dto => {
+    return dispatch => {
+        axios.post(`${HOST}${REGISTER}`, dto)
+            .then(response => {
+                console.log("IN registerNewUser inside: " + JSON.stringify(response.data, null, 2));
+                dispatch({
+                    type: API_REGISTER,
+                    payload: response.data
+                })
+            })
+    }
+};
+
+export const login = dto => {
+    return dispatch => {
+        axios.post(`${HOST}${LOGIN}`, dto)
+            .then(response => {
+                let jwtToken = response.data.token;
+                localStorage.setItem('jwtToken', jwtToken);
+                localStorage.setItem('username', response.data.username);
+                console.log("Token: " + jwtToken)
+                dispatch({
+                    type: API_LOGIN,
+                    payload: response.data.username
+                })
+            }).catch(err => {
+            console.log(err);
+        });
     }
 };

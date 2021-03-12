@@ -22,6 +22,8 @@ import Assignments from '../pages/Assignments'
 import UploadQuiz from "../pages/UploadQuiz";
 import Login from "../components/Login";
 import MyQuizzes from "../pages/MyQuizzes";
+import Register from "./Register";
+import {useSelector} from "react-redux";
 
 const drawerWidth = 240;
 
@@ -96,6 +98,8 @@ export default function MainApp() {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
 
+    const username = useSelector(state => state.api.login.username);
+
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -127,13 +131,16 @@ export default function MainApp() {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" noWrap>
-                            Quiz Robot
+                            Sendmequiz
                         </Typography>
                         <IconButton
                             onClick={() => history.push('/login')}
                             className={classes.loginButton}>
                             <PersonPinIcon />
                         </IconButton>
+                        <Typography variant="h6" noWrap>
+                            {username}
+                        </Typography>
                     </Toolbar>
                 </AppBar>
             </div>
@@ -153,6 +160,7 @@ export default function MainApp() {
                 <Route exact path="/logout" render={props => <Logout {...props} />} />
             </Main>
             <Route exact path="/login" render={props => <Login {...props} />} />
+            <Route exact path="/register" render={props => <Register {...props} />} />
 
             {/*</Switch>*/}
 
