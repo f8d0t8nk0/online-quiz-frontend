@@ -31,13 +31,7 @@ function Account(props) {
                     donec massa sapien faucibus et molestie ac.
                 </p>
 
-                <Avatar className={classes.avatar}>
-                    <PersonAddOutlinedIcon />
-                </Avatar>
-
             </Typography>
-
-
 
         </div>
     );
