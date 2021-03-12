@@ -7,7 +7,7 @@ import {
     API_CREATE_QUESTIONS_SUCCESS,
     API_CREATE_QUIZ_SUCCESS,
     API_GET_ALL_QUIZZES,
-    API_GET_ALL_ROLES,
+    API_GET_ALL_ROLES, API_GET_ALL_STUDENT_ASSIGNMENTS,
     API_GET_ALL_TEACHER_ASSIGNMENTS, API_LOGIN, API_REGISTER,
     API_SAVE_ASSIGNMENT
 } from "./apiTypes";
@@ -43,7 +43,8 @@ const initialState = {
         user : ''
     },
     login: {
-        username: ''
+        loginDTO: '',
+        // username: ''
     }
 };
 
@@ -126,6 +127,15 @@ const apiReducer = (state = initialState, action) => {
                 }
             };
 
+        case API_GET_ALL_STUDENT_ASSIGNMENTS:
+            return {
+                ...state,
+                getTeachAssign: {
+                    ...state.getTeachAssign,
+                    assignments: [...action.payload]
+                }
+            };
+
         case API_CHECK_ASSIGNMENT:
             // console.log("In reducer API_CHECK_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
             return {
@@ -176,7 +186,8 @@ const apiReducer = (state = initialState, action) => {
                 ...state,
                 login: {
                     ...state.login,
-                    username: action.payload
+                    loginDTO: action.payload,
+                    // username: action.payload
                 }
             };
 

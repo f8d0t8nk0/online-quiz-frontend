@@ -16,6 +16,8 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import UploadIcon from '@material-ui/icons/Backup';
 import Drawer from "@material-ui/core/Drawer";
 import { withRouter } from "react-router-dom";
+import {useSelector} from "react-redux";
+import {canShowQuizLink} from "../redux/priviliges";
 
 const drawerWidth = 240;
 
@@ -45,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
     const classes = useStyles();
 
-    const itemList = [{
+    let itemList = [{
         text: 'Account',
         icon: <PersonIcon />,
         onClick: () => {
@@ -102,6 +104,14 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
             handleDrawerClose();
         }
     }];
+
+    itemList = itemList.filter(item => {
+        if (canShowQuizLink) {
+            return true;
+        } else {
+            return item.text !== 'Quizzes'
+        }
+    });
 
 
     return (

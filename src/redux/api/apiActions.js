@@ -6,13 +6,18 @@ import {
     API_CHANGE_SELECTED_QUESTIONS,
     API_GET_ALL_TEACHER_ASSIGNMENTS,
     API_CHECK_ASSIGNMENT,
-    API_GET_ALL_QUIZZES, API_SAVE_ASSIGNMENT, API_GET_ALL_ROLES, API_REGISTER, API_LOGIN
+    API_GET_ALL_QUIZZES,
+    API_SAVE_ASSIGNMENT,
+    API_GET_ALL_ROLES,
+    API_REGISTER,
+    API_LOGIN,
+    API_GET_ALL_STUDENT_ASSIGNMENTS
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
     ALL_ROLES,
     CHECK_ASSIGNMENT,
-    GET_ALL_QUIZZES,
+    GET_ALL_QUIZZES, GET_ALL_STUDENT_ASSIGNMENTS,
     GET_ALL_TEACHER_ASSIGNMENTS, LOGIN,
     QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT,
     SAVE_QUIZ
@@ -94,6 +99,20 @@ export const fetchTeacherAssignments = () => {
     }
 };
 
+export const fetchStudentAssignments = () => {
+    console.log("IN fetchStudentAssignments"); // todo dl
+    return dispatch => {
+        axios.get(`${HOST}${GET_ALL_STUDENT_ASSIGNMENTS}`)
+            .then(response => {
+                console.log("IN fetchStudentAssignments inside: " + JSON.stringify(response.data, null, 2));
+                dispatch({
+                    type: API_GET_ALL_STUDENT_ASSIGNMENTS,
+                    payload: response.data
+                })
+            })
+    }
+};
+
 export const checkAssignment = dto => {
     // console.log("IN checkAssignment"); // todo dl
     return dispatch => {
@@ -165,13 +184,23 @@ export const login = dto => {
     return dispatch => {
         axios.post(`${HOST}${LOGIN}`, dto)
             .then(response => {
-                let jwtToken = response.data.token;
+                // let jwtToken = response.data.token;
+                // localStorage.setItem('jwtToken', jwtToken);
+                // localStorage.setItem('username', response.data.username);
+                // console.log("Token: " + jwtToken);
+
+                let loginDTO = response.data.loginDTO;
+                let jwtToken = loginDTO.token;
+
+                console.log("LoginDTO: " + JSON.stringify(loginDTO, null, 1))
+
                 localStorage.setItem('jwtToken', jwtToken);
-                localStorage.setItem('username', response.data.username);
-                console.log("Token: " + jwtToken)
+                localStorage.setItem('username', loginDTO.username);
+                console.log("Token: " + jwtToken);
+
                 dispatch({
                     type: API_LOGIN,
-                    payload: response.data.username
+                    payload: loginDTO
                 })
             }).catch(err => {
             console.log(err);

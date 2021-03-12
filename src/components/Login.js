@@ -74,15 +74,6 @@ export default function Login() {
 
         dispatch(login(loginDto));
 
-        // axios.post(`${HOST}${LOGIN}`, loginDto)
-        //     .then(res => {
-        //             // console.log(res);
-        //             let jwtToken = res.data.token;
-        //             localStorage.setItem('jwtToken', jwtToken);
-        //             console.log("Token: " + jwtToken)
-        //     }).catch(err => {
-        //         console.log(err);
-        // });
         history.push("/");
     };
 

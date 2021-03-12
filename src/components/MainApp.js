@@ -24,6 +24,7 @@ import Login from "../components/Login";
 import MyQuizzes from "../pages/MyQuizzes";
 import Register from "./Register";
 import {useSelector} from "react-redux";
+import {canShowQuizLink} from "../redux/priviliges";
 
 const drawerWidth = 240;
 
@@ -98,7 +99,18 @@ export default function MainApp() {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
 
-    const username = useSelector(state => state.api.login.username);
+    const username = useSelector(state => {
+        let loginDTO = state.api.login.loginDTO;
+        if (loginDTO !== undefined) {
+            return loginDTO.username;
+        }
+    });
+
+    let quizRoute = "";
+
+    if (canShowQuizLink) {
+        quizRoute = <Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />
+    }
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -152,7 +164,8 @@ export default function MainApp() {
                 <Route exact path="/" render={props => <Home {...props} />} />
                 <Route exact path="/account" render={props => <Account {...props} />} />
                 <Route exact path="/students" render={props => <Students {...props} />} />
-                <Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />
+                {/*<Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />*/}
+                {quizRoute}
                 <Route exact path="/assignments" render={props => <Assignments {...props} />} />
                 <Route exact path="/uploadQuiz" render={props => <UploadQuiz {...props} />} />
                 <Route exact path="/dashboard" render={props => <Dashboard {...props} />} />

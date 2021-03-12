@@ -3,6 +3,7 @@ export const SAVE_QUIZ                   = 'api/v1/teacher/quiz/save';
 export const GET_ALL_QUIZZES             = 'api/v1/teacher/quiz/all';
 export const SAVE_ASSIGNMENT             = 'api/v1/teacher/assignment/save';
 export const GET_ALL_TEACHER_ASSIGNMENTS = 'api/v1/teacher/assignment/all';
+export const GET_ALL_STUDENT_ASSIGNMENTS = 'api/v1/student/assignment/all';
 export const CHECK_ASSIGNMENT            = 'api/v1/student/assignment/submit';
 export const LOGIN                       = 'api/v1/auth/login';
 export const REGISTER                    = 'api/v1/auth/register';
