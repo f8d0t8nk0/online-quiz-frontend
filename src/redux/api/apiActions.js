@@ -11,14 +11,14 @@ import {
     API_GET_ALL_ROLES,
     API_REGISTER,
     API_LOGIN,
-    API_GET_ALL_STUDENT_ASSIGNMENTS
+    API_GET_ALL_STUDENT_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
     ALL_ROLES,
     CHECK_ASSIGNMENT,
     GET_ALL_QUIZZES, GET_ALL_STUDENT_ASSIGNMENTS,
-    GET_ALL_TEACHER_ASSIGNMENTS, LOGIN,
+    GET_ALL_TEACHER_ASSIGNMENTS, GET_ASSIGNMENT_REPORT, LOGIN,
     QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT,
     SAVE_QUIZ
 } from '../../config/api';
@@ -184,10 +184,6 @@ export const login = dto => {
     return dispatch => {
         axios.post(`${HOST}${LOGIN}`, dto)
             .then(response => {
-                // let jwtToken = response.data.token;
-                // localStorage.setItem('jwtToken', jwtToken);
-                // localStorage.setItem('username', response.data.username);
-                // console.log("Token: " + jwtToken);
 
                 let loginDTO = response.data.loginDTO;
                 let jwtToken = loginDTO.token;
@@ -205,5 +201,17 @@ export const login = dto => {
             }).catch(err => {
             console.log(err);
         });
+    }
+};
+
+export const fetchAssignmentReport = (dto) => {
+    return dispatch => {
+        axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
+            .then(response => {
+                dispatch({
+                    type: API_GET_ASSIGNMENT_REPORT,
+                    payload: response.data
+                })
+            })
     }
 };

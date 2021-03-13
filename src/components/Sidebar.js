@@ -49,6 +49,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
 
     let itemList = [{
         text: 'Account',
+        teacherOnly: false,
         icon: <PersonIcon />,
         onClick: () => {
             history.push('/account');
@@ -56,6 +57,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Students',
+        teacherOnly: false,
         icon: <PeopleIcon />,
         onClick: () => {
             history.push('/students');
@@ -63,6 +65,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Quizzes',
+        teacherOnly: true,
         icon: <StorageIcon />,
         onClick: () => {
             history.push('/quizzes');
@@ -70,6 +73,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Assignments',
+        teacherOnly: false,
         icon: <AssignmentIcon />,
         onClick: () => {
             history.push('/assignments');
@@ -77,6 +81,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Upload Quiz',
+        teacherOnly: true,
         icon: <UploadIcon />,
         onClick: () => {
             history.push('/uploadQuiz');
@@ -84,6 +89,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Dashboard',
+        teacherOnly: false,
         icon: <TrendingUpIcon />,
         onClick: () => {
             history.push('/dashboard');
@@ -91,6 +97,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Settings',
+        teacherOnly: false,
         icon: <SettingsIcon />,
         onClick: () => {
             history.push('/settings');
@@ -98,6 +105,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Logout',
+        teacherOnly: false,
         icon: <ArrowBackIcon />,
         onClick: () => {
             history.push('/logout');
@@ -105,11 +113,12 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }];
 
+    // todo change to logic with teacherOnly flag
     itemList = itemList.filter(item => {
         if (canShowQuizLink) {
             return true;
         } else {
-            return item.text !== 'Quizzes'
+            return item.text !== 'Quizzes' && item.text !== 'Upload Quiz'
         }
     });
 

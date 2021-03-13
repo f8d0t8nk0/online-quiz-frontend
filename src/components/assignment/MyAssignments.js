@@ -3,7 +3,8 @@ import {fetchTeacherAssignments} from "../../redux/api/apiActions";
 import {useDispatch, useSelector} from "react-redux";
 import AssignmentCards from "./AssignmentCards";
 import RunningQuizPage from "../radio/RunningQuizPage";
-import AssignmentReport from "../radio/AssignmentReport";
+import AssignmentReportMini from "../radio/AssignmentReportMini";
+import AssignmentReportFull from "../radio/AssignmentReportFull";
 
 function MyAssignments(props) {
 
@@ -14,7 +15,8 @@ function MyAssignments(props) {
     const assignments = useSelector(state => {
         return state.api.getTeachAssign.assignments;
     });
-    const assignmentReport = useSelector(state => state.api.checkAssignment.report);
+    const assignmentReportMini = useSelector(state => state.api.checkAssignment.report);
+    const assignmentReportFull = useSelector(state => state.api.assignmentReport.report);
 
     useEffect(() => {
         dispatch(fetchTeacherAssignments());
@@ -41,7 +43,13 @@ function MyAssignments(props) {
                         nextStep={nextStep}
                     />;
         case 3:
-            return <AssignmentReport report={assignmentReport} />;
+            return <AssignmentReportMini
+                        report={assignmentReportMini}
+                        nextStep={nextStep}
+                    />;
+
+        case 4:
+            return <AssignmentReportFull report={assignmentReportFull}/>;
         default:
             return null;
     }

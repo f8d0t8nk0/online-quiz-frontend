@@ -107,9 +107,11 @@ export default function MainApp() {
     });
 
     let quizRoute = "";
+    let uploadQuizRoute ="";
 
     if (canShowQuizLink) {
-        quizRoute = <Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />
+        quizRoute = <Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />;
+        uploadQuizRoute = <Route exact path="/uploadQuiz" render={props => <UploadQuiz {...props} />} />;
     }
 
     const handleDrawerOpen = () => {
@@ -167,7 +169,8 @@ export default function MainApp() {
                 {/*<Route exact path="/quizzes" render={props => <MyQuizzes {...props} />} />*/}
                 {quizRoute}
                 <Route exact path="/assignments" render={props => <Assignments {...props} />} />
-                <Route exact path="/uploadQuiz" render={props => <UploadQuiz {...props} />} />
+                {/*<Route exact path="/uploadQuiz" render={props => <UploadQuiz {...props} />} />*/}
+                {uploadQuizRoute}
                 <Route exact path="/dashboard" render={props => <Dashboard {...props} />} />
                 <Route exact path="/settings" render={props => <Settings {...props} />} />
                 <Route exact path="/logout" render={props => <Logout {...props} />} />

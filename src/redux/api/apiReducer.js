@@ -8,7 +8,7 @@ import {
     API_CREATE_QUIZ_SUCCESS,
     API_GET_ALL_QUIZZES,
     API_GET_ALL_ROLES, API_GET_ALL_STUDENT_ASSIGNMENTS,
-    API_GET_ALL_TEACHER_ASSIGNMENTS, API_LOGIN, API_REGISTER,
+    API_GET_ALL_TEACHER_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT, API_LOGIN, API_REGISTER,
     API_SAVE_ASSIGNMENT
 } from "./apiTypes";
 import {act} from "@testing-library/react";
@@ -45,6 +45,9 @@ const initialState = {
     login: {
         loginDTO: '',
         // username: ''
+    },
+    assignmentReport: {
+        report: ''
     }
 };
 
@@ -80,7 +83,7 @@ const apiReducer = (state = initialState, action) => {
                 ...state,
                 createQReq: {
                     ...state.createQReq,
-                    questions: [...state.createQReq.questions, ...action.payload]
+                    questions: [ ...action.payload]
                 }
             };
 
@@ -162,7 +165,6 @@ const apiReducer = (state = initialState, action) => {
 
 
         case API_GET_ALL_ROLES:
-            console.log("In reducer API_GET_ALL_ROLES: " + JSON.stringify(action.payload, null, 2));
             return {
                 ...state,
                 getRoles: {
@@ -172,7 +174,6 @@ const apiReducer = (state = initialState, action) => {
             };
 
         case API_REGISTER:
-            console.log("In reducer API_REGISTER: " + JSON.stringify(action.payload, null, 2));
             return {
                 ...state,
                 registerUser: {
@@ -187,7 +188,16 @@ const apiReducer = (state = initialState, action) => {
                 login: {
                     ...state.login,
                     loginDTO: action.payload,
-                    // username: action.payload
+                }
+            };
+
+        case API_GET_ASSIGNMENT_REPORT:
+            console.log("In reducer API_GET_ASSIGNMENT_REPORT: " + JSON.stringify(action.payload, null, 2));
+            return {
+                ...state,
+                assignmentReport: {
+                    ...state.assignmentReport,
+                    report: action.payload
                 }
             };
 
