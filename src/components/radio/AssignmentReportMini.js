@@ -41,7 +41,7 @@ function AssignmentReportMini({ report, nextStep }) {
     const handleClick = () => {
         dispatch(fetchAssignmentReport(report.id));
         console.log("Clicked!!!")
-        nextStep();
+        setTimeout(nextStep(), 1500);
     };
 
     return (
