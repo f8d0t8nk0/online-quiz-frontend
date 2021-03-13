@@ -4,6 +4,8 @@ import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import {useDispatch} from "react-redux";
+import {fetchAssignmentReport} from "../../redux/api/apiActions";
 
 const useStyles = makeStyles({
     root: {
@@ -31,19 +33,23 @@ const useStyles = makeStyles({
     },
 });
 
-function AssignmentReport({ report }) {
+function AssignmentReportMini({ report, nextStep }) {
+
+    const dispatch = useDispatch();
 
     const classes = useStyles();
     const handleClick = () => {
+        dispatch(fetchAssignmentReport(report.id));
         console.log("Clicked!!!")
-    }
+        nextStep();
+    };
 
     return (
         <Card className={classes.root} >
             <Button className={classes.innerButton} onClick={handleClick}>
                 <CardContent>
                     <Typography component={'div'} className={classes.pos} color="textSecondary">
-                        # {report.id}
+                        # {report.assignmentId}
                     </Typography>
                     <Typography className={classes.quizName} variant="h5" component="h2">
                         {report.name}
@@ -57,4 +63,4 @@ function AssignmentReport({ report }) {
     );
 }
 
-export default AssignmentReport;
+export default AssignmentReportMini;

@@ -8,3 +8,4 @@ export const CHECK_ASSIGNMENT            = 'api/v1/student/assignment/submit';
 export const LOGIN                       = 'api/v1/auth/login';
 export const REGISTER                    = 'api/v1/auth/register';
 export const ALL_ROLES                   = 'api/v1/auth/roles';
+export const GET_ASSIGNMENT_REPORT       = 'api/v1/stats/report/assignment/';

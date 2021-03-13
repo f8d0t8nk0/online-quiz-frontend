@@ -1,7 +1,13 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
+import QuestionCardStats from "../components/stats/QuestionCardStats";
+import {mockDataAssignReportFull} from "../components/stats/AssignmentReportFullData";
+import QuestionsStats from "../components/stats/QuestionsStats";
+import AssignmentReportFull from "../components/radio/AssignmentReportFull";
 
 function Logout(props) {
+
+
     return (
         <div>
             <Typography component={'div'} paragraph>
@@ -19,6 +25,10 @@ function Logout(props) {
                     donec massa sapien faucibus et molestie ac.
                 </p>
             </Typography>
+
+            <AssignmentReportFull report={mockDataAssignReportFull} />
+
+
         </div>
     );
 }

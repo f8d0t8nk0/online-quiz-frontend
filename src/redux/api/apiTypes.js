@@ -12,4 +12,5 @@ export const API_SAVE_ASSIGNMENT             = 'API_SAVE_ASSIGNMENT';
 export const API_GET_ALL_ROLES               = 'API_GET_ALL_ROLES';
 export const API_REGISTER                    = 'API_REGISTER';
 export const API_LOGIN                       = 'API_LOGIN';
+export const API_GET_ASSIGNMENT_REPORT       = 'API_GET_ASSIGNMENT_REPORT';
 
