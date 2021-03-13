@@ -16,7 +16,11 @@ function MyAssignments(props) {
         return state.api.getTeachAssign.assignments;
     });
     const assignmentReportMini = useSelector(state => state.api.checkAssignment.report);
-    const assignmentReportFull = useSelector(state => state.api.assignmentReport.report);
+    const assignmentReportFull = useSelector(state => {
+        if (state.api.assignmentReport !== undefined) {
+            return state.api.assignmentReport.report;
+        }
+    });
 
     useEffect(() => {
         dispatch(fetchTeacherAssignments());
