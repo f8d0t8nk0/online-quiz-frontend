@@ -78,7 +78,9 @@ function CreateAssignment({ nextStep, questions, selectedQIds }) {
                 onChange={event => setQuizName(event.target.value)}
                 className={classes.formClass}
                 id="standard-basic"
-                label="Name your assignment"
+                // label="Name your assignment"
+                label={quizName === "" ? "Name your assignment" : ""}
+                InputLabelProps={{shrink: false}}
             />
             <Questions
                 quizzes={questions}
