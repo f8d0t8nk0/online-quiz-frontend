@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Sidebar from "../components/Sidebar";
-import { Route } from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Account from "../pages/Account";
 import Students from "../pages/Students";
@@ -92,6 +92,13 @@ const useStyles = makeStyles((theme) => ({
     contentHeader: {
         // necessary for content to be below app bar
         ...theme.mixins.toolbar,
+    },
+    linkHome: {
+        textDecoration: 'none',
+        color: '#c0caca',
+        '&:hover': {
+            color: '#696969'
+        }
     }
 }));
 
@@ -144,9 +151,11 @@ export default function MainApp() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="h6" noWrap>
-                            Sendmequiz
-                        </Typography>
+                        <Link to="/" className={classes.linkHome} >
+                            <Typography variant="h6" noWrap>
+                                Sendmequiz
+                            </Typography>
+                        </Link>
                         <IconButton
                             onClick={() => history.push('/login')}
                             className={classes.loginButton}>
