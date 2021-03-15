@@ -23,6 +23,8 @@ import {
     SAVE_QUIZ
 } from '../../config/api';
 import axios from "axios";
+import {refreshApp} from "../gui/guiActions";
+
 
 export const fetchQuestions = (dto) => {
     return (dispatch) => {
@@ -181,8 +183,8 @@ export const registerNewUser = dto => {
 };
 
 export const login = dto => {
-    return dispatch => {
-        axios.post(`${HOST}${LOGIN}`, dto)
+    return async (dispatch) => {
+        await axios.post(`${HOST}${LOGIN}`, dto)
             .then(response => {
 
                 let loginDTO = response.data.loginDTO;
@@ -197,10 +199,11 @@ export const login = dto => {
                 dispatch({
                     type: API_LOGIN,
                     payload: loginDTO
-                })
+                });
             }).catch(err => {
             console.log(err);
         });
+        dispatch(refreshApp());
     }
 };
 

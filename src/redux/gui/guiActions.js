@@ -1,7 +1,7 @@
 import {
     GUI_CHANGE_SELECTED_IDS, GUI_CLEAR_QUIZ_RADIO_OPTIONS,
     GUI_FIRST_SELECTED_IDS_DISPATCH,
-    GUI_READ_PARSE_QUESTIONS_FIELDS,
+    GUI_READ_PARSE_QUESTIONS_FIELDS, GUI_REFRESH_APP,
     GUI_SET_QUIZ_RADIO_OPTION
 } from "./guiTypes";
 
@@ -42,5 +42,11 @@ export const setQuizRadioOption =(option) => {
 export const clearQuizRadioOptions = () => {
     return {
         type: GUI_CLEAR_QUIZ_RADIO_OPTIONS,
+    }
+};
+
+export const refreshApp = () => {
+    return {
+        type: GUI_REFRESH_APP
     }
 };

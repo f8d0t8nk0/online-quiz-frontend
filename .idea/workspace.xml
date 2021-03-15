@@ -14,19 +14,10 @@
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mockData/AssignmentsData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/question/QuestionsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mockData/QuestionsData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuizCards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mockData/QuizData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/AssignmentReportData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mockData/AssignmentReportData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/stats/AssignmentReportFullData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mockData/AssignmentReportFullData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyQuizzes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyQuizzes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +159,7 @@
       <workItem from="1615395505747" duration="36000" />
       <workItem from="1615396250613" duration="53108000" />
       <workItem from="1615656288492" duration="1301000" />
-      <workItem from="1615808674086" duration="8465000" />
+      <workItem from="1615808674086" duration="9944000" />
     </task>
     <servers />
   </component>
@@ -294,10 +285,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1614873400722" />
-    <state x="201" y="67" width="875" height="663" key="recent.locations.popup" timestamp="1615816334403">
+    <state x="201" y="67" width="875" height="663" key="recent.locations.popup" timestamp="1615828088432">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="201" y="67" width="875" height="663" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1615816334403" />
+    <state x="201" y="67" width="875" height="663" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1615828088432" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1615674582578">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

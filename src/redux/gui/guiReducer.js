@@ -1,7 +1,7 @@
 import {
     GUI_CHANGE_SELECTED_IDS, GUI_CLEAR_QUIZ_RADIO_OPTIONS,
     GUI_FIRST_SELECTED_IDS_DISPATCH,
-    GUI_READ_PARSE_QUESTIONS_FIELDS,
+    GUI_READ_PARSE_QUESTIONS_FIELDS, GUI_REFRESH_APP,
     GUI_SET_QUIZ_RADIO_OPTION
 } from "./guiTypes";
 
@@ -87,6 +87,10 @@ const guiReducer = (state = initialState, action) => {
                     selectedOptions: []
                 }
             };
+
+        case GUI_REFRESH_APP:
+            window.location.reload(true);
+            return state;
 
         default: return state;
     }

@@ -74,6 +74,7 @@ export default function Login() {
 
         dispatch(login(loginDto));
         history.push("/");
+        setTimeout(() => window.location.reload(true), 1500); // todo change to loading flags logic
         // window.location.reload(true);
     };
 
