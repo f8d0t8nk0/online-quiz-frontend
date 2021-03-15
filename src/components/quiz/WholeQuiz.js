@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import ReplyIcon from '@material-ui/icons/Reply';
 import TextField from "@material-ui/core/TextField";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import {fetchTeacherAssignments, saveAssignment} from "../../redux/api/apiActions";
 import {useDispatch} from "react-redux";
 
@@ -64,15 +64,21 @@ const useStyles = makeStyles({
     }
 });
 
-function WholeQuiz({ selectedQuiz }) {
+// function WholeQuiz({ selectedQuiz }) {
+function WholeQuiz({ quizzes }) {
     const classes = useStyles();
     const history = useHistory();
+    const { quizId } = useParams();
     const dispatch = useDispatch();
 
     const [tAreaClass, setTAreaClass] = useState(classes.myTextFieldHidden);
     const [goButtonClass, setGoButtonClass] = useState(classes.goButtonHidden);
     const [email, setEmail] = useState("");
     const [assignName, setAssignName] = useState("");
+
+    console.log("Quiz id: " + quizId);
+
+    const selectedQuiz = quizzes.find(quiz => quiz.id === Number(quizId));
 
     const handleAssignButton = () => {
         setTAreaClass(classes.myTextFieldVisible);

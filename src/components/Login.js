@@ -73,8 +73,8 @@ export default function Login() {
         loginDto.password = password;
 
         dispatch(login(loginDto));
-
         history.push("/");
+        // window.location.reload(true);
     };
 
     return (

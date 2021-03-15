@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import {AssignmentsData} from "../components/assignment/AssignmentsData";
+import {AssignmentsData} from "../components/mockData/AssignmentsData";
 import AssignmentCards from "../components/assignment/AssignmentCards";
 
 function Dashboard(props) {

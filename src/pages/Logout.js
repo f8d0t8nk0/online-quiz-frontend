@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import QuestionCardStats from "../components/stats/QuestionCardStats";
-import {mockDataAssignReportFull} from "../components/stats/AssignmentReportFullData";
+import {mockDataAssignReportFull} from "../components/mockData/AssignmentReportFullData";
 import QuestionsStats from "../components/stats/QuestionsStats";
 import AssignmentReportFull from "../components/radio/AssignmentReportFull";
 

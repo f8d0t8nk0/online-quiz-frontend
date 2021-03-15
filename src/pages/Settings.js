@@ -1,10 +1,12 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import {QuestionsData} from "../components/question/QuestionsData";
+import {QuestionsData} from "../components/mockData/QuestionsData";
 import CoreQuestions from "../components/radio/CoreQuestions";
+import {useRouteMatch } from "react-router-dom";
 
 function Settings(props) {
 
+    console.log(useRouteMatch()); // todo dl
     return (
         <div>
             <Typography component={'div'} paragraph>

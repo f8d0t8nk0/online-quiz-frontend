@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from "react-router-dom";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
@@ -31,12 +32,14 @@ const useStyles = makeStyles({
     },
 });
 
-function QuizCard({ quiz, setSelectedQuiz, nextStep }) {
+function QuizCard({ quiz, setSelectedQuiz, url }) {
     const classes = useStyles();
+
+    const history = useHistory();
 
     const handleClick = () => {
         setSelectedQuiz(quiz);
-        nextStep();
+        history.push(`${url}/${quiz.id}`);
     };
 
     return (
