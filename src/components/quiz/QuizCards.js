@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     }
 });
 
-function QuizCards({ quizzes, setSelectedQuiz, url }) {
+function QuizCards({ quizzes, url }) {
     const classes = useStyles();
 
     return (
@@ -27,7 +27,6 @@ function QuizCards({ quizzes, setSelectedQuiz, url }) {
                         <QuizCard
                             key={quiz.id}
                             quiz={quiz}
-                            setSelectedQuiz={setSelectedQuiz}
                             url={url}
                         />
                     )

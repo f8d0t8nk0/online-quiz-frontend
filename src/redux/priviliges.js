@@ -10,3 +10,4 @@ if (loginDTO !== undefined) {
 export const canShowQuizLink = (roleId === 2 || roleId === 1);
 export const isStudent = roleId ===3;
 export const isTeacher = roleId ===2;
+export const isAdmin = roleId ===1;

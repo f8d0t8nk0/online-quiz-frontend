@@ -64,7 +64,6 @@ const useStyles = makeStyles({
     }
 });
 
-// function WholeQuiz({ selectedQuiz }) {
 function WholeQuiz({ quizzes }) {
     const classes = useStyles();
     const history = useHistory();
@@ -100,7 +99,7 @@ function WholeQuiz({ quizzes }) {
 
         assignDTO.studentEmails = new Array(email);
         return assignDTO;
-    }
+    };
 
     const handleGoButton = () => {
         // // send to API

@@ -32,13 +32,12 @@ const useStyles = makeStyles({
     },
 });
 
-function QuizCard({ quiz, setSelectedQuiz, url }) {
+function QuizCard({ quiz, url }) {
     const classes = useStyles();
 
     const history = useHistory();
 
     const handleClick = () => {
-        setSelectedQuiz(quiz);
         history.push(`${url}/${quiz.id}`);
     };
 

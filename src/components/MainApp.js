@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import Sidebar from "../components/Sidebar";
-import {Link, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch, useRouteMatch} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import Account from "../pages/Account";
 import Students from "../pages/Students";
@@ -24,7 +24,10 @@ import Login from "../components/Login";
 import MyQuizzes from "../pages/MyQuizzes";
 import Register from "./Register";
 import {useSelector} from "react-redux";
-import {canShowQuizLink} from "../redux/priviliges";
+import {canShowQuizLink, isStudent, isTeacher} from "../redux/priviliges";
+import AssignmentReportMini from "./radio/AssignmentReportMini";
+import StudentSidebarButtons from "./StudentSidebarButtons";
+import TeacherSidebarButtons from "./TeacherSidebarButtons";
 
 const drawerWidth = 240;
 
@@ -116,10 +119,10 @@ export default function MainApp() {
     let quizRoute = "";
     let uploadQuizRoute ="";
 
-    if (canShowQuizLink) {
-        quizRoute = <Route path="/quizzes" ><MyQuizzes/></Route>;
-        uploadQuizRoute = <Route path="/uploadQuiz" ><UploadQuiz/></Route>;
-    }
+    // if (canShowQuizLink) {
+    //     quizRoute = <Route path="/quizzes" ><MyQuizzes/></Route>;
+    //     uploadQuizRoute = <Route path="/uploadQuiz" ><UploadQuiz/></Route>;
+    // }
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -172,15 +175,7 @@ export default function MainApp() {
             <Sidebar open={open} handleDrawerOpen={handleDrawerOpen} handleDrawerClose={handleDrawerClose} />
             <Switch>
             <Main open={open}>
-                <Route exact path="/" ><Home/></Route>
-                <Route  path="/account" ><Account/></Route>
-                <Route  path="/students" ><Students/></Route>
-                {quizRoute}
-                <Route  path="/assignments" ><Assignments/></Route>
-                {uploadQuizRoute}
-                <Route  path="/dashboard" ><Dashboard/></Route>
-                <Route  path="/settings" ><Settings/></Route>
-                <Route  path="/logout" ><Logout /></Route>
+                {isStudent ? <StudentSidebarButtons/> : isTeacher ? <TeacherSidebarButtons/> : <StudentSidebarButtons/>}
             </Main>
 
             </Switch>

@@ -4,8 +4,10 @@ import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {fetchAssignmentReport} from "../../redux/api/apiActions";
+import { useHistory, useParams, useRouteMatch, Redirect } from "react-router-dom";
+
 
 const useStyles = makeStyles({
     root: {
@@ -33,15 +35,21 @@ const useStyles = makeStyles({
     },
 });
 
-function AssignmentReportMini({ report, nextStep }) {
+function AssignmentReportMini({ nextStep }) {
 
     const dispatch = useDispatch();
+    const report = useSelector(state => state.api.checkAssignment.report);
+
+    const history = useHistory();
+    const { url } = useRouteMatch();
+
 
     const classes = useStyles();
     const handleClick = () => {
-        dispatch(fetchAssignmentReport(report.id));
-        console.log("Clicked!!!")
-        setTimeout(nextStep(), 1500);
+        dispatch(fetchAssignmentReport(report.id))
+            .then(history.push(`${url}/full`));
+        console.log("Clicked!!!");
+        // setTimeout(nextStep(), 1500);
     };
 
     return (

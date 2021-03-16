@@ -23,7 +23,7 @@ import {
     SAVE_QUIZ
 } from '../../config/api';
 import axios from "axios";
-import {refreshApp} from "../gui/guiActions";
+import {goToFullAssignmentReport, refreshApp} from "../gui/guiActions";
 
 
 export const fetchQuestions = (dto) => {
@@ -115,17 +115,18 @@ export const fetchStudentAssignments = () => {
     }
 };
 
-export const checkAssignment = dto => {
+export const checkAssignment = (dto, history, url) => {
     // console.log("IN checkAssignment"); // todo dl
-    return dispatch => {
-        axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
+    return async dispatch => {
+        await axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
             .then(response => {
                 // console.log("IN checkAssignment inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({
                     type: API_CHECK_ASSIGNMENT,
                     payload: response.data
                 })
-            })
+            });
+        return Promise.resolve();
     }
 };
 
@@ -200,21 +201,24 @@ export const login = dto => {
                     type: API_LOGIN,
                     payload: loginDTO
                 });
-            }).catch(err => {
+            })
+            .then(dispatch(refreshApp()))
+            .catch(err => {
             console.log(err);
         });
-        dispatch(refreshApp());
+        return Promise.resolve();
     }
 };
 
 export const fetchAssignmentReport = (dto) => {
-    return dispatch => {
-        axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
+    return async dispatch => {
+        await axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
             .then(response => {
                 dispatch({
                     type: API_GET_ASSIGNMENT_REPORT,
                     payload: response.data
                 })
-            })
+            });
+        return Promise.resolve();
     }
 };

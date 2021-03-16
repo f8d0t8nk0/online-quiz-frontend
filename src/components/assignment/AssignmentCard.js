@@ -4,6 +4,8 @@ import Button from "@material-ui/core/Button";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles({
     root: {
@@ -34,13 +36,15 @@ const useStyles = makeStyles({
     },
 });
 
-function AssignmentCard({ assignment, setSelectedAssignment, nextStep }) {
+function AssignmentCard({ assignment, setSelectedAssignment, nextStep, url }) {
 
     const classes = useStyles();
+    const history = useHistory();
 
     const handleClick = () => {
         setSelectedAssignment(assignment);
         nextStep();
+        history.push(`${url}/${assignment.id}`);
     };
 
     return (

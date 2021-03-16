@@ -22,7 +22,7 @@ function Dashboard(props) {
                 </p>
 
 
-                <AssignmentCards assignments={AssignmentsData} />
+                {/*<AssignmentCards assignments={AssignmentsData} />*/}
 
             </Typography>
         </div>

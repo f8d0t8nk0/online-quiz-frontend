@@ -16,8 +16,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import UploadIcon from '@material-ui/icons/Backup';
 import Drawer from "@material-ui/core/Drawer";
 import { withRouter } from "react-router-dom";
-import {useSelector} from "react-redux";
-import {canShowQuizLink} from "../redux/priviliges";
+import {isStudent} from "../redux/priviliges";
 
 const drawerWidth = 240;
 
@@ -57,7 +56,7 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }, {
         text: 'Students',
-        teacherOnly: false,
+        teacherOnly: true,
         icon: <PeopleIcon />,
         onClick: () => {
             history.push('/students');
@@ -113,12 +112,11 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
         }
     }];
 
-    // todo change to logic with teacherOnly flag
     itemList = itemList.filter(item => {
-        if (canShowQuizLink) {
-            return true;
+        if (isStudent) {
+            return !item.teacherOnly;
         } else {
-            return item.text !== 'Quizzes' && item.text !== 'Upload Quiz'
+            return true;
         }
     });
 

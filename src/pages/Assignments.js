@@ -9,6 +9,7 @@ function Assignments(props) {
 
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         if (isTeacher) {
             dispatch(fetchTeacherAssignments());

@@ -1,6 +1,8 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import AssignmentCard from "./AssignmentCard";
+import {useDispatch, useSelector} from "react-redux";
+
 
 const useStyles = makeStyles({
     root: {
@@ -15,8 +17,14 @@ const useStyles = makeStyles({
     }
 });
 
-function AssignmentCards({ assignments, setSelectedAssignment, nextStep }) {
+function AssignmentCards({ setAssignments, setSelectedAssignment, nextStep, url }) {
     const classes = useStyles();
+
+    const assignments = useSelector(state => {
+        return state.api.getTeachAssign.assignments;
+    });
+
+    setAssignments(assignments);
 
     return (
         <div>
@@ -30,6 +38,7 @@ function AssignmentCards({ assignments, setSelectedAssignment, nextStep }) {
                                 assignment={assignment}
                                 setSelectedAssignment={setSelectedAssignment}
                                 nextStep={nextStep}
+                                url={url}
                             />
                         )
                     })}

@@ -1,9 +1,11 @@
 import {
     GUI_CHANGE_SELECTED_IDS, GUI_CLEAR_QUIZ_RADIO_OPTIONS,
-    GUI_FIRST_SELECTED_IDS_DISPATCH,
+    GUI_FIRST_SELECTED_IDS_DISPATCH, GUI_GO_TO_FULL_ASSIGNMENT_REPORT,
     GUI_READ_PARSE_QUESTIONS_FIELDS, GUI_REFRESH_APP,
     GUI_SET_QUIZ_RADIO_OPTION
 } from "./guiTypes";
+import { useHistory } from "react-router-dom";
+
 
 
 const initialState = {
@@ -20,6 +22,9 @@ const initialState = {
 };
 
 const guiReducer = (state = initialState, action) => {
+
+    // const history = useHistory();
+
     switch (action.type) {
         case GUI_READ_PARSE_QUESTIONS_FIELDS:
             return {

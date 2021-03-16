@@ -8,17 +8,10 @@ import QuizCard from "../components/quiz/QuizCard";
 
 function MyQuizzes(props) {
 
-    const [step, setStep] = useState(1);
-    const [selectedQuiz, setSelectedQuiz] = useState();
     const dispatch = useDispatch();
     const quizzes = useSelector(state => state.api.getQuizzes.quizzes);
 
     const {url} = useRouteMatch();
-
-    const nextStep = () => {
-        console.log("In Next Step: " + step); // todo dl
-        setStep(step + 1);
-    };
 
     useEffect(() => {
         dispatch(fetchQuizzes());
@@ -29,13 +22,11 @@ function MyQuizzes(props) {
             <Route exact path='/quizzes'>
                 <QuizCards
                     quizzes={quizzes}
-                    setSelectedQuiz={setSelectedQuiz}
                     url={url}
                 />
             </Route>
             <Route path={`${url}/:quizId`}>
                 <WholeQuiz
-                    selectedQuiz={selectedQuiz}
                     quizzes={quizzes}
                 />
             </Route>
