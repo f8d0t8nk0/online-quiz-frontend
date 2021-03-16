@@ -191,7 +191,7 @@ export const login = dto => {
                 let loginDTO = response.data.loginDTO;
                 let jwtToken = loginDTO.token;
 
-                console.log("LoginDTO: " + JSON.stringify(loginDTO, null, 1))
+                // console.log("LoginDTO: " + JSON.stringify(loginDTO, null, 1))
 
                 localStorage.setItem('jwtToken', jwtToken);
                 localStorage.setItem('username', loginDTO.username);
@@ -202,7 +202,7 @@ export const login = dto => {
                     payload: loginDTO
                 });
             })
-            .then(dispatch(refreshApp()))
+            // .then(dispatch(refreshApp()))
             .catch(err => {
             console.log(err);
         });

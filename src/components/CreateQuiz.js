@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function CreateAssignment({ nextStep, questions, selectedQIds }) {
+function CreateQuiz({ nextStep, questions, selectedQIds }) {
 
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -104,4 +104,4 @@ function CreateAssignment({ nextStep, questions, selectedQIds }) {
     );
 }
 
-export default CreateAssignment;
+export default CreateQuiz;

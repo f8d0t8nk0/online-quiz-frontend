@@ -72,10 +72,12 @@ export default function Login() {
         loginDto.email = email;
         loginDto.password = password;
 
+        // JSON.stringify(loginDto, null, 1);
+
         dispatch(login(loginDto))
             .then(history.push("/"));
 
-        // setTimeout(() => window.location.reload(true), 1500); // todo change to loading flags logic
+        setTimeout(() => window.location.reload(true), 1500); // todo change to loading flags logic
         // window.location.reload(true);
     };
 

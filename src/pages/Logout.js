@@ -4,6 +4,7 @@ import QuestionCardStats from "../components/stats/QuestionCardStats";
 import {mockDataAssignReportFull} from "../components/mockData/AssignmentReportFullData";
 import QuestionsStats from "../components/stats/QuestionsStats";
 import AssignmentReportFull from "../components/radio/AssignmentReportFull";
+import SettingsIcon from '@material-ui/icons/Settings';
 
 function Logout(props) {
 

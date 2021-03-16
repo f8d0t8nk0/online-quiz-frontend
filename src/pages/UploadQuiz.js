@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ParseQuestions from "../components/question/ParseQuestions";
-import CreateAssignment from "../components/CreateAssignment";
+import CreateQuiz from "../components/CreateQuiz";
 import {useDispatch, useSelector} from "react-redux";
 
 const UploadQuiz = props => {
@@ -26,7 +26,7 @@ const UploadQuiz = props => {
                 questions={questions}
             />;
         case 2:
-            return <CreateAssignment
+            return <CreateQuiz
                 nextStep={nextStep}
                 questions={questions}
                 selectedQIds={selectedQIds}

@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, useRouteMatch } from "react-router-dom";
 import {fetchTeacherAssignments} from "../../redux/api/apiActions";
 import {useDispatch, useSelector} from "react-redux";
 import AssignmentCards from "./AssignmentCards";
 import RunningQuizPage from "../radio/RunningQuizPage";
 import AssignmentReportMini from "../radio/AssignmentReportMini";
 import AssignmentReportFull from "../radio/AssignmentReportFull";
-import QuizCards from "../quiz/QuizCards";
 
 function MyAssignments(props) {
 
@@ -21,11 +20,11 @@ function MyAssignments(props) {
     //     return state.api.getTeachAssign.assignments;
     // });
     // const assignmentReportMini = useSelector(state => state.api.checkAssignment.report);
-    const assignmentReportFull = useSelector(state => {
-        if (state.api.assignmentReport !== undefined) {
-            return state.api.assignmentReport.report;
-        }
-    });
+    // const assignmentReportFull = useSelector(state => {
+    //     if (state.api.assignmentReport !== undefined) {
+    //         return state.api.assignmentReport.report;
+    //     }
+    // });
 
     useEffect(() => {
         dispatch(fetchTeacherAssignments());
@@ -37,7 +36,7 @@ function MyAssignments(props) {
 
     return (
         <div>
-            <Route exact path='/assignments'>
+            <Route exact path={`${url}/`}>
                 <AssignmentCards
                     url={url}
                     // assignments={assignments}
