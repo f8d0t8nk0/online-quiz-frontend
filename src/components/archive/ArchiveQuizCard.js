@@ -54,7 +54,7 @@ const useStyles = makeStyles({
     },
 });
 
-function ArchiveQuizCard({ quiz }) {
+function ArchiveQuizCard({ quiz, forceUpdate }) {
     const classes = useStyles();
 
     const history = useHistory();
@@ -115,6 +115,7 @@ function ArchiveQuizCard({ quiz }) {
         setAnchorEl(null);
 
         dispatch(unarchiveQuiz(quiz.id))
+        forceUpdate();
     };
 
     const handleDelete = (event) => {

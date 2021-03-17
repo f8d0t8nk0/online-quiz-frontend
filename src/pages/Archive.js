@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {Link, Route, useRouteMatch} from "react-router-dom";
-import {fetchArchivedQuizzes} from "../redux/api/apiActions";
+import {fetchArchivedQuizzes, fetchQuizzes} from "../redux/api/apiActions";
 import ArchiveQuizCards from "../components/archive/ArchiveQuizCards";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -17,9 +17,15 @@ function Archive(props) {
 
     const {url} = useRouteMatch();
 
+    const [value, setValue] = useState(0);
+    const forceUpdate = () => {
+        setValue(value + 1);
+    }
+
     useEffect(() => {
-        dispatch(fetchArchivedQuizzes())
-    }, []);
+        dispatch(fetchArchivedQuizzes());
+        console.log(value);
+    }, [value]);
 
     return (
         <div>
@@ -36,6 +42,7 @@ function Archive(props) {
                 <ArchiveQuizCards
                     quizzes={quizzes}
                     url={url}
+                    forceUpdate={forceUpdate}
                 />
             </Route>
         </div>

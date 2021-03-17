@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     }
 });
 
-function ArchiveQuizCards({quizzes, url}) {
+function ArchiveQuizCards({quizzes, url, forceUpdate}) {
 
     const classes = useStyles();
 
@@ -27,6 +27,7 @@ function ArchiveQuizCards({quizzes, url}) {
                             key={quiz.id}
                             quiz={quiz}
                             url={url}
+                            forceUpdate={forceUpdate}
                         />
                     )
                 })}
