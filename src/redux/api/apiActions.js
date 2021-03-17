@@ -11,16 +11,20 @@ import {
     API_GET_ALL_ROLES,
     API_REGISTER,
     API_LOGIN,
-    API_GET_ALL_STUDENT_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT
+    API_GET_ALL_STUDENT_ASSIGNMENTS,
+    API_GET_ASSIGNMENT_REPORT,
+    API_DELETE_QUIZ,
+    API_ARCHIVE_QUIZ,
+    API_GET_ALL_ARCHIVED_QUIZZES, API_UNARCHIVE_QUIZ
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
-    ALL_ROLES,
-    CHECK_ASSIGNMENT,
+    ALL_ROLES, ARCHIVE_QUIZ,
+    CHECK_ASSIGNMENT, DELETE_QUIZ, GET_ALL_ARCHIVED_QUIZZES,
     GET_ALL_QUIZZES, GET_ALL_STUDENT_ASSIGNMENTS,
     GET_ALL_TEACHER_ASSIGNMENTS, GET_ASSIGNMENT_REPORT, LOGIN,
     QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT,
-    SAVE_QUIZ
+    SAVE_QUIZ, UNARCHIVE_QUIZ
 } from '../../config/api';
 import axios from "axios";
 import {goToFullAssignmentReport, refreshApp} from "../gui/guiActions";
@@ -40,13 +44,30 @@ export const fetchQuestions = (dto) => {
     }
 };
 
-export const createAssignment = (dto) => {
+export const createQuiz = (dto) => {
     return dispatch => {
         axios.post(`${HOST}${SAVE_QUIZ}`, dto)
             .then(response => {
                 const data = response.data;
                 dispatch(createAssignmentSuccess(data))
             })
+        return Promise.resolve();
+    }
+};
+
+export const deleteQuiz = (quizId) => {
+    return dispatch => {
+        axios.delete(`${HOST}${DELETE_QUIZ}/${quizId}`)
+            .then(response => {
+                console.log("Deleted response: " + JSON.stringify(response.data, null, 1))
+            })
+            .then(response => {
+                dispatch({
+                    type: API_DELETE_QUIZ,
+                    payload: quizId
+                })
+            })
+        return Promise.resolve();
     }
 };
 
@@ -135,13 +156,53 @@ export const fetchQuizzes = () => {
         axios.get(`${HOST}${GET_ALL_QUIZZES}`)
             .then(response => {
                 // console.log("IN fetchQuizzes inside: " + JSON.stringify(response.data, null, 2));
+                let activeQuizzes = response.data.filter(quiz => quiz.status === 'ACTIVE');
                 dispatch({
                     type: API_GET_ALL_QUIZZES,
+                    payload: activeQuizzes
+                })
+            })
+        return Promise.resolve();
+    }
+};
+
+export const archiveQuiz = (quizId) => {
+    return dispatch => {
+        axios.patch(`${HOST}${ARCHIVE_QUIZ}/${quizId}`)
+            .then(response => {
+                dispatch({
+                    type: API_ARCHIVE_QUIZ
+                })
+            })
+            .then(dispatch(fetchQuizzes()));
+        return Promise.resolve();
+    }
+};
+
+export const unarchiveQuiz = (quizId) => {
+    return dispatch => {
+        axios.patch(`${HOST}${UNARCHIVE_QUIZ}/${quizId}`)
+            .then(response => {
+                dispatch({
+                    type: API_UNARCHIVE_QUIZ
+                })
+            })
+            .then(dispatch(fetchQuizzes()));
+        return Promise.resolve();
+    }
+};
+
+export const fetchArchivedQuizzes = () => {
+    return dispatch => {
+        axios.get(`${HOST}${GET_ALL_ARCHIVED_QUIZZES}`)
+            .then(response => {
+                dispatch({
+                    type: API_GET_ALL_ARCHIVED_QUIZZES,
                     payload: response.data
                 })
             })
     }
-};
+}
 
 export const saveAssignment = (dto) => {
     // console.log("IN saveAssignment"); // todo dl

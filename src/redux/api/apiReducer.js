@@ -1,15 +1,16 @@
 import {
+    API_ARCHIVE_QUIZ,
     API_CHANGE_SELECTED_QUESTIONS,
     API_CHECK_ASSIGNMENT,
     API_CREATE_PARSED_QUESTIONS,
     // API_CREATE_QUESTIONS_FAILURE,
     // API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
-    API_CREATE_QUIZ_SUCCESS,
+    API_CREATE_QUIZ_SUCCESS, API_DELETE_QUIZ, API_GET_ALL_ARCHIVED_QUIZZES,
     API_GET_ALL_QUIZZES,
     API_GET_ALL_ROLES, API_GET_ALL_STUDENT_ASSIGNMENTS,
     API_GET_ALL_TEACHER_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT, API_LOGIN, API_REGISTER,
-    API_SAVE_ASSIGNMENT
+    API_SAVE_ASSIGNMENT, API_UNARCHIVE_QUIZ
 } from "./apiTypes";
 import {act} from "@testing-library/react";
 
@@ -34,6 +35,9 @@ const initialState = {
         report: ''
     },
     getQuizzes: {
+        quizzes: []
+    },
+    getArchivedQuizzes: {
         quizzes: []
     },
     getRoles: {
@@ -200,6 +204,32 @@ const apiReducer = (state = initialState, action) => {
                     report: action.payload
                 }
             };
+
+        case API_DELETE_QUIZ:
+
+            return {
+                ...state,
+                getQuizzes: {
+                    ...state.getQuizzes,
+                    quizzes: state.getQuizzes.quizzes.filter(quiz => quiz.id !== action.payload)
+                }
+            };
+
+        case API_ARCHIVE_QUIZ:
+            return state;
+
+        case API_GET_ALL_ARCHIVED_QUIZZES:
+
+            return {
+                ...state,
+                getArchivedQuizzes: {
+                    ...state.getArchivedQuizzes,
+                    quizzes: action.payload
+                }
+            };
+
+        case API_UNARCHIVE_QUIZ:
+            return state;
 
         default: return state;
     }

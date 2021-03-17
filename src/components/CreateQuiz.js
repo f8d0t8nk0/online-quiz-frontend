@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Questions from "./question/Questions";
 import { useHistory } from "react-router-dom";
 import {useDispatch} from 'react-redux';
-import {createAssignment, fetchQuizzes} from "../redux/api/apiActions";
+import {createQuiz, fetchQuizzes} from "../redux/api/apiActions";
 
 const useStyles = makeStyles((theme) => ({
     formClass: {
@@ -58,7 +58,7 @@ function CreateQuiz({ nextStep, questions, selectedQIds }) {
         quizDto.name = quizName;
         quizDto.questionsIds = selectedQIds;
 
-        dispatch(createAssignment(quizDto));
+        dispatch(createQuiz(quizDto));
         dispatch(fetchQuizzes());
         setProgressClass(classes.showProgress);
         setTimeout(() => history.push("/quizzes"), 1500);

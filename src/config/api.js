@@ -1,6 +1,10 @@
 export const QUESTIONS_CREATE            = 'api/v1/teacher/question/create';
 export const SAVE_QUIZ                   = 'api/v1/teacher/quiz/save';
 export const GET_ALL_QUIZZES             = 'api/v1/teacher/quiz/all';
+export const GET_ALL_ARCHIVED_QUIZZES    = 'api/v1/teacher/quiz/archived/all';
+export const DELETE_QUIZ                 = 'api/v1/teacher/quiz/delete';
+export const ARCHIVE_QUIZ                = 'api/v1/teacher/quiz/archive';
+export const UNARCHIVE_QUIZ              = 'api/v1/teacher/quiz/unarchive';
 export const SAVE_ASSIGNMENT             = 'api/v1/teacher/assignment/save';
 export const GET_ALL_TEACHER_ASSIGNMENTS = 'api/v1/teacher/assignment/all';
 export const GET_ALL_STUDENT_ASSIGNMENTS = 'api/v1/student/assignment/all';

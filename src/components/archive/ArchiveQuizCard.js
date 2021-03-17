@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { useHistory } from "react-router-dom";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import {makeStyles} from "@material-ui/core/styles";
+import {archiveQuiz, createQuiz, deleteQuiz, unarchiveQuiz} from "../../redux/api/apiActions";
+import Card from "@material-ui/core/Card";
+import Button from "@material-ui/core/Button";
+import CardContent from "@material-ui/core/CardContent";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import SettingsIcon from "@material-ui/icons/Settings";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Typography from "@material-ui/core/Typography";
 import {useDispatch} from "react-redux";
-import {archiveQuiz, createQuiz, deleteQuiz, fetchQuizzes} from "../../redux/api/apiActions";
+import { useHistory } from "react-router-dom";
+import { Route, useRouteMatch } from "react-router-dom";
+
+
 
 const useStyles = makeStyles({
     root: {
@@ -21,7 +24,11 @@ const useStyles = makeStyles({
         margin: "10px",
         '&:hover': {
             boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
-        }
+        },
+        backgroundColor: "#ebebd2"
+    },
+    oldishColor: {
+        color: "#ebebd2"
     },
     innerButton: {
         height: "100%",
@@ -47,11 +54,14 @@ const useStyles = makeStyles({
     },
 });
 
-function QuizCard({ quiz, url, forceUpdate }) {
+function ArchiveQuizCard({ quiz }) {
     const classes = useStyles();
 
     const history = useHistory();
     const dispatch = useDispatch();
+
+    const {url} = useRouteMatch();
+
 
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -91,7 +101,6 @@ function QuizCard({ quiz, url, forceUpdate }) {
 
         // create quiz with this data
         dispatch(createQuiz(quizDto))
-            .then(forceUpdate());
     };
 
     const handleEdit = (event) => {
@@ -100,13 +109,12 @@ function QuizCard({ quiz, url, forceUpdate }) {
         setAnchorEl(null);
     };
 
-    const handleArchive = (event) => {
+    const handleUnarchive = (event) => {
         event.stopPropagation();
         console.log("handleArchive");
         setAnchorEl(null);
 
-        dispatch(archiveQuiz(quiz.id))
-            .then(forceUpdate());
+        dispatch(unarchiveQuiz(quiz.id))
     };
 
     const handleDelete = (event) => {
@@ -115,8 +123,6 @@ function QuizCard({ quiz, url, forceUpdate }) {
         setAnchorEl(null);
 
         dispatch(deleteQuiz(quiz.id))
-            .then(forceUpdate());
-
     };
 
     return (
@@ -131,14 +137,15 @@ function QuizCard({ quiz, url, forceUpdate }) {
                                 onClick={settingsClicked}/>
                             <Menu
                                 id="assign-menu"
+                                className={classes.oldishColor}
                                 anchorEl={anchorEl}
                                 keepMounted
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleCopy}>Copy</MenuItem>
+                                <MenuItem classes={classes.oldishColor} onClick={handleCopy}>Copy</MenuItem>
                                 <MenuItem onClick={handleEdit}>Edit</MenuItem>
-                                <MenuItem onClick={handleArchive}>Archive</MenuItem>
+                                <MenuItem onClick={handleUnarchive}>Unarchive</MenuItem>
                                 <MenuItem onClick={handleDelete}>Delete</MenuItem>
                             </Menu>
                         </div>
@@ -161,4 +168,4 @@ function QuizCard({ quiz, url, forceUpdate }) {
     )
 }
 
-export default QuizCard;
+export default ArchiveQuizCard;

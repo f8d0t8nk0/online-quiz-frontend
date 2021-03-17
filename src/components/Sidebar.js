@@ -14,6 +14,7 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import UploadIcon from '@material-ui/icons/Backup';
+import ArchiveIcon from '@material-ui/icons/Archive';
 import Drawer from "@material-ui/core/Drawer";
 import { withRouter } from "react-router-dom";
 import {isStudent} from "../redux/priviliges";
@@ -95,6 +96,15 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
             handleDrawerClose();
         }
     }, {
+        text: 'Archive',
+        teacherOnly: true,
+        icon: <ArchiveIcon />,
+        onClick: () => {
+            history.push('/archive');
+            handleDrawerClose();
+        }
+    },
+        {
         text: 'Settings',
         teacherOnly: false,
         icon: <SettingsIcon />,

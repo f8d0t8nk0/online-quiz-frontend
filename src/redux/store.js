@@ -10,10 +10,10 @@ const persistedState = loadState();
 const store = createStore(
     rootReducer,
     persistedState,
-    // composeWithDevTools(
-    //     applyMiddleware(thunk)
-    // )
-    compose(applyMiddleware(thunk))
+    composeWithDevTools(
+        applyMiddleware(thunk)
+    )
+    // compose(applyMiddleware(thunk))
 );
 
 const updateInterval = 1000;

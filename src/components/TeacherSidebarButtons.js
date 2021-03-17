@@ -9,6 +9,7 @@ import Logout from "../pages/Logout";
 import {Route} from 'react-router-dom';
 import MyQuizzes from "../pages/MyQuizzes";
 import UploadQuiz from "../pages/UploadQuiz";
+import Archive from "../pages/Archive";
 
 function TeacherSidebarButtons(props) {
     return (
@@ -20,6 +21,7 @@ function TeacherSidebarButtons(props) {
             <Route  path="/assignments" ><Assignments/></Route>
             <Route path="/uploadQuiz" ><UploadQuiz/></Route>;
             <Route  path="/dashboard" ><Dashboard/></Route>
+            <Route  path="/archive" ><Archive/></Route>
             <Route  path="/settings" ><Settings/></Route>
             <Route  path="/logout" ><Logout /></Route>
         </div>

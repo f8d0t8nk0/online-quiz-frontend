@@ -13,4 +13,7 @@ export const API_GET_ALL_ROLES               = 'API_GET_ALL_ROLES';
 export const API_REGISTER                    = 'API_REGISTER';
 export const API_LOGIN                       = 'API_LOGIN';
 export const API_GET_ASSIGNMENT_REPORT       = 'API_GET_ASSIGNMENT_REPORT';
-
+export const API_DELETE_QUIZ                 = 'API_DELETE_QUIZ';
+export const API_ARCHIVE_QUIZ                = 'API_ARCHIVE_QUIZ';
+export const API_UNARCHIVE_QUIZ              = 'API_UNARCHIVE_QUIZ';
+export const API_GET_ALL_ARCHIVED_QUIZZES    = 'API_GET_ALL_ARCHIVED_QUIZZES';
