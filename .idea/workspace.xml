@@ -11,8 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/archive/ArchiveQuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/archive/ArchiveQuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/archive/ArchiveQuizCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/archive/ArchiveQuizCards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Archive.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +156,7 @@
       <workItem from="1615396250613" duration="53108000" />
       <workItem from="1615656288492" duration="1301000" />
       <workItem from="1615808674086" duration="18679000" />
-      <workItem from="1615909873050" duration="20032000" />
+      <workItem from="1615909873050" duration="20914000" />
     </task>
     <servers />
   </component>

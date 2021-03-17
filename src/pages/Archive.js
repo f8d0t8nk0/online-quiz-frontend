@@ -5,8 +5,35 @@ import {fetchArchivedQuizzes, fetchQuizzes} from "../redux/api/apiActions";
 import ArchiveQuizCards from "../components/archive/ArchiveQuizCards";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import {makeStyles} from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+
+const useStyles = makeStyles({
+    category: {
+        minWidth: 275,
+        maxWidth: 275,
+        // width: "300",
+        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        margin: "10px",
+        '&:hover': {
+            boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
+        },
+        backgroundColor: "#ebebd2",
+        textDecoration: 'none',
+    },
+    link: {
+        textDecoration: 'none',
+    },
+    quizName: {
+        color: "#5cad73",
+        textAlign: "center"
+    },
+
+});
 
 function Archive(props) {
+
+    const classes = useStyles();
 
     const dispatch = useDispatch();
     const quizzes = useSelector(state => {
@@ -30,10 +57,12 @@ function Archive(props) {
     return (
         <div>
             <Route>
-                <Link to={'/archive/quizzes'} >
-                    <Card>
+                <Link className={classes.link} to={'/archive/quizzes'}  >
+                    <Card className={classes.category}>
                         <CardContent>
-                            Quizzes
+                            <Typography className={classes.quizName} variant="h5" component="h2">
+                                Quizzes
+                            </Typography>
                         </CardContent>
                     </Card>
                 </Link>
