@@ -15,19 +15,26 @@ import {
     API_GET_ASSIGNMENT_REPORT,
     API_DELETE_QUIZ,
     API_ARCHIVE_QUIZ,
-    API_GET_ALL_ARCHIVED_QUIZZES, API_UNARCHIVE_QUIZ
+    API_GET_ALL_ARCHIVED_QUIZZES,
+    API_UNARCHIVE_QUIZ,
+    API_SAVE_GROUP,
+    API_SAVE_GROUP_ERROR,
+    API_GET_ALL_GROUPS,
+    API_CLEAR_SUCCESS, API_SAVE_GROUP_ASSIGNMENT
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
     ALL_ROLES, ARCHIVE_QUIZ,
-    CHECK_ASSIGNMENT, DELETE_QUIZ, GET_ALL_ARCHIVED_QUIZZES,
+    CHECK_ASSIGNMENT, DELETE_QUIZ, GET_ALL_ARCHIVED_QUIZZES, GET_ALL_GROUPS,
     GET_ALL_QUIZZES, GET_ALL_STUDENT_ASSIGNMENTS,
     GET_ALL_TEACHER_ASSIGNMENTS, GET_ASSIGNMENT_REPORT, LOGIN,
-    QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT,
+    QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT, SAVE_ASSIGNMENT_TO_GROUP, SAVE_NEW_GROUP,
     SAVE_QUIZ, UNARCHIVE_QUIZ
 } from '../../config/api';
 import axios from "axios";
-import {goToFullAssignmentReport, refreshApp} from "../gui/guiActions";
+import React from "react";
+import { Redirect } from "react-router-dom";
+
 
 
 export const fetchQuestions = (dto) => {
@@ -218,6 +225,18 @@ export const saveAssignment = (dto) => {
     }
 };
 
+export const saveGroupAssignment = (dto) => {
+    return dispatch => {
+        axios.post(`${HOST}${SAVE_ASSIGNMENT_TO_GROUP}`, dto)
+            .then(response => {
+                dispatch({
+                    type: API_SAVE_GROUP_ASSIGNMENT,
+                    payload: response.data
+                })
+            })
+    }
+};
+
 export const fetchRoles = () => {
     return dispatch => {
         axios.get(`${HOST}${ALL_ROLES}`)
@@ -281,5 +300,46 @@ export const fetchAssignmentReport = (dto) => {
                 })
             });
         return Promise.resolve();
+    }
+};
+
+export const createNewGroup = (dto) => {
+    return dispatch => {
+         axios.post(`${HOST}${SAVE_NEW_GROUP}`, dto)
+            .then(response => {
+                dispatch({
+                    type: API_SAVE_GROUP,
+                    payload: response.data
+                });
+            })
+            .catch(err => {
+                // console.log('Error: ' + JSON.stringify(err, null, 1))
+                // console.log("Error response: " + JSON.stringify(err.response, null, 1));
+                // console.log("Error message: " + JSON.stringify(err.response.data.message, null, 8));
+
+                dispatch({
+                    type: API_SAVE_GROUP_ERROR,
+                    payload: err.response.data.message
+                })
+            });
+        return Promise.resolve();
+    }
+};
+
+export const fetchAllGroups = () => {
+    return dispatch => {
+        axios.get(`${HOST}${GET_ALL_GROUPS}`)
+            .then(response => {
+                dispatch({
+                    type: API_GET_ALL_GROUPS,
+                    payload: response.data
+                })
+            })
+    }
+};
+
+export const clearSuccesForRedirect = () => {
+    return {
+        type: API_CLEAR_SUCCESS,
     }
 };

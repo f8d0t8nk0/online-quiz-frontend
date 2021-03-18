@@ -1,4 +1,5 @@
 import {
+    GUI_CALL_ERROR_SNACKBAR,
     GUI_CHANGE_SELECTED_IDS, GUI_CLEAR_QUIZ_RADIO_OPTIONS,
     GUI_FIRST_SELECTED_IDS_DISPATCH, GUI_GO_TO_FULL_ASSIGNMENT_REPORT,
     GUI_READ_PARSE_QUESTIONS_FIELDS, GUI_REFRESH_APP,
@@ -18,6 +19,9 @@ const initialState = {
     },
     conductQuiz: {
         selectedOptions: []
+    },
+    errorStudentSnackbar: {
+        wasOnceCalled: false
     }
 };
 
@@ -96,6 +100,15 @@ const guiReducer = (state = initialState, action) => {
         case GUI_REFRESH_APP:
             window.location.reload(true);
             return state;
+
+        case GUI_CALL_ERROR_SNACKBAR:
+            return {
+                ...state,
+                errorStudentSnackbar: {
+                    ...state.errorStudentSnackbar,
+                    wasOnceCalled: !state.errorStudentSnackbar.wasOnceCalled
+                }
+            };
 
         default: return state;
     }

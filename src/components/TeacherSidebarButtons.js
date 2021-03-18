@@ -14,16 +14,16 @@ import Archive from "../pages/Archive";
 function TeacherSidebarButtons(props) {
     return (
         <div>
-            <Route exact path="/" ><Home/></Route>
-            <Route  path="/account" ><Account/></Route>
-            <Route  path="/students" ><Students/></Route>
-            <Route path="/quizzes" ><MyQuizzes/></Route>;
-            <Route  path="/assignments" ><Assignments/></Route>
-            <Route path="/uploadQuiz" ><UploadQuiz/></Route>;
-            <Route  path="/dashboard" ><Dashboard/></Route>
-            <Route  path="/archive" ><Archive/></Route>
-            <Route  path="/settings" ><Settings/></Route>
-            <Route  path="/logout" ><Logout /></Route>
+            <Route exact path="/"><Home/></Route>
+            <Route path="/account"><Account/></Route>
+            <Route path="/students"><Students/></Route>
+            <Route path="/quizzes"><MyQuizzes/></Route>
+            <Route path="/assignments"><Assignments/></Route>
+            <Route path="/uploadQuiz"><UploadQuiz/></Route>
+            <Route path="/dashboard"><Dashboard/></Route>
+            <Route path="/archive"><Archive/></Route>
+            <Route path="/settings"><Settings/></Route>
+            <Route path="/logout"><Logout/></Route>
         </div>
     );
 }

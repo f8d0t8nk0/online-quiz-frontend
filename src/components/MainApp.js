@@ -28,6 +28,8 @@ import {canShowQuizLink, isStudent, isTeacher} from "../redux/priviliges";
 import AssignmentReportMini from "./radio/AssignmentReportMini";
 import StudentSidebarButtons from "./StudentSidebarButtons";
 import TeacherSidebarButtons from "./TeacherSidebarButtons";
+import Groups from "../pages/Groups";
+import CreateGroup from "./CreateGroup";
 
 const drawerWidth = 240;
 
@@ -181,6 +183,9 @@ export default function MainApp() {
             </Switch>
             <Route path="/login" ><Login/></Route>
             <Route  path="/register" ><Register/></Route>
+            <Route exact path='/groups'><Groups/></Route>
+            <Route path='/groups/create'><CreateGroup/></Route>
+
 
         </div>
     );

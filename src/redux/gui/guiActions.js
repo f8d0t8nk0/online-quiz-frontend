@@ -1,4 +1,5 @@
 import {
+    GUI_CALL_ERROR_SNACKBAR,
     GUI_CHANGE_SELECTED_IDS, GUI_CLEAR_QUIZ_RADIO_OPTIONS,
     GUI_FIRST_SELECTED_IDS_DISPATCH, GUI_GO_TO_FULL_ASSIGNMENT_REPORT,
     GUI_READ_PARSE_QUESTIONS_FIELDS, GUI_REFRESH_APP,
@@ -48,5 +49,11 @@ export const clearQuizRadioOptions = () => {
 export const refreshApp = () => {
     return {
         type: GUI_REFRESH_APP
+    }
+};
+
+export const callStudentErrorSnackbar = () => {
+    return {
+        type: GUI_CALL_ERROR_SNACKBAR
     }
 };

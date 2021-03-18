@@ -3,6 +3,9 @@ import Typography from "@material-ui/core/Typography";
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
 import Avatar from '@material-ui/core/Avatar';
 import {makeStyles} from "@material-ui/core/styles";
+import GroupTable from "../components/group/GroupTable";
+import {GroupListData} from "../components/mockData/GroupListData";
+import GroupTables from "../components/group/GroupTables";
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
@@ -31,6 +34,8 @@ function Account(props) {
                     donec massa sapien faucibus et molestie ac.
                 </p>
 
+
+                <GroupTables groups={GroupListData}/>
             </Typography>
 
         </div>

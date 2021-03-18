@@ -55,7 +55,7 @@ function AssignmentCard({ assignment, setSelectedAssignment, nextStep, url }) {
 
     const handleClick = () => {
         setSelectedAssignment(assignment);
-        nextStep();
+        // nextStep();
         history.push(`${url}/${assignment.id}`);
     };
 

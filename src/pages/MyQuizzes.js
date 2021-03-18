@@ -14,7 +14,8 @@ function MyQuizzes(props) {
 
     const forceUpdate = () => {
         setValue(value + 1);
-    }
+    };
+
     const {url} = useRouteMatch();
 
     useEffect(() => {

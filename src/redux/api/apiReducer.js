@@ -1,22 +1,17 @@
 import {
     API_ARCHIVE_QUIZ,
     API_CHANGE_SELECTED_QUESTIONS,
-    API_CHECK_ASSIGNMENT,
+    API_CHECK_ASSIGNMENT, API_CLEAR_SUCCESS,
     API_CREATE_PARSED_QUESTIONS,
     // API_CREATE_QUESTIONS_FAILURE,
     // API_CREATE_QUESTIONS_REQUEST,
     API_CREATE_QUESTIONS_SUCCESS,
-    API_CREATE_QUIZ_SUCCESS, API_DELETE_QUIZ, API_GET_ALL_ARCHIVED_QUIZZES,
+    API_CREATE_QUIZ_SUCCESS, API_DELETE_QUIZ, API_GET_ALL_ARCHIVED_QUIZZES, API_GET_ALL_GROUPS,
     API_GET_ALL_QUIZZES,
     API_GET_ALL_ROLES, API_GET_ALL_STUDENT_ASSIGNMENTS,
     API_GET_ALL_TEACHER_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT, API_LOGIN, API_REGISTER,
-    API_SAVE_ASSIGNMENT, API_UNARCHIVE_QUIZ
+    API_SAVE_ASSIGNMENT, API_SAVE_GROUP, API_SAVE_GROUP_ASSIGNMENT, API_SAVE_GROUP_ERROR, API_UNARCHIVE_QUIZ
 } from "./apiTypes";
-import {act} from "@testing-library/react";
-
-// const initialState = {
-//     createdQuestions: []
-// };
 
 const initialState = {
     createQReq : {
@@ -52,6 +47,14 @@ const initialState = {
     },
     assignmentReport: {
         report: ''
+    },
+    saveGroup: {
+        group: '',
+        errorMsg: '',
+        success: false,
+    },
+    allGroups: {
+        groups: []
     }
 };
 
@@ -167,6 +170,8 @@ const apiReducer = (state = initialState, action) => {
             // console.log("In reducer API_SAVE_ASSIGNMENT: " + JSON.stringify(action.payload, null, 2));
             return state; // no need to save saved assignment id
 
+        case API_SAVE_GROUP_ASSIGNMENT:
+            return state;
 
         case API_GET_ALL_ROLES:
             return {
@@ -219,7 +224,6 @@ const apiReducer = (state = initialState, action) => {
             return state;
 
         case API_GET_ALL_ARCHIVED_QUIZZES:
-
             return {
                 ...state,
                 getArchivedQuizzes: {
@@ -230,6 +234,50 @@ const apiReducer = (state = initialState, action) => {
 
         case API_UNARCHIVE_QUIZ:
             return state;
+
+        case API_SAVE_GROUP:
+            console.log("API_SAVE_GROUP: " + JSON.stringify(action.payload, null, 1));
+            return {
+                ...state,
+                saveGroup: {
+                    ...state.saveGroup,
+                    group: action.payload,
+                    errorMsg: '',
+                    success: true
+                }
+            };
+
+        case API_SAVE_GROUP_ERROR:
+            console.log("In API_SAVE_GROUP_ERROR");
+            console.log("Payload: " + action.payload);
+            return {
+                ...state,
+                saveGroup: {
+                    ...state.saveGroup,
+                    errorMsg: action.payload
+                }
+            };
+
+        case API_GET_ALL_GROUPS:
+            console.log("API_GET_ALL_GROUPS: "  + action.payload);
+
+            return {
+                ...state,
+                allGroups: {
+                    ...state.allGroups,
+                    groups: action.payload
+                }
+            };
+
+        case API_CLEAR_SUCCESS:
+            return {
+                ...state,
+                saveGroup: {
+                    ...state.saveGroup,
+                    success: false
+                }
+            };
+
 
         default: return state;
     }
