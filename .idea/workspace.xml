@@ -11,25 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TeacherSidebarButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TeacherSidebarButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/MyAssignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/MyAssignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyQuizzes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyQuizzes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Students.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gui/guiTypes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +154,9 @@
       <workItem from="1615396250613" duration="53108000" />
       <workItem from="1615656288492" duration="1301000" />
       <workItem from="1615808674086" duration="18679000" />
-      <workItem from="1615909873050" duration="52280000" />
+      <workItem from="1615909873050" duration="54209000" />
+      <workItem from="1616172762945" duration="1128000" />
+      <workItem from="1616257256840" duration="541000" />
     </task>
     <servers />
   </component>
@@ -294,18 +278,18 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="77" width="807" height="574" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1615815855871" />
-    <state x="110" y="91" width="1067" height="637" key="new project wizard" timestamp="1614873400722">
+    <state x="110" y="91" width="1067" height="637" key="new project wizard" timestamp="1616257303386">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1614873400722" />
+    <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1616257303386" />
     <state x="201" y="67" width="875" height="663" key="recent.locations.popup" timestamp="1615828088432">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="201" y="67" width="875" height="663" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1615828088432" />
-    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup" timestamp="1615871995082">
+    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup" timestamp="1616101969395">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1615871995082" />
+    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1616101969395" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1615061986231" />
   </component>
   <component name="XDebuggerManager">
