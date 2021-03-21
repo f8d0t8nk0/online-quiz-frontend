@@ -55,7 +55,6 @@ function QuizCard({ quiz, url, forceUpdate }) {
 
     const [anchorEl, setAnchorEl] = useState(null);
 
-
     const handleClick = () => {
         history.push(`${url}/${quiz.id}`)
     };
@@ -87,11 +86,14 @@ function QuizCard({ quiz, url, forceUpdate }) {
         let quizDto = {
             name: quiz.name,
             questionsIds: quiz.questions.map(q => q.id)
-        }
+        };
 
         // create quiz with this data
         dispatch(createQuiz(quizDto))
-            .then(forceUpdate());
+            .then((pizda) => {
+                console.log("pizda: ",  pizda);
+                forceUpdate()
+            });
     };
 
     const handleEdit = (event) => {

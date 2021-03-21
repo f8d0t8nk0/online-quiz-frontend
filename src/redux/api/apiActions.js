@@ -53,12 +53,11 @@ export const fetchQuestions = (dto) => {
 
 export const createQuiz = (dto) => {
     return dispatch => {
-        axios.post(`${HOST}${SAVE_QUIZ}`, dto)
+        return axios.post(`${HOST}${SAVE_QUIZ}`, dto)
             .then(response => {
                 const data = response.data;
                 dispatch(createAssignmentSuccess(data))
-            })
-        return Promise.resolve();
+            });
     }
 };
 
@@ -162,13 +161,13 @@ export const fetchQuizzes = () => {
     return dispatch => {
         axios.get(`${HOST}${GET_ALL_QUIZZES}`)
             .then(response => {
-                // console.log("IN fetchQuizzes inside: " + JSON.stringify(response.data, null, 2));
+                console.log("IN fetchQuizzes inside: " + response.data.length);
                 let activeQuizzes = response.data.filter(quiz => quiz.status === 'ACTIVE');
                 dispatch({
                     type: API_GET_ALL_QUIZZES,
                     payload: activeQuizzes
                 })
-            })
+            });
         return Promise.resolve();
     }
 };

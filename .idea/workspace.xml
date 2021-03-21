@@ -13,6 +13,8 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +159,7 @@
       <workItem from="1615808674086" duration="18679000" />
       <workItem from="1615909873050" duration="54209000" />
       <workItem from="1616172762945" duration="1128000" />
-      <workItem from="1616257256840" duration="1721000" />
+      <workItem from="1616257256840" duration="4400000" />
     </task>
     <servers />
   </component>
