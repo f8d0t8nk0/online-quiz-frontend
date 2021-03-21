@@ -11,6 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +157,7 @@
       <workItem from="1615808674086" duration="18679000" />
       <workItem from="1615909873050" duration="54209000" />
       <workItem from="1616172762945" duration="1128000" />
-      <workItem from="1616257256840" duration="541000" />
+      <workItem from="1616257256840" duration="1721000" />
     </task>
     <servers />
   </component>
@@ -286,10 +287,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="201" y="67" width="875" height="663" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1615828088432" />
-    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup" timestamp="1616101969395">
+    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup" timestamp="1616260008128">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1616101969395" />
+    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1616260008128" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1615061986231" />
   </component>
   <component name="XDebuggerManager">
