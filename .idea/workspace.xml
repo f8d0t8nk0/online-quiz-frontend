@@ -13,8 +13,13 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuizCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Students.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +58,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/@material-ui/core/styles/transitions.d.ts" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../redux-problem/use-select-problem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Grids/playground" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
@@ -159,7 +165,8 @@
       <workItem from="1615808674086" duration="18679000" />
       <workItem from="1615909873050" duration="54209000" />
       <workItem from="1616172762945" duration="1128000" />
-      <workItem from="1616257256840" duration="4400000" />
+      <workItem from="1616257256840" duration="12742000" />
+      <workItem from="1616507970919" duration="7269000" />
     </task>
     <servers />
   </component>
@@ -196,10 +203,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="315" y="195" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1615570921838" />
-    <state x="381" y="101" key="FileChooserDialogImpl" timestamp="1615397604401">
+    <state x="381" y="101" key="FileChooserDialogImpl" timestamp="1616411200692">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="381" y="101" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1615397604401" />
+    <state x="381" y="101" key="FileChooserDialogImpl/0.0.1280.800@0.0.1280.800" timestamp="1616411200692" />
     <state width="1228" height="309" key="GridCell.Tab.0.bottom" timestamp="1614810161018">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -281,10 +288,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="240" y="77" width="807" height="574" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1615815855871" />
-    <state x="110" y="91" width="1067" height="637" key="new project wizard" timestamp="1616257303386">
+    <state x="110" y="91" width="1067" height="637" key="new project wizard" timestamp="1616406767755">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1616257303386" />
+    <state x="110" y="91" width="1067" height="637" key="new project wizard/0.0.1280.800@0.0.1280.800" timestamp="1616406767755" />
     <state x="201" y="67" width="875" height="663" key="recent.locations.popup" timestamp="1615828088432">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

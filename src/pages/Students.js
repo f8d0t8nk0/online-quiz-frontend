@@ -12,16 +12,36 @@ import { Link, Route, useRouteMatch, useHistory } from "react-router-dom";
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Groups from "./Groups";
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import styled from "@material-ui/core/styles/styled";
+import {myHoverShadow, myShadow, myShadows} from "../redux/globalStyleConst";
 
 
 const useStyles = makeStyles((theme) => ({
-    headerText: {
-        // textAlign: "center",
-        // align: 'center'
+    // headerText: {
+    //     // textAlign: "center",
+    //     // align: 'center'
+    // },
+    root : {
+        // width: "100%",
+        // padding: theme.spacing(2),
+        // flexGrow: 1,
     },
     linkButton: {
         textDecoration: 'none',
-    }
+    },
+    grid : {
+        // flexGrow: 1,
+        width: "100%",
+        margin: '0px'
+    },
+    paper : {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        backgroundColor: '#eae9e9',
+    },
+    shadows: myShadows
 }));
 
 function Students(props) {
@@ -31,15 +51,25 @@ function Students(props) {
     const {url} = useRouteMatch();
 
     return (
-        <div className={classes.headerText}>
-            <h1 >Students</h1>
-
-            <Link className={classes.linkButton} to='/groups'>
-                <Button variant="contained">Groups</Button>
-            </Link>
-
-
-
+        <div className={classes.root}>
+             <Grid container className={classes.root}  spacing={2} >
+                 <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
+                         <Paper
+                             className={`${classes.paper} ${classes.shadows}`}
+                             elevation={3}>
+                             Students
+                         </Paper>
+                 </Grid>
+                 <Grid item xs={12} sm={6} md={6} lg={3} xl={3}>
+                     <Link className={classes.linkButton} to='/groups'>
+                         <Paper
+                             className={`${classes.paper} ${classes.shadows}`}
+                             elevation={3}>
+                             Groups
+                         </Paper>
+                     </Link>
+                 </Grid>
+             </Grid>
         </div>
     );
 }

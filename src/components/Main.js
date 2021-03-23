@@ -1,23 +1,24 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import clsx from "clsx";
+import {drawerDurationSec} from "../redux/globalStyleConst";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        flexGrow: 1,
+        // flexGrow: 0,
         padding: theme.spacing(3),
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
+            duration: drawerDurationSec,
         }),
-        marginLeft: -drawerWidth,
+        // marginLeft: -drawerWidth, // if enabled content adjusts the size when drawer opens
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
             easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
+            duration: drawerDurationSec,
         }),
         marginLeft: 0,
     },

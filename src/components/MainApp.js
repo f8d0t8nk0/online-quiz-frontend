@@ -30,17 +30,18 @@ import StudentSidebarButtons from "./StudentSidebarButtons";
 import TeacherSidebarButtons from "./TeacherSidebarButtons";
 import Groups from "../pages/Groups";
 import CreateGroup from "./CreateGroup";
+import {drawerDurationSec} from "../redux/globalStyleConst";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        display: 'flex',
+        display: 'block', // it was flex before
     },
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
+            // easing: theme.transitions.easing.sharp,
+            duration: drawerDurationSec,
         }),
         color: '#c0caca',
         backgroundColor: '#212121',
@@ -49,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
         transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
+            // easing: theme.transitions.easing.easeOut,
+            duration: drawerDurationSec,
         }),
     },
     menuButton: {
@@ -82,15 +83,15 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         padding: theme.spacing(3),
         transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
+            // easing: theme.transitions.easing.sharp,
+            duration: drawerDurationSec,
         }),
         marginLeft: -drawerWidth,
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
+            // easing: theme.transitions.easing.easeOut,
+            duration: drawerDurationSec,
         }),
         marginLeft: 0,
     },
@@ -117,14 +118,6 @@ export default function MainApp() {
             return loginDTO.username;
         }
     });
-
-    let quizRoute = "";
-    let uploadQuizRoute ="";
-
-    // if (canShowQuizLink) {
-    //     quizRoute = <Route path="/quizzes" ><MyQuizzes/></Route>;
-    //     uploadQuizRoute = <Route path="/uploadQuiz" ><UploadQuiz/></Route>;
-    // }
 
     const handleDrawerOpen = () => {
         setOpen(true);

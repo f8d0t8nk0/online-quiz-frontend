@@ -18,6 +18,7 @@ import ArchiveIcon from '@material-ui/icons/Archive';
 import Drawer from "@material-ui/core/Drawer";
 import { withRouter } from "react-router-dom";
 import {isStudent} from "../redux/priviliges";
+import {drawerDurationMs} from "../redux/globalStyleConst";
 
 const drawerWidth = 240;
 
@@ -132,36 +133,39 @@ function Sidebar({ open, handleDrawerOpen, handleDrawerClose, history }) {
 
 
     return (
-        <div>
-            <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="left"
-                open={open}
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-            >
-                <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
-                        <ChevronLeftIcon />
-                    </IconButton>
-                </div>
+            <div>
+                <Drawer
+                    className={classes.drawer}
+                    variant="temporary"
+                    anchor="left"
+                    open={open}
+                    onBackdropClick={handleDrawerClose}
+                    transitionDuration={drawerDurationMs}
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}
+                >
+                    <div className={classes.drawerHeader}>
+                        <IconButton onClick={handleDrawerClose}>
+                            <ChevronLeftIcon />
+                        </IconButton>
+                    </div>
 
-                <List>
-                    {itemList.map((item, index) => {
-                        const { text, icon, onClick } = item;
-                        return (
-                            <ListItem button key={index} className="listItem" onClick={onClick}>
-                                {icon && <ListItemIcon>{icon}</ListItemIcon>}
-                                <ListItemText primary={text} />
-                            </ListItem>
-                        );
-                    })}
-                </List>
+                    <List>
+                        {itemList.map((item, index) => {
+                            const { text, icon, onClick } = item;
+                            return (
+                                <ListItem button key={index} className="listItem" onClick={onClick}>
+                                    {icon && <ListItemIcon>{icon}</ListItemIcon>}
+                                    <ListItemText primary={text} />
+                                </ListItem>
+                            );
+                        })}
+                    </List>
 
-            </Drawer>
-        </div>
+                </Drawer>
+            </div>
+
     );
 }
 
