@@ -13,13 +13,8 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/MyAssignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/MyAssignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mockData/AssignmentsData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mockData/AssignmentsData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/AssignmentReportFull.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/AssignmentReportFull.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/radio/AssignmentReportMini.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/AssignmentReportMini.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/radio/RunningQuizPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/RunningQuizPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Account.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +161,7 @@
       <workItem from="1615909873050" duration="54209000" />
       <workItem from="1616172762945" duration="1128000" />
       <workItem from="1616257256840" duration="12742000" />
-      <workItem from="1616507970919" duration="31116000" />
+      <workItem from="1616507970919" duration="32765000" />
     </task>
     <servers />
   </component>

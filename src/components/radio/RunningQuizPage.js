@@ -3,13 +3,15 @@ import { useHistory, useParams, useRouteMatch, Redirect } from "react-router-dom
 import CoreQuestions from "./CoreQuestions";
 import {makeStyles} from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import Grid from '@material-ui/core/Grid';
 import {useDispatch, useSelector} from "react-redux";
 import {clearQuizRadioOptions} from "../../redux/gui/guiActions";
 import {checkAssignment} from "../../redux/api/apiActions";
 
 const useStyles = makeStyles({
     headerText: {
-        textAlign: "center"
+        textAlign: "center",
+        margin: "10px",
     },
     saveButton: {
         margin: "10px",
@@ -51,15 +53,32 @@ function RunningQuizPage({ assignments, nextStep }) {
 
     return (
         <div>
-            <h1 className={classes.headerText}>{assignment.quizFullDto.name}</h1>
-            <CoreQuestions questions={assignment.quizFullDto.questions}/>
+            <Grid
+                container
+                direction="column"
+                justify="center"
+                alignItems="center"
+            >
+                <Grid container item
+                      xs={12} sm={12} md={9} lg={7} xl={4}
+                      alignItems="center">
+                    <h1 className={classes.headerText}>{assignment.quizFullDto.name}</h1>
+                </Grid>
+                <Grid container item>
+                    <CoreQuestions questions={assignment.quizFullDto.questions}/>
+                </Grid>
+                <Grid container item
+                      xs={12} sm={12} md={9} lg={7} xl={4}
+                      alignItems="center">
+                    <Button
+                        onClick={() => handleSave()}
+                        className={classes.saveButton}
+                        variant="contained"
+                        color="primary"
+                    >Submit</Button>
+                </Grid>
+            </Grid>
 
-            <Button
-                onClick={() => handleSave()}
-                className={classes.saveButton}
-                variant="contained"
-                color="primary"
-            >Submit</Button>
         </div>
     );
 }

@@ -134,7 +134,7 @@ export default function MainApp() {
             <div>
                 <CssBaseline />
                 <AppBar
-                    position="fixed"
+                    position="static"
                     className={clsx(classes.appBar, {
                         [classes.appBarShift]: open,
                     })}
