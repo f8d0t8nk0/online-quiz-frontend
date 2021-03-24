@@ -27,7 +27,7 @@ function Logout(props) {
                 </p>
             </Typography>
 
-            <AssignmentReportFull report={mockDataAssignReportFull} />
+            {/*<AssignmentReportFull report={mockDataAssignReportFull} />*/}
 
 
         </div>

@@ -1,5 +1,7 @@
+import { v4 } from 'node-uuid';
+
 export const mockDataAssignReportFull = {
-    "id": 1,
+    "id": v4(),
     "assignmentId": 1,
     "name": "Qeography",
     "student": {
