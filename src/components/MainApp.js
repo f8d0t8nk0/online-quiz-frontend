@@ -79,26 +79,26 @@ const useStyles = makeStyles((theme) => ({
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
     },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        transition: theme.transitions.create('margin', {
-            // easing: theme.transitions.easing.sharp,
-            duration: drawerDurationSec,
-        }),
-        marginLeft: -drawerWidth,
-    },
-    contentShift: {
-        transition: theme.transitions.create('margin', {
-            // easing: theme.transitions.easing.easeOut,
-            duration: drawerDurationSec,
-        }),
-        marginLeft: 0,
-    },
-    contentHeader: {
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-    },
+    // content: {
+    //     // flexGrow: 1,
+    //     padding: theme.spacing(3),
+    //     transition: theme.transitions.create('margin', {
+    //         // easing: theme.transitions.easing.sharp,
+    //         duration: drawerDurationSec,
+    //     }),
+    //     marginLeft: -drawerWidth,
+    // },
+    // contentShift: {
+    //     transition: theme.transitions.create('margin', {
+    //         // easing: theme.transitions.easing.easeOut,
+    //         duration: drawerDurationSec,
+    //     }),
+    //     marginLeft: 0,
+    // },
+    // contentHeader: {
+    //     // necessary for content to be below app bar
+    //     ...theme.mixins.toolbar,
+    // },
     linkHome: {
         textDecoration: 'none',
         color: '#c0caca',

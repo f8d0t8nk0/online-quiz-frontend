@@ -2,6 +2,8 @@ import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import {AssignmentsData} from "../components/mockData/AssignmentsData";
 import AssignmentCards from "../components/assignment/AssignmentCards";
+import QuestionQuizCard from "../components/quiz/QuestionQuizCard";
+import {QuestionsData} from "../components/mockData/QuestionsData";
 
 function Dashboard(props) {
     return (
@@ -23,6 +25,7 @@ function Dashboard(props) {
 
 
                 {/*<AssignmentCards assignments={AssignmentsData} />*/}
+                <QuestionQuizCard quiz={QuestionsData[0]}/>
 
             </Typography>
         </div>

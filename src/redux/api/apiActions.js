@@ -41,13 +41,12 @@ export const fetchQuestions = (dto) => {
     return (dispatch) => {
         // dispatch(fetchQuestionsRequest());
 
-        axios.post(`${HOST}${QUESTIONS_CREATE}`, dto)
+        return axios.post(`${HOST}${QUESTIONS_CREATE}`, dto)
             .then(response => {
                 const data = response.data;
                 console.log("Action data: " + JSON.stringify(data, null, 1));
                 dispatch(fetchQuestionsSuccess(data));
             });
-        return Promise.resolve();
     }
 };
 
@@ -63,7 +62,7 @@ export const createQuiz = (dto) => {
 
 export const deleteQuiz = (quizId) => {
     return dispatch => {
-        axios.delete(`${HOST}${DELETE_QUIZ}/${quizId}`)
+        return axios.delete(`${HOST}${DELETE_QUIZ}/${quizId}`)
             .then(response => {
                 console.log("Deleted response: " + JSON.stringify(response.data, null, 1))
             })
@@ -73,7 +72,6 @@ export const deleteQuiz = (quizId) => {
                     payload: quizId
                 })
             })
-        return Promise.resolve();
     }
 };
 
@@ -145,7 +143,7 @@ export const fetchStudentAssignments = () => {
 export const checkAssignment = (dto, history, url) => {
     // console.log("IN checkAssignment"); // todo dl
     return async dispatch => {
-        await axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
+        return await axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
             .then(response => {
                 // console.log("IN checkAssignment inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({
@@ -153,13 +151,12 @@ export const checkAssignment = (dto, history, url) => {
                     payload: response.data
                 })
             });
-        return Promise.resolve();
     }
 };
 
 export const fetchQuizzes = () => {
     return dispatch => {
-        axios.get(`${HOST}${GET_ALL_QUIZZES}`)
+        return axios.get(`${HOST}${GET_ALL_QUIZZES}`)
             .then(response => {
                 console.log("IN fetchQuizzes inside: " + response.data.length);
                 let activeQuizzes = response.data.filter(quiz => quiz.status === 'ACTIVE');
@@ -168,33 +165,30 @@ export const fetchQuizzes = () => {
                     payload: activeQuizzes
                 })
             });
-        return Promise.resolve();
     }
 };
 
 export const archiveQuiz = (quizId) => {
     return dispatch => {
-        axios.patch(`${HOST}${ARCHIVE_QUIZ}/${quizId}`)
+        return axios.patch(`${HOST}${ARCHIVE_QUIZ}/${quizId}`)
             .then(response => {
                 dispatch({
                     type: API_ARCHIVE_QUIZ
                 })
             })
             .then(dispatch(fetchQuizzes()));
-        return Promise.resolve();
     }
 };
 
 export const unarchiveQuiz = (quizId) => {
     return dispatch => {
-        axios.patch(`${HOST}${UNARCHIVE_QUIZ}/${quizId}`)
+        return axios.patch(`${HOST}${UNARCHIVE_QUIZ}/${quizId}`)
             .then(response => {
                 dispatch({
                     type: API_UNARCHIVE_QUIZ
                 })
             })
             .then(dispatch(fetchQuizzes()));
-        return Promise.resolve();
     }
 };
 
@@ -208,7 +202,7 @@ export const fetchArchivedQuizzes = () => {
                 })
             })
     }
-}
+};
 
 export const saveAssignment = (dto) => {
     // console.log("IN saveAssignment"); // todo dl
@@ -264,7 +258,7 @@ export const registerNewUser = dto => {
 
 export const login = dto => {
     return async (dispatch) => {
-        await axios.post(`${HOST}${LOGIN}`, dto)
+        return await axios.post(`${HOST}${LOGIN}`, dto)
             .then(response => {
 
                 let loginDTO = response.data.loginDTO;
@@ -285,26 +279,24 @@ export const login = dto => {
             .catch(err => {
             console.log(err);
         });
-        return Promise.resolve();
     }
 };
 
 export const fetchAssignmentReport = (dto) => {
     return async dispatch => {
-        await axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
+        return await axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
             .then(response => {
                 dispatch({
                     type: API_GET_ASSIGNMENT_REPORT,
                     payload: response.data
                 })
             });
-        return Promise.resolve();
     }
 };
 
 export const createNewGroup = (dto) => {
     return dispatch => {
-         axios.post(`${HOST}${SAVE_NEW_GROUP}`, dto)
+         return axios.post(`${HOST}${SAVE_NEW_GROUP}`, dto)
             .then(response => {
                 dispatch({
                     type: API_SAVE_GROUP,
@@ -321,7 +313,6 @@ export const createNewGroup = (dto) => {
                     payload: err.response.data.message
                 })
             });
-        return Promise.resolve();
     }
 };
 

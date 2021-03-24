@@ -17,7 +17,8 @@ const useStyles = makeStyles({
         maxWidth: 275,
         // width: "300",
         boxShadow: myShadow,
-        margin: "0 0 0 0",
+        margin: '8px',
+        // margin: "0 0 0 0",
         '&:hover': {
             boxShadow: myHoverShadow
         }

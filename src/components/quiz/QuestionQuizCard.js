@@ -4,19 +4,21 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import {myHoverShadow, myShadow } from "../../redux/globalStyleConst";
 
 const fadeOutTime = 500;
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 550,
-        maxWidth: 550,
+        // minWidth: 550,
+        // maxWidth: 550,
         display : "flex",
         flexDirection: "column",
-        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        boxShadow: myShadow,
         margin: "10px",
         '&:hover': {
-            boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
+            boxShadow: myHoverShadow,
         }
     },
     hideCard: {
@@ -54,28 +56,33 @@ function QuestionQuizCard({ quiz, ordinal }) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
-            <CardContent>
-                <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
-                    {ordinal}
-                </Typography>
-                <Typography component={'div'}  className={classes.pos} color="textPrimary">
-                    {quiz.question}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
-                    {"A) " + quiz.a}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
-                    {"B) " + quiz.b}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
-                    {"C) " + quiz.c}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
-                    {"D) " + quiz.d}
-                </Typography>
-            </CardContent>
-        </Card>
+        <Grid container>
+            <Grid item xs={12} sm={12} md={9} lg={6} xl={4}>
+                <Card className={classes.root}>
+                    <CardContent>
+                        <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
+                            {ordinal}
+                        </Typography>
+                        <Typography component={'div'}  className={classes.pos} color="textPrimary">
+                            {quiz.question}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
+                            {"A) " + quiz.a}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
+                            {"B) " + quiz.b}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
+                            {"C) " + quiz.c}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
+                            {"D) " + quiz.d}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Grid>
+        </Grid>
+
     );
 
 }

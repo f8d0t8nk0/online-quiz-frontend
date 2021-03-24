@@ -13,13 +13,13 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/question/ParseQuestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/QuestionQuizCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/quiz/WholeQuiz.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/web.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Students.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Students.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Grids/playground" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -166,7 +166,7 @@
       <workItem from="1615909873050" duration="54209000" />
       <workItem from="1616172762945" duration="1128000" />
       <workItem from="1616257256840" duration="12742000" />
-      <workItem from="1616507970919" duration="7269000" />
+      <workItem from="1616507970919" duration="22893000" />
     </task>
     <servers />
   </component>
@@ -267,10 +267,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="284" y="56" key="MultipleFileMergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1615636669835" />
-    <state x="66" y="0" key="SettingsEditor" timestamp="1614766871150">
+    <state x="66" y="0" key="SettingsEditor" timestamp="1616578545854">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="66" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1614766871150" />
+    <state x="66" y="0" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1616578545854" />
     <state x="35" y="23" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1614762760174" />
     <state x="8" y="8" width="1264" height="784" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1613647847163">
       <screen x="0" y="0" width="1280" height="800" />
@@ -296,10 +296,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="201" y="67" width="875" height="663" key="recent.locations.popup/0.0.1280.800@0.0.1280.800" timestamp="1615828088432" />
-    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup" timestamp="1616260008128">
+    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup" timestamp="1616590689434">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1616260008128" />
+    <state x="305" y="124" width="838" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1616590689434" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1615061986231" />
   </component>
   <component name="XDebuggerManager">
