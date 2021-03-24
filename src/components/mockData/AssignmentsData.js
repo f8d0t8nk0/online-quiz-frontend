@@ -1,6 +1,8 @@
+import { v4 } from 'node-uuid';
+
 export const AssignmentsData = [
     {
-        "id": 1,
+        "id": v4(),
         "name": "Grammar Practice",
         "quizFullDto": {
             "id": 1,
@@ -72,7 +74,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 2,
+        "id": v4(),
         "name": "Shit Practice",
         "quizFullDto": {
             "id": 2,
@@ -134,7 +136,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 3,
+        "id": v4(),
         "name": "Fuck Practice",
         "quizFullDto": {
             "id": 2,
@@ -196,7 +198,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 4,
+        "id": v4(),
         "name": "Jerk Practice",
         "quizFullDto": {
             "id": 2,
@@ -258,7 +260,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 5,
+        "id": v4(),
         "name": "Grammar Practice",
         "quizFullDto": {
             "id": 2,
@@ -320,7 +322,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 6,
+        "id": v4(),
         "name": "Grammar Practice",
         "quizFullDto": {
             "id": 2,
@@ -382,7 +384,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 7,
+        "id": v4(),
         "name": "Grammar Practice",
         "quizFullDto": {
             "id": 2,
@@ -444,7 +446,7 @@ export const AssignmentsData = [
         }
     },
     {
-        "id": 8,
+        "id": v4(),
         "name": "Grammar Practice",
         "quizFullDto": {
             "id": 2,

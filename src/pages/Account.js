@@ -37,8 +37,6 @@ function Account(props) {
 
                 <p>
 
-
-
                     <br/>
                     1. Red Square is in ...
 
@@ -113,7 +111,6 @@ function Account(props) {
                     <br/>
                     <br/>
                     1-b 2-d 3-c 4-d 5-a
-
 
 
                 </p>

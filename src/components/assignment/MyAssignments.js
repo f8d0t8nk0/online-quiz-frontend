@@ -15,6 +15,8 @@ function MyAssignments(props) {
     const [step, setStep] = useState(1);
     const [selectedAssignment, setSelectedAssignment] = useState();
     const [assignments, setAssignments] = useState();
+    const[selectedReport, setSelectedReport] = useState('');
+
 
     const dispatch = useDispatch();
 
@@ -46,13 +48,13 @@ function MyAssignments(props) {
             </Route>
             <Route exact path={`${url}/:assignmentId/report`}>
                 <MyGridContainer>
-                    <AssignmentReportMini />
+                    <AssignmentReportMini setSelectedReport={setSelectedReport} />
                 </MyGridContainer>
                 {/*<AssignmentReportMini />*/}
             </Route>
             <Route path={`${url}/:assignmentId/report/full`}>
                 <MyGridContainer>
-                    <AssignmentReportFull />
+                    <AssignmentReportFull selectedReport={selectedReport} />
                 </MyGridContainer>
             </Route>
         </div>

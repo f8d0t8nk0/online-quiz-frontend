@@ -43,7 +43,7 @@ function RunningQuizPage({ assignments, nextStep }) {
         // history.push(`${match.url}/report`)
         dispatch(clearQuizRadioOptions());
         let theUrl = `${match.url}/report`;
-        let newVar = ()=> <Redirect to={theUrl} />;
+        let newVar = () => <Redirect to={theUrl} />;
         newVar()
         console.log("Cleared!!!");
         // nextStep();

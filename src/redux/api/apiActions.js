@@ -283,8 +283,8 @@ export const login = dto => {
 };
 
 export const fetchAssignmentReport = (dto) => {
-    return async dispatch => {
-        return await axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
+    return dispatch => {
+        return axios.get(`${HOST}${GET_ASSIGNMENT_REPORT}${dto}`)
             .then(response => {
                 dispatch({
                     type: API_GET_ASSIGNMENT_REPORT,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Button from "@material-ui/core/Button";
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     },
 });
 
-function AssignmentReportMini() {
+function AssignmentReportMini({ setSelectedReport }) {
 
     const dispatch = useDispatch();
     const report = useSelector(state => state.api.checkAssignment.report);
@@ -44,11 +44,12 @@ function AssignmentReportMini() {
     const history = useHistory();
     const { url } = useRouteMatch();
 
-
     const classes = useStyles();
     const handleClick = () => {
-        dispatch(fetchAssignmentReport(report.id))
-            .then(history.push(`${url}/full`));
+        setSelectedReport(report.id);
+        history.push(`${url}/full`)
+        // dispatch(fetchAssignmentReport(report.id))
+        //     .then(history.push(`${url}/full`));
         console.log("Clicked!!!");
         // setTimeout(nextStep(), 1500);
     };
