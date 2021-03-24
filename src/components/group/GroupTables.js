@@ -5,9 +5,7 @@ import GroupTable from "./GroupTable";
 const useStyles = makeStyles({
     root: {
         display : "flex",
-        // flexFlow: "row wrap",
         flexDirection: "column",
-        // flexWrap: "wrap",
         justifyContent: "flex-start",
     },
 });

@@ -6,16 +6,14 @@ import Card from "@material-ui/core/Card";
 import {makeStyles} from "@material-ui/core/styles";
 import QuestionsStats from "../stats/QuestionsStats";
 import {useSelector} from "react-redux";
+import {myHoverShadow, myShadow} from "../../redux/globalStyleConst";
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 550,
-        maxWidth: 550,
-        // width: "300",
-        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        boxShadow: myShadow,
         margin: "10px",
         '&:hover': {
-            boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
+            boxShadow: myHoverShadow,
         }
     },
     innerButton: {
@@ -33,7 +31,7 @@ const useStyles = makeStyles({
     },
 });
 
-function AssignmentReportFull({ }) {
+function AssignmentReportFull() {
     const classes = useStyles();
 
 

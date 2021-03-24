@@ -6,6 +6,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import GroupTable from "../components/group/GroupTable";
 import {GroupListData} from "../components/mockData/GroupListData";
 import GroupTables from "../components/group/GroupTables";
+import MyGridContainer from "../components/MyGridContainer";
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
@@ -34,8 +35,92 @@ function Account(props) {
                     donec massa sapien faucibus et molestie ac.
                 </p>
 
+                <p>
 
-                <GroupTables groups={GroupListData}/>
+
+
+                    <br/>
+                    1. Red Square is in ...
+
+                    <br/>
+                    a) Paris
+                    <br/>
+                    b) Moscow
+                    <br/>
+                    c) Roma
+                    <br/>
+                    d) Berlin
+                    <br/>
+                    <br/>
+
+                    2. Berlin is a capital of ...
+
+                    <br/>
+                    <br/>
+                    a) Russia
+                    <br/>
+                    b) France
+                    <br/>
+                    c) Italy
+                    <br/>
+                    d) Germany
+                    <br/>
+
+                    <br/>
+                    <br/>
+                    3. The longest river in the world.
+
+                    <br/>
+                    <br/>
+                    a) Thames
+                    <br/>
+                    b) Amazon
+                    <br/>
+                    c) Nile
+                    <br/>
+                    d) Mississipi
+                    <br/>
+
+                    <br/>
+                    <br/>
+                    4. The smallest continent in the world.
+
+                    <br/>
+                    a) Africa
+                    <br/>
+                    b) Asia
+                    <br/>
+                    c) North America
+                    <br/>
+                    d) Australia
+                    <br/>
+
+                    <br/>
+                    <br/>
+                    5. The highest lake is the world.
+
+                    <br/>
+                    a) Titicaca
+                    <br/>
+                    b) Victoria
+                    <br/>
+                    c) Baikal
+                    <br/>
+                    d) Dead Sea
+                    <br/>
+
+
+                    <br/>
+                    <br/>
+                    1-b 2-d 3-c 4-d 5-a
+
+
+
+                </p>
+
+                <MyGridContainer>
+                    <GroupTables groups={GroupListData}/>
+                </MyGridContainer>
             </Typography>
 
         </div>

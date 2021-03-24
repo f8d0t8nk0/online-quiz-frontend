@@ -59,9 +59,10 @@ function CreateQuiz({ nextStep, questions, selectedQIds }) {
         quizDto.questionsIds = selectedQIds;
 
         dispatch(createQuiz(quizDto));
-        dispatch(fetchQuizzes());
-        setProgressClass(classes.showProgress);
-        setTimeout(() => history.push("/quizzes"), 1500);
+        dispatch(fetchQuizzes())
+            .then(history.push("/quizzes"));
+        // setProgressClass(classes.showProgress);
+        // setTimeout(() => history.push("/quizzes"), 1500);
     };
 
 

@@ -6,17 +6,16 @@ import Typography from "@material-ui/core/Typography";
 import clsx from "clsx";
 import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
+import {myHoverShadow, myShadow} from "../../redux/globalStyleConst";
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 550,
-        maxWidth: 550,
         display : "flex",
         flexDirection: "column",
-        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        boxShadow: myShadow,
         margin: "10px",
         '&:hover': {
-            boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
+            boxShadow: myHoverShadow,
         }
     },
     hideCard: {

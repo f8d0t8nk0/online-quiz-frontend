@@ -42,36 +42,31 @@ function GroupTable({ group }) {
     const classes = useStyles();
 
     return (
-        <Grid container>
-            <Grid item xs={12} sm={12} md={9} lg={6} xl={4}>
-                <div className={classes.table}>
-                    <div className={classes.title}>
-                        <p>{group.name}</p>
-                    </div>
-                    <TableContainer component={Paper}>
-                        <Table size="medium" aria-label="a dense table">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell className={classes.tableRow}>Name</TableCell>
-                                    <TableCell className={classes.tableRow} align="left">Email</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {group.students.map(student => (
-                                    <TableRow key={student.id}>
-                                        <TableCell className={classes.tableRow} component="th" scope="student">
-                                            {student.name}
-                                        </TableCell>
-                                        <TableCell className={classes.tableRow} align="left">{student.email}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </div>
-            </Grid>
-        </Grid>
-
+        <div className={classes.table}>
+            <div className={classes.title}>
+                <p>{group.name}</p>
+            </div>
+            <TableContainer component={Paper}>
+                <Table size="medium" aria-label="a dense table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell className={classes.tableRow}>Name</TableCell>
+                            <TableCell className={classes.tableRow} align="left">Email</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {group.students.map(student => (
+                            <TableRow key={student.id}>
+                                <TableCell className={classes.tableRow} component="th" scope="student">
+                                    {student.name}
+                                </TableCell>
+                                <TableCell className={classes.tableRow} align="left">{student.email}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div>
     );
 }
 

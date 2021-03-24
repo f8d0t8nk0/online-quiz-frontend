@@ -6,6 +6,7 @@ import AssignmentCards from "./AssignmentCards";
 import RunningQuizPage from "../radio/RunningQuizPage";
 import AssignmentReportMini from "../radio/AssignmentReportMini";
 import AssignmentReportFull from "../radio/AssignmentReportFull";
+import MyGridContainer from "../MyGridContainer";
 
 function MyAssignments(props) {
 
@@ -44,10 +45,15 @@ function MyAssignments(props) {
                 />;
             </Route>
             <Route exact path={`${url}/:assignmentId/report`}>
-                <AssignmentReportMini />
+                <MyGridContainer>
+                    <AssignmentReportMini />
+                </MyGridContainer>
+                {/*<AssignmentReportMini />*/}
             </Route>
             <Route path={`${url}/:assignmentId/report/full`}>
-                <AssignmentReportFull />
+                <MyGridContainer>
+                    <AssignmentReportFull />
+                </MyGridContainer>
             </Route>
         </div>
     );

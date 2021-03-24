@@ -7,17 +7,18 @@ import Typography from "@material-ui/core/Typography";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAssignmentReport} from "../../redux/api/apiActions";
 import { useHistory, useParams, useRouteMatch, Redirect } from "react-router-dom";
+import {myHoverShadow, myShadow} from "../../redux/globalStyleConst";
 
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 400,
-        maxWidth: 400,
+        // minWidth: 400,
+        // maxWidth: 400,
         // width: "300",
-        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        boxShadow: myShadow,
         margin: "10px",
         '&:hover': {
-            boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
+            boxShadow: myHoverShadow,
         }
     },
     innerButton: {
@@ -35,7 +36,7 @@ const useStyles = makeStyles({
     },
 });
 
-function AssignmentReportMini({ nextStep }) {
+function AssignmentReportMini() {
 
     const dispatch = useDispatch();
     const report = useSelector(state => state.api.checkAssignment.report);
