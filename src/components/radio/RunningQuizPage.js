@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import Grid from '@material-ui/core/Grid';
 import {useDispatch, useSelector} from "react-redux";
 import {clearQuizRadioOptions} from "../../redux/gui/guiActions";
-import {checkAssignment} from "../../redux/api/apiActions";
+import {checkAssignment, getUncompletedAssNum} from "../../redux/api/apiActions";
 
 const useStyles = makeStyles({
     headerText: {
@@ -32,7 +32,7 @@ function RunningQuizPage({ assignments, nextStep }) {
     const match = useRouteMatch();
 
 
-    const handleSave = () => {
+    const handleSubmit = () => {
         console.log("Results: " + JSON.stringify(results, null, 1));
 
         let submitAssignmentDTO = {
@@ -41,9 +41,12 @@ function RunningQuizPage({ assignments, nextStep }) {
             selections: results
         };
         dispatch(checkAssignment(submitAssignmentDTO, history, match.url))
+            .then(dispatch(getUncompletedAssNum()))
+            .then(dispatch(clearQuizRadioOptions()))
             .then(history.push(`${match.url}/report`));
         // history.push(`${match.url}/report`)
-        dispatch(clearQuizRadioOptions());
+        // dispatch(clearQuizRadioOptions());
+        // dispatch(getUncompletedAssNum());
         let theUrl = `${match.url}/report`;
         let newVar = () => <Redirect to={theUrl} />;
         newVar()
@@ -71,7 +74,7 @@ function RunningQuizPage({ assignments, nextStep }) {
                       xs={12} sm={12} md={9} lg={7} xl={4}
                       alignItems="center">
                     <Button
-                        onClick={() => handleSave()}
+                        onClick={() => handleSubmit()}
                         className={classes.saveButton}
                         variant="contained"
                         color="primary"

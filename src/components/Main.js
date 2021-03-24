@@ -38,11 +38,10 @@ function Main({ open,  children}) {
                     [classes.contentShift]: open,
                 })}
             >
-                <div className={classes.contentHeader} />
-                {children}
-
+                <div className={classes.contentHeader} >
+                    {children}
+                </div>
             </main>
-
         </div>
     );
 }

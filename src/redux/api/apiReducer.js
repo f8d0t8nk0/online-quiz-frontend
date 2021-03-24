@@ -9,7 +9,7 @@ import {
     API_CREATE_QUIZ_SUCCESS, API_DELETE_QUIZ, API_GET_ALL_ARCHIVED_QUIZZES, API_GET_ALL_GROUPS,
     API_GET_ALL_QUIZZES,
     API_GET_ALL_ROLES, API_GET_ALL_STUDENT_ASSIGNMENTS,
-    API_GET_ALL_TEACHER_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT, API_LOGIN, API_REGISTER,
+    API_GET_ALL_TEACHER_ASSIGNMENTS, API_GET_ASSIGNMENT_REPORT, API_GET_UNCOMPLETED_ASS_NUM, API_LOGIN, API_REGISTER,
     API_SAVE_ASSIGNMENT, API_SAVE_GROUP, API_SAVE_GROUP_ASSIGNMENT, API_SAVE_GROUP_ERROR, API_UNARCHIVE_QUIZ
 } from "./apiTypes";
 
@@ -55,6 +55,9 @@ const initialState = {
     },
     allGroups: {
         groups: []
+    },
+    uncompletedAssNum: {
+        num: ''
     }
 };
 
@@ -128,7 +131,7 @@ const apiReducer = (state = initialState, action) => {
             };
 
         case API_GET_ALL_TEACHER_ASSIGNMENTS:
-            // console.log("In reducer API_GET_ALL_TEACHER_ASSIGNMENTS: " + JSON.stringify(action.payload, null, 2));
+            console.log("In reducer API_GET_ALL_TEACHER_ASSIGNMENTS: " + JSON.stringify(action.payload, null, 2));
             return {
                 ...state,
                 getTeachAssign: {
@@ -143,6 +146,15 @@ const apiReducer = (state = initialState, action) => {
                 getTeachAssign: {
                     ...state.getTeachAssign,
                     assignments: [...action.payload]
+                }
+            };
+
+        case API_GET_UNCOMPLETED_ASS_NUM:
+            return {
+                ...state,
+                uncompletedAssNum: {
+                    ...state.uncompletedAssNum,
+                    num: action.payload
                 }
             };
 

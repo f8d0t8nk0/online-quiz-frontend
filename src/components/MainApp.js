@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -23,7 +23,7 @@ import UploadQuiz from "../pages/UploadQuiz";
 import Login from "../components/Login";
 import MyQuizzes from "../pages/MyQuizzes";
 import Register from "./Register";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {canShowQuizLink, isStudent, isTeacher} from "../redux/priviliges";
 import AssignmentReportMini from "./radio/AssignmentReportMini";
 import StudentSidebarButtons from "./StudentSidebarButtons";
@@ -31,6 +31,10 @@ import TeacherSidebarButtons from "./TeacherSidebarButtons";
 import Groups from "../pages/Groups";
 import CreateGroup from "./CreateGroup";
 import {drawerDurationSec} from "../redux/globalStyleConst";
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import Badge from '@material-ui/core/Badge';
+import {getUncompletedAssNum} from "../redux/api/apiActions";
+import AssignmentsNotification from "./AssignmentsNotification";
 
 const drawerWidth = 240;
 
@@ -47,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#212121',
     },
     appBarShift: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
+        // width: `calc(100% - ${drawerWidth}px)`,
+        // marginLeft: drawerWidth,
         transition: theme.transitions.create(['margin', 'width'], {
             // easing: theme.transitions.easing.easeOut,
             duration: drawerDurationSec,
@@ -95,10 +99,10 @@ const useStyles = makeStyles((theme) => ({
     //     }),
     //     marginLeft: 0,
     // },
-    // contentHeader: {
-    //     // necessary for content to be below app bar
-    //     ...theme.mixins.toolbar,
-    // },
+    contentHeader: {
+        // necessary for content to be below app bar
+        ...theme.mixins.toolbar,
+    },
     linkHome: {
         textDecoration: 'none',
         color: '#c0caca',
@@ -110,6 +114,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainApp() {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
 
     const username = useSelector(state => {
@@ -118,6 +123,10 @@ export default function MainApp() {
             return loginDTO.username;
         }
     });
+
+
+
+
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -145,7 +154,7 @@ export default function MainApp() {
                             aria-label="open drawer"
                             onClick={handleDrawerOpen}
                             edge="start"
-                            className={clsx(classes.menuButton, open && classes.hide)}
+                            className={clsx(classes.menuButton)}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -162,24 +171,20 @@ export default function MainApp() {
                         <Typography variant="h6" noWrap>
                             {username}
                         </Typography>
+                        <AssignmentsNotification />
                     </Toolbar>
                 </AppBar>
             </div>
-
-
             <Sidebar open={open} handleDrawerOpen={handleDrawerOpen} handleDrawerClose={handleDrawerClose} />
             <Switch>
             <Main open={open}>
                 {isStudent ? <StudentSidebarButtons/> : isTeacher ? <TeacherSidebarButtons/> : <StudentSidebarButtons/>}
             </Main>
-
             </Switch>
-            <Route path="/login" ><Login/></Route>
-            <Route  path="/register" ><Register/></Route>
             <Route exact path='/groups'><Groups/></Route>
             <Route path='/groups/create'><CreateGroup/></Route>
-
-
+            <Route path="/login" ><Login/></Route>
+            <Route  path="/register" ><Register/></Route>
         </div>
     );
 }

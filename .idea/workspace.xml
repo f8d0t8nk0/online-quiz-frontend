@@ -13,8 +13,15 @@
     <list default="true" id="d6a5f639-38ec-44d2-b083-30b37592c430" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assignment/AssignmentCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/radio/RunningQuizPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/radio/RunningQuizPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api/apiTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api/apiTypes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +168,7 @@
       <workItem from="1615909873050" duration="54209000" />
       <workItem from="1616172762945" duration="1128000" />
       <workItem from="1616257256840" duration="12742000" />
-      <workItem from="1616507970919" duration="32765000" />
+      <workItem from="1616507970919" duration="39726000" />
     </task>
     <servers />
   </component>
@@ -198,6 +205,14 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="315" y="195" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1615570921838" />
+    <state x="9" y="0" key="CommitChangelistDialog2" timestamp="1616622117491">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="9" y="0" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1616622117491" />
+    <state x="6" y="6" width="1268" height="788" maximized="true" key="DiffContextDialog" timestamp="1616622515944">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="6" y="6" width="1268" height="788" maximized="true" key="DiffContextDialog/0.0.1280.800@0.0.1280.800" timestamp="1616622515944" />
     <state x="381" y="101" key="FileChooserDialogImpl" timestamp="1616411200692">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

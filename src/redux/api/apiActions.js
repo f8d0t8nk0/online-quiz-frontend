@@ -20,14 +20,14 @@ import {
     API_SAVE_GROUP,
     API_SAVE_GROUP_ERROR,
     API_GET_ALL_GROUPS,
-    API_CLEAR_SUCCESS, API_SAVE_GROUP_ASSIGNMENT
+    API_CLEAR_SUCCESS, API_SAVE_GROUP_ASSIGNMENT, API_GET_UNCOMPLETED_ASS_NUM
 } from "./apiTypes";
 import {HOST} from '../../config/web';
 import {
     ALL_ROLES, ARCHIVE_QUIZ,
     CHECK_ASSIGNMENT, DELETE_QUIZ, GET_ALL_ARCHIVED_QUIZZES, GET_ALL_GROUPS,
     GET_ALL_QUIZZES, GET_ALL_STUDENT_ASSIGNMENTS,
-    GET_ALL_TEACHER_ASSIGNMENTS, GET_ASSIGNMENT_REPORT, LOGIN,
+    GET_ALL_TEACHER_ASSIGNMENTS, GET_ASSIGNMENT_REPORT, GET_UNCOMPLETED_ASS_NUM, LOGIN,
     QUESTIONS_CREATE, REGISTER, SAVE_ASSIGNMENT, SAVE_ASSIGNMENT_TO_GROUP, SAVE_NEW_GROUP,
     SAVE_QUIZ, UNARCHIVE_QUIZ
 } from '../../config/api';
@@ -140,10 +140,24 @@ export const fetchStudentAssignments = () => {
     }
 };
 
+export const getUncompletedAssNum = () => {
+    console.log("IN getUncompletedAssNum"); // todo dl
+    return dispatch => {
+        return axios.get(`${HOST}${GET_UNCOMPLETED_ASS_NUM}`)
+            .then(response => {
+                console.log("Uncompleted ASS num: " + response.data);
+                dispatch({
+                    type: API_GET_UNCOMPLETED_ASS_NUM,
+                    payload: response.data
+                })
+            })
+    }
+};
+
 export const checkAssignment = (dto, history, url) => {
     // console.log("IN checkAssignment"); // todo dl
-    return async dispatch => {
-        return await axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
+    return dispatch => {
+        return  axios.post(`${HOST}${CHECK_ASSIGNMENT}`, dto)
             .then(response => {
                 // console.log("IN checkAssignment inside: " + JSON.stringify(response.data, null, 2));
                 dispatch({

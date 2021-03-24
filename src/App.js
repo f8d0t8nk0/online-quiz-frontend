@@ -3,6 +3,10 @@ import {Provider} from 'react-redux';
 import MainApp from "./components/MainApp";
 import axios from "axios";
 import store from "./redux/store";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import { Route } from 'react-router-dom';
+
 
 axios.interceptors.request.use(
     config => {
@@ -19,10 +23,6 @@ export default function App() {
   return (
       <Provider store={store}>
           <div>
-              {/*<Switch>*/}
-              {/*  <Route exact path="/login" render={props => <Login {...props} />} />*/}
-              {/*  <Route exact path="/" render={props => <MainApp {...props} />} />*/}
-              {/*</Switch>*/}
               <MainApp />
           </div>
       </Provider>

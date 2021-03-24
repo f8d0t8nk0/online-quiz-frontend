@@ -16,3 +16,4 @@ export const ALL_ROLES                   = 'api/v1/auth/roles';
 export const GET_ASSIGNMENT_REPORT       = 'api/v1/stats/report/assignment/';
 export const SAVE_NEW_GROUP              = 'api/v1/teacher/group/save';
 export const GET_ALL_GROUPS              = 'api/v1/teacher/group/all';
+export const GET_UNCOMPLETED_ASS_NUM     = 'api/v1/student/assignment/uncompleted/number';

@@ -23,6 +23,9 @@ const useStyles = makeStyles({
             boxShadow: myHoverShadow
         }
     },
+    completedColor: {
+        backgroundColor: '#d4fad9'
+    },
     settingsButton: {
         // margin: "7px",
         zIndex: "10",
@@ -94,7 +97,7 @@ function AssignmentCard({ assignment, setSelectedAssignment, nextStep, url }) {
     };
 
     return (
-        <Card className={classes.root} >
+        <Card className={assignment.isCompleted ? `${classes.root} ${classes.completedColor}` : `${classes.root}`} >
             <Button className={classes.innerButton} onClick={handleClick}>
                 <CardContent>
                     <ClickAwayListener onClickAway={handleClickAway} >
