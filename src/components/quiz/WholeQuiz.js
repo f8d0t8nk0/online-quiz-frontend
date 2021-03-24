@@ -260,7 +260,7 @@ function WholeQuiz({ quizzes }) {
                     >
                             <Grid item
                                   className={assignButGridClass}
-                                  xs={6} sm={4} spacing={8}>
+                                  xs={6} sm={4}>
                                 <Button
                                     className={assignButtonClass}
                                     variant="outlined"

@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         display: "none"
     },
     fadeOutCard : {
-        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        boxShadow: myShadow,
         margin: "10px",
         transition: "opacity " + fadeOutTime/1000 + "s ease-out",
         opacity: "0"

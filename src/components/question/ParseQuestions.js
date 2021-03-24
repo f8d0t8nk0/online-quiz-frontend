@@ -18,12 +18,6 @@ const useStyles = makeStyles((theme) => ({
     commonMargin: {
         margin: "10px"
     },
-    submitDiv : {
-        display : "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        textAlign: "left"
-    },
     submitButton : {
         width: "fit-content",
         margin: "10px",
@@ -60,8 +54,6 @@ function ParseQuestions(props) {
     };
 
     return (
-
-
         <Grid
             container
             direction="row"
@@ -108,38 +100,6 @@ function ParseQuestions(props) {
 
 
         </Grid>
-
-
-
-            // <div className={classes.submitDiv}>
-        //     <Typography component={'div'}  >
-        //         <h2>Upload Your Quiz</h2>
-        //     </Typography>
-        //
-        //     <TextareaAutosize
-        //         className={classes.pasteQuestions}
-        //         onChange={event => setQuestions(event.target.value)}
-        //         placeholder="Paste questions' text here: "
-        //         aria-label="minimum height"
-        //         rowsMin={10} />
-        //
-        //     <TextareaAutosize
-        //         className={classes.pasteQuestions}
-        //         onChange={event => setAnswers(event.target.value)}
-        //         placeholder="Paste answers' text here: "
-        //         aria-label="minimum height"
-        //         rowsMin={5} />
-        //
-        //     <Button
-        //         className={classes.submitButton}
-        //         onClick= {() => {
-        //             dispatch(fetchQuestions(buildDto()))
-        //                 // .then(dispatch(firstSelectedIds()));
-        //             next();
-        //         }}>Submit
-        //     </Button>
-        //
-        // </div>
     );
 }
 

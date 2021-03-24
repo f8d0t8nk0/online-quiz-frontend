@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
+import Grid from '@material-ui/core/Grid';
 import {useDispatch} from "react-redux";
 import {changeSelectedIds} from "../../redux/gui/guiActions";
 import {changeSelectedQuestions} from "../../redux/api/apiActions";
@@ -14,8 +15,8 @@ const fadeOutTime = 500;
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 550,
-        maxWidth: 550,
+        // minWidth: 550,
+        // maxWidth: 550,
         display : "flex",
         flexDirection: "column",
         boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
@@ -80,33 +81,41 @@ export default function QuestionCard({ quiz, ordinal, selectedQIds }) {
     };
 
     return (
-        <Card className={rootClass}>
-            <CardContent>
-                <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
-                    {ordinal}
-                </Typography>
-                <Typography component={'div'}  className={classes.pos} color="textPrimary">
-                    {quiz.question}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
-                    {"A) " + quiz.a}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
-                    {"B) " + quiz.b}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
-                    {"C) " + quiz.c}
-                </Typography>
-                <Typography component={'div'}  className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
-                    {"D) " + quiz.d}
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button className={classes.deleteButton} size="small" color="primary" onClick={() => handleDelete()}>
-                    Delete
-                </Button>
-            </CardActions>
-        </Card>
+        <Grid container>
+            <Grid item xs={12} sm={12} md={9} lg={6} xl={4}>
+                <Card className={rootClass}>
+                    <CardContent>
+                        <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
+                            {ordinal}
+                        </Typography>
+                        <Typography component={'div'}  className={classes.pos} color="textPrimary">
+                            {quiz.question}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "a") && classes.rightAnsClass)} >
+                            {"A) " + quiz.a}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "b") && classes.rightAnsClass)} >
+                            {"B) " + quiz.b}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "c") && classes.rightAnsClass)}  >
+                            {"C) " + quiz.c}
+                        </Typography>
+                        <Typography component={'div'}  className={clsx((quiz.rightAn === "d") && classes.rightAnsClass)} >
+                            {"D) " + quiz.d}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button className={classes.deleteButton}
+                                size="small"
+                                color="primary"
+                                onClick={() => handleDelete()}>
+                            Delete
+                        </Button>
+                    </CardActions>
+                </Card>
+            </Grid>
+        </Grid>
+
     );
 
 }

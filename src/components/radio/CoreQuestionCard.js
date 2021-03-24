@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Grid from '@material-ui/core/Grid';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -9,18 +10,19 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import {useDispatch} from "react-redux";
 import {setQuizRadioOption} from "../../redux/gui/guiActions";
+import {myHoverShadow, myShadow} from "../../redux/globalStyleConst";
 
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 550,
-        maxWidth: 550,
-        display : "flex",
-        flexDirection: "column",
-        boxShadow: '0 0 10px 5px rgba(100, 100, 100, 0.3)',
+        // minWidth: 550,
+        // maxWidth: 550,
+        // display : "flex",
+        // flexDirection: "column",
+        boxShadow: myShadow,
         margin: "10px",
         '&:hover': {
-            boxShadow: '0 0 10px 5px rgba(25, 25, 25, 0.4)',
+            boxShadow: myHoverShadow,
         }
     },
     hideCard: {
@@ -73,27 +75,37 @@ function CoreQuestionCard({question, ordinal}) {
 
 
     return (
-        <div>
-            <Card className={rootClass}>
-                <CardContent>
-                    <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
-                        {ordinal}
-                    </Typography>
-                    <Typography component={'div'}  >
-                        {question.question}
-                    </Typography>
-                    <br />
-                    <FormControl component="fieldset">
-                        <RadioGroup aria-label="gender" name="gender1" value={selection} onChange={handleChange}>
-                            <FormControlLabel value="a" control={<CustomRadio />} label={"A)" + question.a} />
-                            <FormControlLabel value="b" control={<CustomRadio />} label={"B)" + question.b} />
-                            <FormControlLabel value="c" control={<CustomRadio />} label={"C)" + question.c} />
-                            <FormControlLabel value="d" control={<CustomRadio />} label={"D)" + question.d} />
-                        </RadioGroup>
-                    </FormControl>
-                </CardContent>
-            </Card>
-        </div>
+
+        <Grid
+            container item
+            xs={12} sm={12} md={9} lg={7} xl={4}
+            direction="column"
+            alignItems="stretch">
+            <Grid
+                item
+                // xs={12} sm={12} md={9} lg={6} xl={4}
+            >
+                <Card className={rootClass}>
+                    <CardContent>
+                        <Typography component={'div'}  className={classes.title} color="textSecondary" gutterBottom>
+                            {ordinal}
+                        </Typography>
+                        <Typography component={'div'}  >
+                            {question.question}
+                        </Typography>
+                        <br />
+                        <FormControl component="fieldset">
+                            <RadioGroup aria-label="gender" name="gender1" value={selection} onChange={handleChange}>
+                                <FormControlLabel value="a" control={<CustomRadio />} label={"A)" + question.a} />
+                                <FormControlLabel value="b" control={<CustomRadio />} label={"B)" + question.b} />
+                                <FormControlLabel value="c" control={<CustomRadio />} label={"C)" + question.c} />
+                                <FormControlLabel value="d" control={<CustomRadio />} label={"D)" + question.d} />
+                            </RadioGroup>
+                        </FormControl>
+                    </CardContent>
+                </Card>
+            </Grid>
+        </Grid>
     );
 }
 
